@@ -21,7 +21,7 @@ function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            +258 845 023 340
+            +258 84 502 3340
           </a>
 
           <a
@@ -33,13 +33,13 @@ function Footer() {
           </a>
 
           <span>
-            Cape Town CBD
+            Cape Town, Central
           </span>
 
         </div>
 
         <p className="copyright">
-          © {new Date().getFullYear()} The Sweet Spot
+          © {new Date().getFullYear()} The Sweet Spot - Developed by M&M Xperiences
         </p>
 
       </div>

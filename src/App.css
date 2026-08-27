@@ -1141,17 +1141,28 @@ textarea {
 
   flex-shrink: 0;
 
-  display: grid;
-
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   border-radius: 50%;
 
-  border: 1px solid rgba(201, 121, 125, 0.5);
+  border: 1px solid rgba(201, 121, 125, 0.45);
 
   color: var(--rose);
 
-  font-size: 22px;
+  background: #fffafa;
+}
+
+.contact-icon svg {
+  width: 23px;
+  height: 23px;
+
+  display: block;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
 }
 
 .contact-card h2 {

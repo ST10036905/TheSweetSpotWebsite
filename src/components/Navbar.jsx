@@ -21,7 +21,7 @@ function Navbar() {
 
         <nav className="navbar-links">
           <a href="/">Home</a>
-          <a href="/menu">Cake Menu</a>
+          <a href="/menu">Menu</a>
           <a href="/order">Order</a>
           <a href="/contact">Contact</a>
         </nav>
