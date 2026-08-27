@@ -1,18 +1,24 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <BrowserRouter>
+    <div className="app">
+      <Navbar />
 
-      <Routes>
-
-        <Route path="/" element={<Home />} />
-
-      </Routes>
-
-    </BrowserRouter>
+      <main>
+        <section
+          id="home"
+          style={{
+            minHeight: "80vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <h1>Coming soon...</h1>
+        </section>
+      </main>
+    </div>
   );
 }
 
