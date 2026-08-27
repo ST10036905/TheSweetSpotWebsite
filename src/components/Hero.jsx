@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import heroImage from "../assets/hero.png";
+import mainImage from "../assets/The-Sweet-Spot-Logo.png";
 
 function Hero() {
   return (
@@ -9,7 +9,7 @@ function Hero() {
         <div className="hero-content">
 
           <p className="hero-location">
-            CAPE TOWN , Central
+            CAPE TOWN, SOUTH AFRICA
           </p>
 
           <h1>
@@ -19,7 +19,7 @@ function Hero() {
 
           <p className="hero-description">
             Hand-crafted celebration cakes made to order in Cape Town.
-            Choose your cake base, filling and occasion — we'll bake
+            Choose your cake base, filling, occasion and we'll bake
             something special just for you.
           </p>
 
@@ -29,7 +29,7 @@ function Hero() {
             </Link>
 
             <Link to="/menu" className="btn btn-secondary">
-              View cake menu
+              View menu
             </Link>
           </div>
 
@@ -39,9 +39,9 @@ function Hero() {
           <div className="hero-circle"></div>
 
           <img
-            src={heroImage}
-            alt="The Sweet Spot celebration cake"
-            className="hero-image"
+            src={mainImage}
+            alt="The Sweet Spot"
+            className="mainImage"
           />
         </div>
 

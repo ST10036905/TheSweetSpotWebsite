@@ -1,3 +1,4 @@
+import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const cakeBases = [
@@ -10,18 +11,14 @@ const cakeBases = [
 const fillings = [
   "Cream Cheese Frosting",
   "Peppermint Crisp",
-  "Classic Caramel",
   "Biscoff Lotus",
   "Milk Truffle",
   "Dark Chocolate Truffle",
+];
+
+const specialFillings = [
   "Chocolate Ganache",
-];
-
-const fruityFillings = [
   "Strawberry Compote",
-];
-
-const decadentFillings = [
   "Salted Caramel",
 ];
 
@@ -35,85 +32,82 @@ const occasions = [
   "Just Because",
 ];
 
-function MenuList({ items }) {
+function MenuCard({ title, items, pink = false }) {
   return (
-    <ul className="menu-list">
-      {items.map((item) => (
-        <li key={item}>
-          <span>♡</span>
-          {item}
-        </li>
-      ))}
-    </ul>
-  );
-}
+    <div className={`menu-card ${pink ? "pink-card" : "teal-card"}`}>
+      <div className={`menu-label ${pink ? "pink-label" : "teal-label"}`}>
+        {title}
+      </div>
 
-function MenuCard({ title, children, type = "rose" }) {
-  return (
-    <article className={`menu-card ${type}`}>
-      <h2>{title}</h2>
-      {children}
-    </article>
+      <ul className="menu-list">
+        {items.map((item) => (
+          <li key={item}>
+            <Heart size={14} />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
 function Menu() {
   return (
-    <main className="page">
+    <main className="menu-page">
 
-      <section className="page-header">
-        <p className="eyebrow">THE SWEET SPOT</p>
-
+      {/* Header */}
+      <section className="menu-header">
         <h1>Cake Menu</h1>
 
-        <div className="heart-divider">♡</div>
+        <div className="heart-divider">
+          ♡
+        </div>
 
         <p>
-          Mix and match your favourite cake base with a delicious
-          filling. Every cake is made individually by hand.
+          Mix and match a base with a filling. Every cake is made
+          individually by hand, so no two are ever identical.
         </p>
       </section>
 
-
+      {/* Cake Options */}
       <section className="menu-grid">
 
-        <MenuCard title="Cake Bases">
-          <p className="menu-script">Classic flavours</p>
+        <MenuCard
+          title="Cake Bases"
+          items={cakeBases}
+          pink
+        />
 
-          <MenuList items={cakeBases} />
-        </MenuCard>
+        <MenuCard
+          title="Fillings & Frostings"
+          items={fillings}
+        />
 
+        <MenuCard
+          title="Special Fillings"
+          items={specialFillings}
+          pink
+        />
 
-        <MenuCard title="Fillings & Frostings" type="teal">
-          <MenuList items={fillings} />
-        </MenuCard>
-
-
-        <MenuCard title="Fruity Filling">
-          <MenuList items={fruityFillings} />
-
-          <p className="menu-note">
-            Made with fresh strawberries.
-          </p>
-        </MenuCard>
-
-
-        <MenuCard title="Decadent Filling" type="teal">
-          <MenuList items={decadentFillings} />
-
-          <p className="menu-note">
-            Rich homemade caramel sauce.
-          </p>
-        </MenuCard>
+        <MenuCard
+          title="Our Promise"
+          items={[
+            "Freshly baked to order",
+            "Made with quality ingredients",
+            "Hand decorated",
+          ]}
+        />
 
       </section>
 
-
-      <section className="menu-occasions">
+      {/* Occasions */}
+      <section className="occasion-section">
 
         <h2>Perfect for</h2>
 
-        <div className="heart-divider">♡</div>
+        <div className="heart-divider">
+          ♡
+        </div>
 
         <div className="occasion-list">
           {occasions.map((occasion) => (
@@ -123,7 +117,7 @@ function Menu() {
           ))}
         </div>
 
-        <Link to="/order" className="btn btn-primary">
+        <Link to="/order" className="menu-order-button">
           Order your cake
         </Link>
 
