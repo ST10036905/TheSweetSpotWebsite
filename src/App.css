@@ -226,7 +226,7 @@ textarea {
 
   flex-shrink: 0;
 
-  background: var(--rose);
+  background: var(--rose-dark);
 
   color: white;
 
@@ -554,105 +554,306 @@ textarea {
   font-weight: 400;
 }
 
-
 /* =========================================================
    HOW IT WORKS
 ========================================================= */
 
 .how-section {
-  width: min(1200px, 92%);
-
+  width: min(1280px, 92%);
   margin: auto;
-
-  padding: 90px 0;
+  padding: 70px 0 90px;
 }
+
+/* SECTION TITLE */
 
 .section-heading {
   text-align: center;
+  margin-bottom: 48px;
 }
+
+.section-heading h2 {
+  color: var(--teal);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(34px, 4vw, 42px);
+
+  font-weight: 400;
+
+  letter-spacing: 0.5px;
+
+  line-height: 1.1;
+}
+
+.heart-divider {
+  color: var(--rose);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 20px;
+
+  margin-top: 10px;
+}
+
+
+/* =========================================================
+   HOW IT WORKS GRID
+========================================================= */
 
 .how-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  gap: 25px;
+  gap: 28px 30px;
 
-  margin-top: 40px;
+  margin-top: 0;
 }
+
+
+/* =========================================================
+   INFO CARD
+========================================================= */
 
 .info-card {
   display: flex;
 
+  align-items: flex-start;
+
   gap: 20px;
 
-  padding: 28px;
+  min-height: 177px;
 
-  border-radius: var(--radius);
+  padding: 30px;
 
   background: #ffffff;
 
+  border-radius: 20px;
+
   box-shadow:
-    0 8px 30px rgba(50, 70, 80, 0.03);
+    0 8px 30px rgba(50, 70, 80, 0.025);
 }
+
+
+/* PINK BORDER */
 
 .rose-card {
   border: 1px solid rgba(201, 121, 125, 0.45);
 }
 
+
+/* TEAL BORDER */
+
 .teal-card {
   border: 1px solid rgba(53, 101, 117, 0.35);
 }
 
+
+/* =========================================================
+   ICON
+========================================================= */
+
 .info-icon {
-  width: 54px;
-  height: 54px;
+  width: 70px;
+  height: 70px;
 
   flex-shrink: 0;
 
-  display: grid;
+  display: flex;
 
-  place-items: center;
+  align-items: center;
+  justify-content: center;
 
   border-radius: 50%;
 
-  color: var(--rose);
-
   border: 1px solid rgba(201, 121, 125, 0.5);
 
-  font-size: 22px;
+  color: var(--rose);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 27px;
+
+  font-weight: 400;
 }
+
+.teal-icon {
+  border-color: rgba(53, 101, 117, 0.35);
+
+  color: var(--teal);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.info-content {
+  padding-top: 2px;
+}
+
+
+/* CARD HEADING */
 
 .info-card h3 {
-  color: var(--teal);
+  color: var(--rose);
 
-  font-family: Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  font-size: 23px;
+  font-size: 25px;
 
-  margin-bottom: 12px;
+  font-weight: 400;
+
+  letter-spacing: 1px;
+
+  line-height: 1.2;
+
+  margin-bottom: 17px;
 }
+
+
+/* TEAL CARD HEADING */
+
+.teal-card h3 {
+  color: var(--teal);
+}
+
+
+/* =========================================================
+   CARD LIST
+========================================================= */
 
 .info-card ul {
   list-style: none;
+
+  margin: 0;
+  padding: 0;
 }
 
 .info-card li {
+  position: relative;
+
   color: var(--muted);
 
-  font-size: 14px;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  line-height: 1.7;
+  font-size: 17px;
 
-  margin-bottom: 5px;
+  font-weight: 400;
+
+  letter-spacing: 0.4px;
+
+  line-height: 1.5;
+
+  margin-bottom: 9px;
+
+  padding-left: 26px;
 }
 
+
+/* HEART BULLET */
+
 .info-card li::before {
-  content: "♡";
+  content: "♥";
+
+  position: absolute;
+
+  left: 0;
+  top: 2px;
 
   color: var(--rose);
 
-  margin-right: 8px;
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .how-section {
+    width: 90%;
+
+    padding: 60px 0 75px;
+  }
+
+  .how-grid {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .info-card {
+    min-height: auto;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .how-section {
+    width: 90%;
+
+    padding: 50px 0 65px;
+  }
+
+  .section-heading {
+    margin-bottom: 35px;
+  }
+
+  .section-heading h2 {
+    font-size: 34px;
+  }
+
+  .info-card {
+    gap: 16px;
+
+    padding: 24px 20px;
+
+    border-radius: 18px;
+  }
+
+  .info-icon {
+    width: 58px;
+    height: 58px;
+
+    font-size: 23px;
+  }
+
+  .info-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 13px;
+  }
+
+  .info-card li {
+    font-size: 15px;
+
+    padding-left: 22px;
+  }
 }
 
 
@@ -680,6 +881,8 @@ textarea {
   color: var(--teal-dark);
 
   font-family: "Great Vibes" , cursive;
+
+  letter-spacing: 1.5px;
 
   font-size: 32px;
 }

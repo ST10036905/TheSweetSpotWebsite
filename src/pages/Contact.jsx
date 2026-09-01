@@ -1,44 +1,20 @@
-import { Link } from "react-router-dom";
+function HowItWorks() { 
+  return ( 
+    <section className="how-section"> 
+ 
+      <div className="section-heading"> 
+        <h2>How ordering works</h2> 
+        <div className="heart-divider">♡</div> 
+      </div> 
+ 
+      <div className="how-grid"> 
+ 
+        {/* ORDERING TIME FRAME */} 
+        <article className="info-card rose-card"> 
+ 
+          <div className="info-icon"> 
 
-function Contact() {
-  return (
-    <main className="page">
-
-      {/* PAGE HEADER */}
-      <section className="page-header">
-
-        <p className="eyebrow">
-          THE SWEET SPOT
-        </p>
-
-        <h1>Get in touch</h1>
-
-        <div className="heart-divider">
-          ♡
-        </div>
-
-        <p>
-          Questions about flavours, sizing or a design you have
-          in mind? We are here to assist you.
-        </p>
-
-      </section>
-
-
-      {/* CONTACT OPTIONS */}
-      <section className="contact-grid">
-
-        {/* WHATSAPP */}
-        <a
-          href="https://wa.me/258845023340"
-          target="_blank"
-          rel="noreferrer"
-          className="contact-card"
-        >
-
-          <div className="contact-icon">
-
-            {/* Phone icon */}
+            {/* Clock icon */}
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -48,49 +24,79 @@ function Contact() {
               strokeLinejoin="round"
               aria-hidden="true"
             >
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2
-                19.79 19.79 0 0 1-8.63-3.07
-                19.5 19.5 0 0 1-6-6
-                19.79 19.79 0 0 1-3.07-8.67
-                A2 2 0 0 1 4.11 2h3
-                a2 2 0 0 1 2 1.72
-                12.84 12.84 0 0 0 .7 2.81
-                2 2 0 0 1-.45 2.11L8.09 9.91
-                a16 16 0 0 0 6 6l1.27-1.27
-                a2 2 0 0 1 2.11-.45
-                12.84 12.84 0 0 0 2.81.7
-                A2 2 0 0 1 22 16.92z"
+              <circle
+                cx="12"
+                cy="12"
+                r="9"
               />
+
+              <path d="M12 7v5l3 2" />
+
             </svg>
 
-          </div>
+          </div> 
+ 
+          <div className="info-content"> 
+            <h3>ORDERING TIME FRAME</h3> 
+ 
+            <ul> 
+              <li>At least 2 days notice</li> 
+              <li>Up to 1 week for complex orders</li> 
+            </ul> 
+          </div> 
+ 
+        </article> 
+ 
+ 
+        {/* PAYMENT */} 
+        <article className="info-card teal-card"> 
+ 
+          <div className="info-icon teal-icon"> 
 
-          <div>
-            <h2>WhatsApp</h2>
+            {/* Payment / Card icon */}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <rect
+                x="3"
+                y="5"
+                width="18"
+                height="14"
+                rx="2"
+              />
 
-            <p>
-              +258 84 502 3340
-            </p>
+              <path d="M3 10h18" />
 
-            <span>
-              Message us →
-            </span>
-          </div>
+              <path d="M7 15h4" />
 
-        </a>
+            </svg>
 
+          </div> 
+ 
+          <div className="info-content"> 
+            <h3>PAYMENT</h3> 
+ 
+            <ul> 
+              <li>50% non-refundable deposit confirms the order</li> 
+              <li>Full payment on the date of pickup</li> 
+            </ul> 
+          </div> 
+ 
+        </article> 
+ 
+ 
+        {/* DESIGN */} 
+        <article className="info-card rose-card"> 
+ 
+          <div className="info-icon"> 
 
-        {/* INSTAGRAM */}
-        <a
-          href="https://instagram.com/thesweetspot_by_mayra"
-          target="_blank"
-          rel="noreferrer"
-          className="contact-card teal"
-        >
-
-          <div className="contact-icon">
-
-            {/* Instagram icon */}
+            {/* Instagram-style icon */}
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -124,27 +130,25 @@ function Contact() {
 
             </svg>
 
-          </div>
-
-          <div>
-            <h2>Instagram</h2>
-
-            <p>
-              @thesweetspot_by_mayra
-            </p>
-
-            <span>
-              Follow us →
-            </span>
-          </div>
-
-        </a>
-
-
-        {/* COLLECTION */}
-        <div className="contact-card">
-
-          <div className="contact-icon">
+          </div> 
+ 
+          <div className="info-content"> 
+            <h3>DESIGN</h3> 
+ 
+            <ul> 
+              <li>No two cakes are ever identical</li> 
+              <li>Each cake is a work of art, made by hand</li> 
+              <li>Inspiration pictures are used as a guide</li> 
+            </ul> 
+          </div> 
+ 
+        </article> 
+ 
+ 
+        {/* COLLECTIONS */} 
+        <article className="info-card teal-card"> 
+ 
+          <div className="info-icon teal-icon"> 
 
             {/* Location / Map Pin icon */}
             <svg
@@ -166,95 +170,24 @@ function Contact() {
 
             </svg>
 
-          </div>
-
-          <div>
-            <h2>Collections</h2>
-
-            <p>
-              Cape Town, Central
-            </p>
-
-            <span>
-              Monday – Saturday
-            </span>
-          </div>
-
-        </div>
-
-
-        {/* DELIVERY */}
-        <div className="contact-card teal">
-
-          <div className="contact-icon">
-
-            {/* Delivery / Truck icon */}
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.7"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M3 6h11v11H3z" />
-
-              <path d="M14 9h4l3 3v5h-7z" />
-
-              <circle
-                cx="7"
-                cy="19"
-                r="2"
-              />
-
-              <circle
-                cx="18"
-                cy="19"
-                r="2"
-              />
-
-            </svg>
-
-          </div>
-
-          <div>
-            <h2>Delivery</h2>
-
-            <p>
-              Cape Town
-            </p>
-
-            <span>
-              Available at an extra cost
-            </span>
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* CTA */}
-      <section className="contact-cta">
-
-        <h2>Ready to order?</h2>
-
-        <p>
-          Let's create something beautiful together for your special occasion.
-        </p>
-
-        <Link
-          to="/order"
-          className="btn btn-primary"
-        >
-          Start your order now
-        </Link>
-
-      </section>
-
-    </main>
-  );
-}
-
-export default Contact;
+          </div> 
+ 
+          <div className="info-content"> 
+            <h3>COLLECTIONS</h3> 
+ 
+            <ul> 
+              <li>Open Monday – Saturday</li> 
+              <li>Orders collected at the agreed time</li> 
+              <li>Delivery available at an extra cost</li> 
+            </ul> 
+          </div> 
+ 
+        </article> 
+ 
+      </div> 
+ 
+    </section> 
+  ); 
+} 
+ 
+export default HowItWorks;

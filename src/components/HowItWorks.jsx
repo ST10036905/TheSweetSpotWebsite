@@ -1,54 +1,159 @@
-function HowItWorks() {
-  return (
-    <section className="how-section">
+function HowItWorks() { 
+  return ( 
+    <section className="how-section"> 
+ 
+      <div className="section-heading"> 
+        <h2>How ordering works</h2> 
+        <div className="heart-divider">♡</div> 
+      </div> 
+ 
+      <div className="how-grid"> 
+ 
+        {/* ORDERING TIME FRAME */} 
+        <article className="info-card rose-card"> 
+ 
+          <div className="info-icon"> 
 
-      <div className="section-heading">
-        <h2>How ordering works</h2>
-        <div className="heart-divider">♡</div>
-      </div>
+            {/* Clock icon */}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              width="24"
+              height="24"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 2" />
+            </svg>
 
-      <div className="how-grid">
+          </div> 
+ 
+          <div className="info-content"> 
+            <h3>ORDERING TIME FRAME</h3> 
+ 
+            <ul> 
+              <li>At least 2 days notice</li> 
+              <li>Up to 1 week for complex orders</li> 
+            </ul> 
+          </div> 
+ 
+        </article> 
+ 
+ 
+        {/* PAYMENT */} 
+        <article className="info-card teal-card"> 
+ 
+          <div className="info-icon teal-icon"> 
 
-        <article className="info-card rose-card">
+            {/* Payment / Card icon */}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              width="24"
+              height="24"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="M3 10h18" />
+              <path d="M7 15h4" />
+            </svg>
 
-          <div className="info-icon">
-            ♡
-          </div>
+          </div> 
+ 
+          <div className="info-content"> 
+            <h3>PAYMENT</h3> 
+ 
+            <ul> 
+              <li>50% non-refundable deposit confirms the order</li> 
+              <li>Full payment on the date of pickup</li> 
+            </ul> 
+          </div> 
+ 
+        </article> 
+ 
+ 
+        {/* DESIGN */} 
+        <article className="info-card rose-card"> 
+ 
+          <div className="info-icon"> 
 
-          <div>
-            <h3>Your cake</h3>
+            {/* Heart icon */}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              width="24"
+              height="24"
+            >
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z" />
+            </svg>
 
-            <ul>
-              <li>No two cakes are ever identical.</li>
-              <li>Each cake is a work of art, made by hand.</li>
-              <li>Inspiration pictures are used as a guide.</li>
-            </ul>
-          </div>
+          </div> 
+ 
+          <div className="info-content"> 
+            <h3>DESIGN</h3> 
+ 
+            <ul> 
+              <li>No two cakes are ever identical</li> 
+              <li>Each cake is a work of art, made by hand</li> 
+              <li>Inspiration pictures are used as a guide</li> 
+            </ul> 
+          </div> 
+ 
+        </article> 
+ 
+ 
+        {/* COLLECTIONS */} 
+        <article className="info-card teal-card"> 
+ 
+          <div className="info-icon teal-icon"> 
 
-        </article>
+            {/* Location / Map Pin icon */}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              width="24"
+              height="24"
+            >
+              <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg>
 
-        <article className="info-card teal-card">
-
-          <div className="info-icon">
-            ♡
-          </div>
-
-          <div>
-            <h3>Collections</h3>
-
-            <ul>
-              <li>Open Monday – Saturday.</li>
-              <li>Orders collected at the agreed time.</li>
-              <li>Delivery available at an extra cost.</li>
-            </ul>
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-  );
-}
-
+          </div> 
+ 
+          <div className="info-content"> 
+            <h3>COLLECTIONS</h3> 
+ 
+            <ul> 
+              <li>Open Monday – Saturday</li> 
+              <li>Orders collected at the agreed time</li> 
+              <li>Delivery available at an extra cost</li> 
+            </ul> 
+          </div> 
+ 
+        </article> 
+ 
+      </div> 
+ 
+    </section> 
+  ); 
+} 
+ 
 export default HowItWorks;
