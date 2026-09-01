@@ -3,23 +3,25 @@
    Main Website Styles
 ========================================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
 
-/* =========================
-   BRAND
-========================= */
 
 :root {
-  --cream: #ffffff;
   --white: #ffffff;
+  --cream: #fffaf8;
+
+  /* Soft dusty white / beige */
+  --dusty-white: #f7f3ef;
 
   --teal: #356575;
   --teal-dark: #294f5d;
 
   --rose: #c9797d;
+  --rose-dark: #b9686e;
   --rose-light: #f8e7e5;
 
-  --text: #334f5b;
-  --muted: #71828a;
+  --text: #111111;
+  --muted: #6f777b;
 
   --border: #eaded9;
 
@@ -27,9 +29,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    GLOBAL
-========================= */
+========================================================= */
 
 * {
   box-sizing: border-box;
@@ -43,12 +45,15 @@ html {
 
 body {
   margin: 0;
-  background: #ffffff;
+  background: var(--white);
   color: var(--text);
 
   font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
     Arial,
-    Helvetica,
     sans-serif;
 
   -webkit-font-smoothing: antialiased;
@@ -56,11 +61,12 @@ body {
 
 #root {
   min-height: 100vh;
-  background: #ffffff;
+  background: var(--white);
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 button,
@@ -71,101 +77,202 @@ textarea {
 }
 
 
-/* =========================
+/* =========================================================
    NAVBAR
-========================= */
+========================================================= */
 
 .navbar {
   position: sticky;
   top: 0;
   z-index: 100;
 
-  background: #ffffff;
+  width: 100%;
+
+  background: rgba(247, 243, 239, 0.96);
+
+  backdrop-filter: blur(10px);
 
   border-bottom: 1px solid var(--border);
 }
 
 .navbar-container {
-  width: min(1200px, 92%);
-  margin: auto;
+  width: min(1320px, 94%);
+  min-height: 86px;
 
-  min-height: 82px;
+  margin: 0 auto;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  gap: 30px;
+  gap: 40px;
 }
+
+
+/* =========================================================
+   BRAND
+========================================================= */
 
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+
+  gap: 14px;
+
+  flex-shrink: 0;
 }
 
 .navbar-logo {
-  width: 54px;
-  height: 54px;
+  width: 56px;
+  height: 56px;
 
   object-fit: contain;
+
+  display: block;
 }
 
 .navbar-brand-text {
   display: flex;
   flex-direction: column;
+
+  justify-content: center;
+
+  line-height: 1;
 }
+
+
+/* Main brand name
+   Elegant serif italic — NOT cursive
+*/
 
 .brand-name {
   color: var(--teal);
 
-  font-family: Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  font-size: 23px;
+  font-size: 27px;
+
+  font-weight: 500;
+
+  font-style: italic;
+
+  letter-spacing: 0.2px;
+
+  white-space: nowrap;
 }
+
+
+/* Tagline */
 
 .brand-tagline {
   color: var(--rose);
 
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
   font-size: 9px;
 
-  letter-spacing: 3px;
+  font-weight: 500;
+
+  letter-spacing: 3.2px;
 
   text-transform: uppercase;
 
-  margin-top: 3px;
+  margin-top: 7px;
+
+  white-space: nowrap;
 }
+
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
 
 .navbar-links {
   display: flex;
+
   align-items: center;
 
-  gap: 30px;
+  justify-content: center;
+
+  gap: 38px;
+
+  margin-left: auto;
 }
 
 .navbar-links a {
-  color: var(--text);
+  color: var(--rose);
 
-  font-size: 14px;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  transition: color 0.2s ease;
+  font-size: 18px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.6px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .navbar-links a:hover {
   color: var(--rose);
+
+  transform: translateY(-1px);
 }
 
+
+/* =========================================================
+   WHATSAPP BUTTON
+========================================================= */
+
 .navbar-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
   background: var(--rose);
 
   color: #ffffff;
 
-  padding: 12px 21px;
+  padding: 12px 22px;
+
+  min-width: 124px;
 
   border-radius: 999px;
 
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
   font-size: 14px;
+
   font-weight: 600;
+
+  line-height: 1;
 
   transition:
     transform 0.2s ease,
@@ -180,9 +287,91 @@ textarea {
 }
 
 
-/* =========================
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .navbar-container {
+    width: 92%;
+
+    min-height: 78px;
+
+    gap: 25px;
+  }
+
+  .navbar-links {
+    gap: 22px;
+  }
+
+  .navbar-links a {
+    font-size: 17px;
+  }
+
+  .navbar-logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .brand-name {
+    font-size: 24px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .navbar-container {
+    min-height: 72px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-button {
+    margin-left: auto;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .navbar-container {
+    width: 90%;
+
+    min-height: 68px;
+  }
+
+  .navbar-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .navbar-brand-text {
+    display: none;
+  }
+
+  .navbar-button {
+    padding: 11px 18px;
+
+    min-width: auto;
+
+    font-size: 13px;
+  }
+}
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
   background: #ffffff;
@@ -272,9 +461,9 @@ textarea {
 }
 
 
-/* =========================
+/* =========================================================
    BUTTONS
-========================= */
+========================================================= */
 
 .btn {
   display: inline-flex;
@@ -327,9 +516,9 @@ textarea {
 }
 
 
-/* =========================
+/* =========================================================
    HERO IMAGE
-========================= */
+========================================================= */
 
 .hero-image-wrapper {
   position: relative;
@@ -346,9 +535,6 @@ textarea {
   overflow: visible;
 }
 
-
-/* Soft circle behind logo */
-
 .hero-circle {
   position: absolute;
 
@@ -361,9 +547,6 @@ textarea {
 
   z-index: 0;
 }
-
-
-/* Main Sweet Spot logo */
 
 .mainImage {
   position: relative;
@@ -392,9 +575,9 @@ textarea {
 }
 
 
-/* =========================
-   OCCASIONS
-========================= */
+/* =========================================================
+   HOME — OCCASIONS
+========================================================= */
 
 .occasions-section {
   width: min(1200px, 92%);
@@ -405,7 +588,7 @@ textarea {
 }
 
 .section-card {
-  background: #ffffff;
+  background: #f8e7e5;
 
   border: 1px solid var(--border);
 
@@ -423,11 +606,13 @@ textarea {
 .section-heading h2 {
   color: var(--rose);
 
-  font-family: Georgia, serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 32px;
 
-  font-weight: 500;
+  letter-spacing: 1px;
+
+  font-weight: 400;
 }
 
 .heart-divider {
@@ -455,19 +640,25 @@ textarea {
 
   border-radius: 999px;
 
-  border: 1px solid rgba(201, 121, 125, 0.4);
+  border: 1px solid rgba(201, 121, 125, 0.35);
 
   background: #fff8f7;
 
-  color: var(--teal);
+  color: #c9797d;
 
-  font-size: 13px;
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 16px;
+
+  letter-spacing: 1px;
+
+  font-weight: 400;
 }
 
 
-/* =========================
+/* =========================================================
    HOW IT WORKS
-========================= */
+========================================================= */
 
 .how-section {
   width: min(1200px, 92%);
@@ -479,10 +670,6 @@ textarea {
 
 .section-heading {
   text-align: center;
-}
-
-.section-heading h2 {
-  color: var(--teal);
 }
 
 .how-grid {
@@ -570,14 +757,17 @@ textarea {
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 .footer {
   border-top: 1px solid var(--border);
 
-  background: #ffffff;
+  /* Soft dusty white / beige */
+  background: var(--dusty-white);
+
+  margin-top: auto;
 }
 
 .footer-container {
@@ -641,7 +831,7 @@ textarea {
 
 
 /* =========================================================
-   INNER PAGES
+   INNER PAGE BASE
 ========================================================= */
 
 .page {
@@ -693,135 +883,339 @@ textarea {
 }
 
 
-/* =========================
-   MENU
-========================= */
+/* =========================================================
+   MENU PAGE
+========================================================= */
+
+.menu-page {
+  width: min(1100px, 92%);
+
+  margin: 0 auto;
+
+  padding: 75px 0 100px;
+}
+
+
+/* =========================================================
+   MENU HEADER
+========================================================= */
+
+.menu-header {
+  max-width: 680px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+.menu-header h1 {
+  color: #111111;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: clamp(42px, 6vw, 62px);
+
+  font-weight: 600;
+
+  letter-spacing: -1.8px;
+
+  line-height: 1.1;
+}
+
+.menu-header .heart-divider {
+  color: var(--rose);
+
+  font-size: 18px;
+
+  margin: 14px 0 18px;
+}
+
+.menu-header p {
+  max-width: 590px;
+
+  margin: auto;
+
+  color: #555555;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   MENU GRID
+========================================================= */
 
 .menu-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
-  gap: 25px;
+  gap: 24px;
 }
+
+
+/* =========================================================
+   MENU CARD
+========================================================= */
 
 .menu-card {
+  position: relative;
+
   background: #ffffff;
 
-  border: 1px solid rgba(201, 121, 125, 0.4);
+  border-radius: 20px;
 
-  border-radius: var(--radius);
+  padding: 32px;
 
-  padding: 30px;
+  min-height: 235px;
 
   box-shadow:
-    0 10px 35px rgba(50, 70, 80, 0.04);
+    0 8px 30px rgba(0, 0, 0, 0.045);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.menu-card.teal {
-  border-color: rgba(53, 101, 117, 0.35);
+.menu-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
-.menu-card h2 {
-  display: inline-block;
+.menu-card.pink-card {
+  border: 1px solid #f0d8d7;
+}
 
-  background: var(--rose);
+.menu-card.teal-card {
+  border: 1px solid #d9e4e7;
+}
 
-  color: #ffffff;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+/* =========================================================
+   MENU LABEL
+========================================================= */
 
-  font-size: 13px;
+.menu-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
 
   font-weight: 600;
 
-  letter-spacing: 2px;
+  letter-spacing: 1.2px;
 
   text-transform: uppercase;
-
-  border-radius: 7px;
-
-  padding: 9px 15px;
 }
 
-.menu-card.teal h2 {
-  background: var(--teal);
+.pink-label {
+  background: #f8e7e5;
+
+  color: #a9585e;
 }
 
-.menu-script {
+.teal-label {
+  background: #e8f0f2;
+
   color: var(--teal);
-
-  font-family:
-    "Brush Script MT",
-    "Segoe Script",
-    cursive;
-
-  font-size: 27px;
-
-  margin-top: 20px;
 }
+
+
+/* =========================================================
+   MENU ITEMS
+========================================================= */
 
 .menu-list {
   list-style: none;
 
-  margin-top: 20px;
+  margin-top: 22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
 }
 
 .menu-list li {
   display: flex;
 
-  gap: 10px;
+  align-items: center;
 
-  color: var(--text);
+  gap: 12px;
 
   padding: 9px 0;
 
+  color: #111111;
+
   font-size: 15px;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+.menu-list li svg {
+  flex-shrink: 0;
+
+  width: 15px;
+  height: 15px;
+
+  color: var(--rose);
+
+  stroke-width: 1.8;
 }
 
 .menu-list li span {
-  color: var(--rose);
+  color: #111111;
 }
 
-.menu-note {
-  color: var(--rose);
 
-  font-size: 13px;
+/* =========================================================
+   OCCASIONS — MENU
+========================================================= */
 
-  font-style: italic;
+.occasion-section {
+  margin-top: 30px;
 
-  margin-top: 12px;
-}
+  padding: 48px 30px;
 
-.menu-occasions {
-  margin-top: 25px;
-
-  background: #ffffff;
+  background: #fffafa;
 
   border: 1px solid var(--border);
 
-  border-radius: var(--radius);
-
-  padding: 35px;
+  border-radius: 20px;
 
   text-align: center;
 }
 
-.menu-occasions h2 {
-  color: var(--rose);
-
-  font-family: Georgia, serif;
+.occasion-section h2 {
+  color: #111111;
 
   font-size: 30px;
 
-  font-weight: 500;
+  font-weight: 600;
+
+  letter-spacing: -0.5px;
 }
 
-.menu-occasions .btn {
+.occasion-section .heart-divider {
+  color: var(--rose);
+
+  font-size: 18px;
+
+  margin: 10px 0 24px;
+}
+
+.occasion-section .occasion-list {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  max-width: 850px;
+
+  margin: 0 auto;
+}
+
+.occasion-section .occasion-list span {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 9px 15px;
+
+  border-radius: 999px;
+
+  border: 1px solid #e8d8d5;
+
+  background: #ffffff;
+
+  color: #111111;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.occasion-section .occasion-list span:hover {
+  background: var(--rose-light);
+
+  border-color: #e5c5c3;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MENU ORDER BUTTON
+========================================================= */
+
+.menu-order-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
   margin-top: 30px;
+
+  padding: 13px 25px;
+
+  border-radius: 999px;
+
+  background: var(--rose);
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 7px 20px rgba(201, 121, 125, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.menu-order-button:hover {
+  background: var(--rose-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(201, 121, 125, 0.25);
 }
 
 
@@ -909,22 +1303,13 @@ textarea {
 
   background: #ffffff;
 
-  color: var(--text);
+  color: #111111;
 
   border-radius: 10px;
 
   padding: 12px 14px;
 
   outline: none;
-
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.form-grid input::placeholder,
-.form-grid textarea::placeholder {
-  color: #a0aaae;
 }
 
 .form-grid input:focus,
@@ -945,9 +1330,9 @@ textarea {
 }
 
 
-/* =========================
-   WHATSAPP ORDER BUTTON
-========================= */
+/* =========================================================
+   WHATSAPP ORDER
+========================================================= */
 
 .whatsapp-order-button {
   display: flex;
@@ -998,10 +1383,6 @@ textarea {
   box-shadow: none;
 }
 
-.whatsapp-order-button.disabled:hover {
-  transform: none;
-}
-
 .form-help {
   text-align: center;
 
@@ -1013,9 +1394,9 @@ textarea {
 }
 
 
-/* =========================
+/* =========================================================
    ORDER SUMMARY
-========================= */
+========================================================= */
 
 .order-summary {
   position: sticky;
@@ -1142,6 +1523,7 @@ textarea {
   flex-shrink: 0;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -1152,17 +1534,6 @@ textarea {
   color: var(--rose);
 
   background: #fffafa;
-}
-
-.contact-icon svg {
-  width: 23px;
-  height: 23px;
-
-  display: block;
-
-  stroke: currentColor;
-
-  stroke-width: 1.7;
 }
 
 .contact-card h2 {
@@ -1236,18 +1607,15 @@ textarea {
 
 @media (max-width: 850px) {
 
-  /* Navbar */
-
   .navbar-links {
     display: none;
   }
 
   .navbar-container {
+    width: 92%;
+
     min-height: 72px;
   }
-
-
-  /* Hero */
 
   .hero-container {
     grid-template-columns: 1fr;
@@ -1285,15 +1653,9 @@ textarea {
     width: min(90%, 430px);
   }
 
-
-  /* How it works */
-
   .how-grid {
     grid-template-columns: 1fr;
   }
-
-
-  /* Inner pages */
 
   .page {
     padding-top: 50px;
@@ -1331,9 +1693,6 @@ textarea {
     width: 48px;
     height: 48px;
   }
-
-
-  /* Hero */
 
   .hero-container {
     width: 90%;
@@ -1380,9 +1739,6 @@ textarea {
     width: 95%;
   }
 
-
-  /* Sections */
-
   .section-card {
     padding: 25px 18px;
   }
@@ -1399,9 +1755,6 @@ textarea {
   .info-card {
     padding: 22px;
   }
-
-
-  /* Inner pages */
 
   .page {
     width: 90%;
@@ -1420,14 +1773,66 @@ textarea {
   }
 
 
-  /* Menu */
+  /* =======================================================
+     MENU
+  ======================================================= */
+
+  .menu-page {
+    width: 90%;
+
+    padding: 45px 0 70px;
+  }
+
+  .menu-header {
+    margin-bottom: 40px;
+  }
+
+  .menu-header h1 {
+    font-size: 42px;
+
+    letter-spacing: -1px;
+  }
+
+  .menu-header p {
+    font-size: 14px;
+  }
 
   .menu-card {
-    padding: 24px;
+    padding: 25px;
+
+    min-height: auto;
+  }
+
+  .menu-list li {
+    font-size: 14px;
+  }
+
+  .occasion-section {
+    padding: 38px 18px;
+  }
+
+  .occasion-section h2 {
+    font-size: 26px;
+  }
+
+  .occasion-section .occasion-list {
+    gap: 7px;
+  }
+
+  .occasion-section .occasion-list span {
+    font-size: 11px;
+
+    padding: 8px 12px;
+  }
+
+  .menu-order-button {
+    width: 100%;
   }
 
 
-  /* Order */
+  /* =======================================================
+     ORDER
+  ======================================================= */
 
   .form-grid {
     grid-template-columns: 1fr;
@@ -1442,7 +1847,9 @@ textarea {
   }
 
 
-  /* Contact */
+  /* =======================================================
+     CONTACT
+  ======================================================= */
 
   .contact-card {
     padding: 22px;
