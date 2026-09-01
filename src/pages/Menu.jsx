@@ -42,7 +42,11 @@ function MenuCard({ title, items, pink = false }) {
       <ul className="menu-list">
         {items.map((item) => (
           <li key={item}>
-            <Heart size={15} />
+            <Heart
+              size={18}
+              fill = "#f88796"
+              stroke="#f88796"
+            />
             <span>{item}</span>
           </li>
         ))}
@@ -57,13 +61,13 @@ function Menu() {
 
       {/* MENU HEADER */}
       <section className="menu-header">
-        <h1>Cake Menu</h1>
+        <h1>CAKE MENU</h1>
 
         <div className="heart-divider">♡</div>
 
         <p>
           Mix and match your favourite cake base and filling.
-          Every cake is freshly baked and carefully decorated
+          Every cake is freshly baked and carefully crafted
           just for you.
         </p>
       </section>

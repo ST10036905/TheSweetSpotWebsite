@@ -3,7 +3,7 @@
    Main Website Styles
 ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=Great+Vibes&display=swap');
 
 
 :root {
@@ -88,7 +88,6 @@ textarea {
 
   width: 100%;
 
-  /* Existing color preserved */
   background: #ffffff;
 
   backdrop-filter: blur(10px);
@@ -133,12 +132,13 @@ textarea {
   justify-content: center;
 }
 
+
 /* =========================================================
    ACTIVE PAGE
 ========================================================= */
 
 .navbar-links a.active {
-  color: var(--rose-light);
+  color: #f88796;
 
   font-weight: 600;
 }
@@ -160,7 +160,7 @@ textarea {
 }
 
 .brand-tagline {
-  color: var(--rose);
+  color: #f88796;
 
   font-family:
     Inter,
@@ -171,6 +171,7 @@ textarea {
     sans-serif;
 
   font-size: 9px;
+
   font-weight: 500;
 
   letter-spacing: 3px;
@@ -226,7 +227,7 @@ textarea {
 
   flex-shrink: 0;
 
-  background: var(--rose-dark);
+  background: #f88796;
 
   color: white;
 
@@ -238,15 +239,16 @@ textarea {
 
   border-radius: 999px;
 
-  font-family:"Cormorant Garamont", serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   letter-spacing: 1px;
 
   font-size: 14px;
 
-  font-weight: 500px;
-
-  
+  font-weight: 500;
 
   line-height: 1;
 
@@ -300,7 +302,10 @@ textarea {
 .hero h1 {
   color: var(--teal);
 
-  font-family: "Cormorant Garamont", serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: clamp(48px, 6vw, 76px);
 
@@ -312,13 +317,13 @@ textarea {
 .hero h1 span {
   display: block;
 
-  color: var(--rose);
+  color: #f88796;
 
   font-family: "Great Vibes", cursive;
 
   font-size: 1.15em;
 
-  font-weight: 300px;
+  font-weight: 400;
 
   line-height: 0.9;
 
@@ -332,7 +337,10 @@ textarea {
 
   font-size: 20px;
 
-  font-family: "Cormorant Goramont";
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   line-height: 1.8;
 
@@ -377,15 +385,18 @@ textarea {
 }
 
 .btn-primary {
-  background: var(--rose);
+  background: #f88796;
 
   color: #ffffff;
 
-   font-family: "Cormorant Garamont", serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-   letter-spacing:2px;
+  letter-spacing: 2px;
 
-  font-weight: lighter;
+  font-weight: 400;
 
   box-shadow:
     0 8px 22px rgba(201, 121, 125, 0.2);
@@ -403,11 +414,14 @@ textarea {
 
   background: #ffffff;
 
-  font-family: "Cormorant Garamont", serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  letter-spacing:2px;
+  letter-spacing: 2px;
 
-  font-weight: lighter;
+  font-weight: 400;
 }
 
 .btn-secondary:hover {
@@ -503,9 +517,12 @@ textarea {
 
 .section-card h2,
 .section-heading h2 {
-  color: var(--rose);
+  color: #f88796;
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 32px;
 
@@ -515,7 +532,12 @@ textarea {
 }
 
 .heart-divider {
-  color: var(--rose);
+  color: #f88796;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 20px;
 
@@ -543,9 +565,12 @@ textarea {
 
   background: #fff8f7;
 
-  color: #c9797d;
+  color: #f88796;
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 16px;
 
@@ -554,20 +579,27 @@ textarea {
   font-weight: 400;
 }
 
+
 /* =========================================================
    HOW IT WORKS
 ========================================================= */
 
 .how-section {
   width: min(1280px, 92%);
+
   margin: auto;
+
   padding: 70px 0 90px;
 }
 
-/* SECTION TITLE */
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
 
 .section-heading {
   text-align: center;
+
   margin-bottom: 48px;
 }
 
@@ -588,7 +620,7 @@ textarea {
   line-height: 1.1;
 }
 
-.heart-divider {
+.section-heading .heart-divider {
   color: var(--rose);
 
   font-family:
@@ -609,7 +641,8 @@ textarea {
 .how-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
   gap: 28px 30px;
 
@@ -644,14 +677,14 @@ textarea {
 /* PINK BORDER */
 
 .rose-card {
-  border: 1px solid rgba(201, 121, 125, 0.45);
+  border: 2px solid rgba(201, 121, 125, 0.45);
 }
 
 
 /* TEAL BORDER */
 
 .teal-card {
-  border: 1px solid rgba(53, 101, 117, 0.35);
+  border: 2px solid rgba(53, 101, 117, 0.35);
 }
 
 
@@ -672,9 +705,9 @@ textarea {
 
   border-radius: 50%;
 
-  border: 1px solid rgba(201, 121, 125, 0.5);
+  border: 1px solid #f88796;
 
-  color: var(--rose);
+  color: #f88796;
 
   font-family:
     "Cormorant Garamond",
@@ -702,10 +735,12 @@ textarea {
 }
 
 
-/* CARD HEADING */
+/* =========================================================
+   CARD HEADING
+========================================================= */
 
 .info-card h3 {
-  color: var(--rose);
+  color: #f88796;
 
   font-family:
     "Cormorant Garamond",
@@ -723,9 +758,6 @@ textarea {
   margin-bottom: 17px;
 }
 
-
-/* TEAL CARD HEADING */
-
 .teal-card h3 {
   color: var(--teal);
 }
@@ -739,6 +771,7 @@ textarea {
   list-style: none;
 
   margin: 0;
+
   padding: 0;
 }
 
@@ -774,153 +807,14 @@ textarea {
   position: absolute;
 
   left: 0;
+
   top: 2px;
 
-  color: var(--rose);
+  color:#f88796;
 
   font-family: Arial, sans-serif;
 
   font-size: 12px;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 850px) {
-
-  .how-section {
-    width: 90%;
-
-    padding: 60px 0 75px;
-  }
-
-  .how-grid {
-    grid-template-columns: 1fr;
-
-    gap: 22px;
-  }
-
-  .info-card {
-    min-height: auto;
-  }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-  .how-section {
-    width: 90%;
-
-    padding: 50px 0 65px;
-  }
-
-  .section-heading {
-    margin-bottom: 35px;
-  }
-
-  .section-heading h2 {
-    font-size: 34px;
-  }
-
-  .info-card {
-    gap: 16px;
-
-    padding: 24px 20px;
-
-    border-radius: 18px;
-  }
-
-  .info-icon {
-    width: 58px;
-    height: 58px;
-
-    font-size: 23px;
-  }
-
-  .info-card h3 {
-    font-size: 21px;
-
-    margin-bottom: 13px;
-  }
-
-  .info-card li {
-    font-size: 15px;
-
-    padding-left: 22px;
-  }
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.footer {
-  border-top: 1.5px solid var(--rose-dark);
-
-  background: #ffffff;
-
-  margin-top: auto;
-}
-
-.footer-container {
-  width: min(1200px, 92%);
-
-  margin: auto;
-
-  padding: 45px 0 25px;
-}
-
-.footer-title {
-  color: var(--teal-dark);
-
-  font-family: "Great Vibes" , cursive;
-
-  letter-spacing: 1.5px;
-
-  font-size: 32px;
-}
-
-.footer-links {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 25px;
-
-  margin-top: 25px;
-
-  letter-spacing: 0.5px;
-
-  font-family: "Cormorant Garamont" , serif;
-
-  color: var(--rose);
-
-  font-size: 16px;
-}
-
-.footer-links a {
-  color: var(--rose);
-
-  transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
-  color: var(--rose-dark);
-}
-
-.copyright {
-  color: #89969b;
-
-  font-size: 11px;
-
-  margin-top: 30px;
 }
 
 
@@ -961,7 +855,10 @@ textarea {
 .page-header h1 {
   color: var(--teal);
 
-  font-family: Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: clamp(42px, 6vw, 64px);
 
@@ -1003,27 +900,21 @@ textarea {
 }
 
 .menu-header h1 {
-  color: #111111;
+  color: #f88796;
 
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
-    sans-serif;
+  font-family: "Cormorant Garamond";
 
   font-size: clamp(42px, 6vw, 62px);
 
   font-weight: 600;
 
-  letter-spacing: -1.8px;
+  letter-spacing: 0.5px;
 
   line-height: 1.1;
 }
 
 .menu-header .heart-divider {
-  color: var(--rose);
+  color: #f88796;
 
   font-size: 18px;
 
@@ -1035,9 +926,13 @@ textarea {
 
   margin: auto;
 
-  color: #555555;
+  color: var(--teal);
 
-  font-size: 15px;
+  font-family: "Cormorant Garamond", serif;
+
+  font-weight: 500;
+
+  font-size: 18px;
 
   line-height: 1.8;
 }
@@ -1088,11 +983,11 @@ textarea {
 }
 
 .menu-card.pink-card {
-  border: 1px solid #f0d8d7;
+  border: 2px solid #f0d8d7;
 }
 
 .menu-card.teal-card {
-  border: 1px solid #d9e4e7;
+  border: 2px solid #d9e4e7;
 }
 
 
@@ -1156,7 +1051,7 @@ textarea {
 
   padding: 9px 0;
 
-  color: #111111;
+  color: #294f5d;
 
   font-size: 15px;
 
@@ -1169,52 +1064,77 @@ textarea {
   flex-shrink: 0;
 
   width: 15px;
+
   height: 15px;
 
   color: var(--rose);
 
-  stroke-width: 1.8;
+  stroke-width: 2.0;
 }
 
 .menu-list li span {
-  color: #111111;
+  color: #294f5d;
+  
+  font-family: "Cormont Garamond" , serif;
+
+  font-weight: 500;
+
+  font-size: 16px;
+
+  letter-spacing: 0.2px;
 }
 
 
 /* =========================================================
    OCCASIONS — MENU
+   MATCHES HOME OCCASIONS CARD
 ========================================================= */
 
 .occasion-section {
   margin-top: 30px;
 
-  padding: 48px 30px;
+  padding: 35px;
 
-  background: #fffafa;
+  background: #f8e7e5;
 
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
 
-  border-radius: 20px;
+  border-radius: var(--radius);
 
   text-align: center;
+
+  box-shadow:
+    0 10px 35px rgba(50, 70, 80, 0.04);
 }
 
 .occasion-section h2 {
-  color: #111111;
+  color: #f88796;
 
-  font-size: 30px;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  font-weight: 600;
+  font-size: 32px;
 
-  letter-spacing: -0.5px;
+  letter-spacing: 1px;
+
+  font-weight: 400;
+
+  line-height: 1.2;
 }
 
 .occasion-section .heart-divider {
-  color: var(--rose);
+  color: #f88796;
 
-  font-size: 18px;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  margin: 10px 0 24px;
+  font-size: 20px;
+
+  margin-top: 8px;
 }
 
 .occasion-section .occasion-list {
@@ -1226,11 +1146,9 @@ textarea {
 
   flex-wrap: wrap;
 
-  gap: 9px;
+  gap: 10px;
 
-  max-width: 850px;
-
-  margin: 0 auto;
+  margin-top: 22px;
 }
 
 .occasion-section .occasion-list span {
@@ -1240,19 +1158,26 @@ textarea {
 
   justify-content: center;
 
-  padding: 9px 15px;
+  padding: 10px 17px;
 
   border-radius: 999px;
 
-  border: 1px solid #e8d8d5;
+  border: 1px solid rgba(201, 121, 125, 0.35);
 
-  background: #ffffff;
+  background: #fff8f7;
 
-  color: #111111;
+  color: #f88796;
 
-  font-size: 12px;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  font-weight: 500;
+  font-size: 16px;
+
+  letter-spacing: 1px;
+
+  font-weight: 400;
 
   transition:
     background 0.2s ease,
@@ -1261,9 +1186,9 @@ textarea {
 }
 
 .occasion-section .occasion-list span:hover {
-  background: var(--rose-light);
+  background: #ffffff;
 
-  border-color: #e5c5c3;
+  border-color: rgba(201, 121, 125, 0.5);
 
   transform: translateY(-2px);
 }
@@ -1290,9 +1215,16 @@ textarea {
 
   color: #ffffff;
 
-  font-size: 13px;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  font-weight: 600;
+  font-size: 15px;
+
+  letter-spacing: 1px;
+
+  font-weight: 500;
 
   box-shadow:
     0 7px 20px rgba(201, 121, 125, 0.18);
@@ -1345,7 +1277,10 @@ textarea {
 .order-form-card h2 {
   color: var(--teal);
 
-  font-family: Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 29px;
 
@@ -1365,7 +1300,8 @@ textarea {
 .form-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns:
+    repeat(2, 1fr);
 
   gap: 20px;
 
@@ -1512,7 +1448,10 @@ textarea {
 .order-summary h2 {
   color: var(--teal);
 
-  font-family: Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 27px;
 
@@ -1574,7 +1513,8 @@ textarea {
 .contact-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns:
+    repeat(2, 1fr);
 
   gap: 20px;
 }
@@ -1612,6 +1552,7 @@ textarea {
 
 .contact-icon {
   width: 55px;
+
   height: 55px;
 
   flex-shrink: 0;
@@ -1619,6 +1560,7 @@ textarea {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -1633,7 +1575,10 @@ textarea {
 .contact-card h2 {
   color: var(--teal);
 
-  font-family: Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 22px;
 
@@ -1675,7 +1620,10 @@ textarea {
 .contact-cta h2 {
   color: var(--teal);
 
-  font-family: Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 32px;
 
@@ -1725,6 +1673,7 @@ textarea {
 
   .hero-description {
     margin-left: auto;
+
     margin-right: auto;
   }
 
@@ -1740,6 +1689,7 @@ textarea {
 
   .hero-circle {
     width: 350px;
+
     height: 350px;
   }
 
@@ -1785,6 +1735,7 @@ textarea {
 
   .navbar-logo {
     width: 48px;
+
     height: 48px;
   }
 
@@ -1826,6 +1777,7 @@ textarea {
 
   .hero-circle {
     width: 280px;
+
     height: 280px;
   }
 
@@ -1901,22 +1853,27 @@ textarea {
     font-size: 14px;
   }
 
+
+  /* =======================================================
+     MENU OCCASIONS
+  ======================================================= */
+
   .occasion-section {
-    padding: 38px 18px;
+    padding: 25px 18px;
   }
 
   .occasion-section h2 {
-    font-size: 26px;
+    font-size: 28px;
   }
 
   .occasion-section .occasion-list {
-    gap: 7px;
+    gap: 8px;
   }
 
   .occasion-section .occasion-list span {
-    font-size: 11px;
+    font-size: 14px;
 
-    padding: 8px 12px;
+    padding: 9px 14px;
   }
 
   .menu-order-button {
@@ -1979,10 +1936,93 @@ textarea {
 
   .hero-circle {
     width: 260px;
+
     height: 260px;
   }
 
   .mainImage {
     width: 100%;
   }
+
+  .occasion-section {
+    padding: 25px 15px;
+  }
+
+  .occasion-section .occasion-list span {
+    font-size: 13px;
+
+    padding: 8px 12px;
+  }
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  border-top: 1.5px solid #f88796;
+
+  background: #ffffff;
+
+  margin-top: auto;
+}
+
+.footer-container {
+  width: min(1200px, 92%);
+
+  margin: auto;
+
+  padding: 45px 0 25px;
+}
+
+.footer-title {
+  color: var(--teal-dark);
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  letter-spacing: 1.5px;
+
+  font-size: 32px;
+}
+
+.footer-links {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 25px;
+
+  margin-top: 25px;
+
+  letter-spacing: 0.5px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  color: var(--teal-dark);
+
+  font-size: 16px;
+}
+
+.footer-links a {
+  color: var(--teal-dark);
+
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--rose-dark);
+}
+
+.copyright {
+  color: #6f777b;
+
+  font-size: 11px;
+
+  margin-top: 30px;
 }

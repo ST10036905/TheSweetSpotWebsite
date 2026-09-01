@@ -36,7 +36,7 @@ function Footer() {
         </div>
 
         <p className="copyright">
-          © {new Date().getFullYear()} The Sweet Spot - Developed by Mayra Selemane
+          © {new Date().getFullYear()} The Sweet Spot - Developed by Mayra Selemane.
         </p>
 
       </div>
