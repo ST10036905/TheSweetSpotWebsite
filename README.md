@@ -1,16 +1,74 @@
-# React + Vite
+# The Sweet Spot 
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern and responsive bakery website built for **The Sweet Spot**.
 
-Currently, two official plugins are available:
+The project is designed to provide a clean and welcoming online presence where visitors can explore the bakery, view the menu, learn about available services, and get in touch.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+##  Technologies
 
-## React Compiler
+* React
+* Vite
+* React Router
+* CSS3
+* Lucide React
+* JavaScript
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  Features
 
-## Expanding the Oxlint configuration
+* Responsive design for desktop, tablet and mobile
+* Reusable React components
+* Multi-page navigation
+* Modern bakery-focused UI
+* Menu presentation
+* Order page
+* Contact page
+* Consistent navigation and footer
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── Navbar.jsx
+│   └── Footer.jsx
+│
+├── pages/
+│   ├── Home.jsx
+│   ├── Menu.jsx
+│   ├── Order.jsx
+│   └── Contact.jsx
+│
+├── App.jsx
+├── App.css
+└── main.jsx
+```
+
+##  Getting Started
+
+Clone the repository and install the dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will then be available through the local Vite development server.
+
+##  Design
+
+The website follows The Sweet Spot's visual identity with a clean, modern aesthetic, soft tones, rounded elements, and responsive layouts.
+
+##  Status
+
+**Currently in development.**
+
+This repository represents the initial frontend phase of the project. Features and design may change as development continues.
+
+---
+
+Built with React & Vite.
