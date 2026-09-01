@@ -88,18 +88,19 @@ textarea {
 
   width: 100%;
 
-  background: rgba(247, 243, 239, 0.96);
+  /* Existing color preserved */
+  background: #ffffff;
 
   backdrop-filter: blur(10px);
 
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1.5px solid var(--rose-dark);
 }
 
 .navbar-container {
-  width: min(1320px, 94%);
-  min-height: 86px;
+  width: min(1525px, 92%);
+  min-height: 82px;
 
-  margin: 0 auto;
+  margin: auto;
 
   display: flex;
   align-items: center;
@@ -108,23 +109,17 @@ textarea {
   gap: 40px;
 }
 
-
-/* =========================================================
-   BRAND
-========================================================= */
-
 .navbar-brand {
   display: flex;
   align-items: center;
-
-  gap: 14px;
+  gap: 13px;
 
   flex-shrink: 0;
 }
 
 .navbar-logo {
-  width: 56px;
-  height: 56px;
+  width: 54px;
+  height: 54px;
 
   object-fit: contain;
 
@@ -136,36 +131,33 @@ textarea {
   flex-direction: column;
 
   justify-content: center;
-
-  line-height: 1;
 }
 
+/* =========================================================
+   ACTIVE PAGE
+========================================================= */
 
-/* Main brand name
-   Elegant serif italic — NOT cursive
-*/
+.navbar-links a.active {
+  color: var(--rose-light);
+
+  font-weight: 600;
+}
 
 .brand-name {
   color: var(--teal);
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Great Vibes", cursive;
 
-  font-size: 27px;
+  font-size: 32px;
 
-  font-weight: 500;
+  font-weight: 400;
 
-  font-style: italic;
+  letter-spacing: 0;
 
-  letter-spacing: 0.2px;
+  line-height: 1;
 
   white-space: nowrap;
 }
-
-
-/* Tagline */
 
 .brand-tagline {
   color: var(--rose);
@@ -179,68 +171,52 @@ textarea {
     sans-serif;
 
   font-size: 9px;
-
   font-weight: 500;
 
-  letter-spacing: 3.2px;
+  letter-spacing: 3px;
 
   text-transform: uppercase;
 
-  margin-top: 7px;
+  margin-top: 5px;
 
   white-space: nowrap;
 }
 
-
-/* =========================================================
-   NAVIGATION LINKS
-========================================================= */
-
 .navbar-links {
   display: flex;
-
   align-items: center;
 
-  justify-content: center;
+  justify-content: flex-end;
 
-  gap: 38px;
+  gap: 34px;
 
   margin-left: auto;
 }
 
 .navbar-links a {
-  color: var(--rose);
+  color: var(--teal);
 
   font-family:
     "Cormorant Garamond",
     Georgia,
     serif;
 
-  font-size: 18px;
+  font-size: 19px;
 
-  font-weight: 500;
+  letter-spacing: 0.5px;
 
-  letter-spacing: 0.6px;
+  font-weight: 600;
 
   line-height: 1;
 
   white-space: nowrap;
 
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .navbar-links a:hover {
   color: var(--rose);
-
-  transform: translateY(-1px);
 }
-
-
-/* =========================================================
-   WHATSAPP BUTTON
-========================================================= */
 
 .navbar-button {
   display: inline-flex;
@@ -252,27 +228,29 @@ textarea {
 
   background: var(--rose);
 
-  color: #ffffff;
+  color: white;
 
-  padding: 12px 22px;
+  padding: 12px 21px;
 
   min-width: 124px;
 
+  min-height: 44px;
+
   border-radius: 999px;
 
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
-    sans-serif;
+  font-family:"Cormorant Garamont", serif;
+
+  letter-spacing: 1px;
 
   font-size: 14px;
 
-  font-weight: 600;
+  font-weight: 500px;
+
+  
 
   line-height: 1;
+
+  white-space: nowrap;
 
   transition:
     transform 0.2s ease,
@@ -287,88 +265,6 @@ textarea {
 }
 
 
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 950px) {
-
-  .navbar-container {
-    width: 92%;
-
-    min-height: 78px;
-
-    gap: 25px;
-  }
-
-  .navbar-links {
-    gap: 22px;
-  }
-
-  .navbar-links a {
-    font-size: 17px;
-  }
-
-  .navbar-logo {
-    width: 52px;
-    height: 52px;
-  }
-
-  .brand-name {
-    font-size: 24px;
-  }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 850px) {
-
-  .navbar-container {
-    min-height: 72px;
-  }
-
-  .navbar-links {
-    display: none;
-  }
-
-  .navbar-button {
-    margin-left: auto;
-  }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 500px) {
-
-  .navbar-container {
-    width: 90%;
-
-    min-height: 68px;
-  }
-
-  .navbar-logo {
-    width: 48px;
-    height: 48px;
-  }
-
-  .navbar-brand-text {
-    display: none;
-  }
-
-  .navbar-button {
-    padding: 11px 18px;
-
-    min-width: auto;
-
-    font-size: 13px;
-  }
-}
 /* =========================================================
    HERO
 ========================================================= */
@@ -401,22 +297,10 @@ textarea {
   max-width: 540px;
 }
 
-.hero-location {
-  color: var(--rose);
-
-  font-size: 11px;
-
-  font-weight: 600;
-
-  letter-spacing: 4px;
-
-  margin-bottom: 20px;
-}
-
 .hero h1 {
   color: var(--teal);
 
-  font-family: Georgia, serif;
+  font-family: "Cormorant Garamont", serif;
 
   font-size: clamp(48px, 6vw, 76px);
 
@@ -430,14 +314,15 @@ textarea {
 
   color: var(--rose);
 
-  font-family:
-    "Brush Script MT",
-    "Segoe Script",
-    cursive;
+  font-family: "Great Vibes", cursive;
 
-  font-size: 1.05em;
+  font-size: 1.15em;
 
-  margin-top: 4px;
+  font-weight: 300px;
+
+  line-height: 0.9;
+
+  margin-top: 10px;
 }
 
 .hero-description {
@@ -445,7 +330,9 @@ textarea {
 
   color: var(--muted);
 
-  font-size: 16px;
+  font-size: 20px;
+
+  font-family: "Cormorant Goramont";
 
   line-height: 1.8;
 
@@ -494,6 +381,12 @@ textarea {
 
   color: #ffffff;
 
+   font-family: "Cormorant Garamont", serif;
+
+   letter-spacing:2px;
+
+  font-weight: lighter;
+
   box-shadow:
     0 8px 22px rgba(201, 121, 125, 0.2);
 }
@@ -509,6 +402,12 @@ textarea {
   color: var(--teal);
 
   background: #ffffff;
+
+  font-family: "Cormorant Garamont", serif;
+
+  letter-spacing:2px;
+
+  font-weight: lighter;
 }
 
 .btn-secondary:hover {
@@ -762,10 +661,9 @@ textarea {
 ========================================================= */
 
 .footer {
-  border-top: 1px solid var(--border);
+  border-top: 1.5px solid var(--rose-dark);
 
-  /* Soft dusty white / beige */
-  background: var(--dusty-white);
+  background: #ffffff;
 
   margin-top: auto;
 }
@@ -779,22 +677,11 @@ textarea {
 }
 
 .footer-title {
-  color: var(--teal);
+  color: var(--teal-dark);
 
-  font-family:
-    "Brush Script MT",
-    "Segoe Script",
-    cursive;
+  font-family: "Great Vibes" , cursive;
 
-  font-size: 30px;
-}
-
-.footer-text {
-  color: var(--muted);
-
-  margin-top: 8px;
-
-  font-size: 13px;
+  font-size: 32px;
 }
 
 .footer-links {
@@ -806,19 +693,23 @@ textarea {
 
   margin-top: 25px;
 
-  color: var(--muted);
+  letter-spacing: 0.5px;
 
-  font-size: 13px;
+  font-family: "Cormorant Garamont" , serif;
+
+  color: var(--rose);
+
+  font-size: 16px;
 }
 
 .footer-links a {
-  color: var(--muted);
+  color: var(--rose);
 
   transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-  color: var(--rose);
+  color: var(--rose-dark);
 }
 
 .copyright {

@@ -8,10 +8,6 @@ function Hero() {
 
         <div className="hero-content">
 
-          <p className="hero-location">
-            CAPE TOWN, SOUTH AFRICA
-          </p>
-
           <h1>
             Custom cakes,
             <span>baked with love</span>

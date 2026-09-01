@@ -9,9 +9,6 @@ function Footer() {
             Sweet moments begin here.
           </p>
 
-          <p className="footer-text">
-            The Sweet Spot · Baked with love
-          </p>
         </div>
 
         <div className="footer-links">
@@ -33,13 +30,13 @@ function Footer() {
           </a>
 
           <span>
-            Cape Town, Central
+            Cape Town, Western Cape
           </span>
 
         </div>
 
         <p className="copyright">
-          © {new Date().getFullYear()} The Sweet Spot - Developed by M&M Xperiences
+          © {new Date().getFullYear()} The Sweet Spot - Developed by Mayra Selemane
         </p>
 
       </div>
