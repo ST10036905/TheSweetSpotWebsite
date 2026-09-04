@@ -1,6 +1,6 @@
 /* =========================================================
    THE SWEET SPOT
-   Main Website Styles
+   Main Website Styles — FIXED mobile version
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=Great+Vibes&display=swap');
@@ -33,15 +33,19 @@
    RESET
    ========================================================= */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* FIX 1: never put overflow-x on <html> — it breaks position:sticky
+   and clips content on mobile Safari/Chrome. Clip on body only,
+   using `clip` so sticky keeps working. */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
@@ -49,17 +53,22 @@ body {
   color: var(--text);
   font-family: Inter, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
+  overflow-wrap: break-word;
 }
 
 #root {
   min-height: 100vh;
+  min-height: 100dvh;
   background: var(--white);
 }
 
-img {
+img,
+svg,
+video {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -72,6 +81,21 @@ input,
 select,
 textarea {
   font: inherit;
+  max-width: 100%;
+}
+
+/* FIX 2: flex/grid children can't shrink below their content by
+   default. This single rule stops almost every "content cut off
+   on mobile" bug. */
+.hero-content,
+.info-content,
+.contact-card > div,
+.navbar-brand-text,
+.about-content,
+.menu-card,
+.order-form-card,
+.order-summary {
+  min-width: 0;
 }
 
 /* =========================================================
@@ -88,6 +112,7 @@ textarea {
   background: rgba(255, 255, 255, 0.97);
 
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
   border-bottom: 1.5px solid var(--pink);
 }
@@ -115,12 +140,15 @@ textarea {
 
   gap: 13px;
 
-  flex-shrink: 0;
+  flex-shrink: 1;   /* FIX: was 0 — let the brand shrink on tiny screens */
+  min-width: 0;
 }
 
 .navbar-logo {
   width: 54px;
   height: 54px;
+
+  flex-shrink: 0;
 
   object-fit: contain;
 }
@@ -129,6 +157,8 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  min-width: 0;
 }
 
 .brand-name {
@@ -251,7 +281,9 @@ textarea {
 
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  /* FIX: minmax(0,1fr) lets columns shrink — plain 1fr refuses to
+     go below content width and overflows on mobile */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
   align-items: center;
 
@@ -263,6 +295,7 @@ textarea {
 .hero-content {
   width: 100%;
   max-width: 540px;
+  min-width: 0;
 }
 
 .hero h1 {
@@ -275,6 +308,8 @@ textarea {
   line-height: 1.05;
 
   font-weight: 500;
+
+  overflow-wrap: break-word;
 }
 
 .hero h1 span {
@@ -386,6 +421,7 @@ textarea {
 
   width: 100%;
   min-height: 520px;
+  min-width: 0;
 
   display: flex;
   align-items: center;
@@ -605,7 +641,7 @@ textarea {
 .how-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));  /* FIX */
 
   gap: 28px 30px;
 }
@@ -617,6 +653,7 @@ textarea {
   gap: 20px;
 
   min-height: 177px;
+  min-width: 0;
 
   padding: 30px;
 
@@ -665,6 +702,7 @@ textarea {
 
 .info-content {
   flex: 1;
+  min-width: 0;
 }
 
 .info-card h3 {
@@ -817,13 +855,14 @@ textarea {
 .menu-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));  /* FIX */
 
   gap: 24px;
 }
 
 .menu-card {
   min-height: 235px;
+  min-width: 0;
 
   padding: 32px;
 
@@ -900,6 +939,8 @@ textarea {
   padding: 9px 0;
 
   color: var(--teal-dark);
+
+  min-width: 0;
 }
 
 .menu-list li svg {
@@ -921,6 +962,8 @@ textarea {
 
   font-size: 17px;
   font-weight: 500;
+
+  min-width: 0;
 }
 
 /* =========================================================
@@ -1061,7 +1104,7 @@ textarea {
 .form-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));  /* FIX */
 
   gap: 22px 24px;
 
@@ -1071,6 +1114,7 @@ textarea {
 .form-grid label {
   display: block;
   width: 100%;
+  min-width: 0;
 }
 
 .form-grid label span {
@@ -1090,6 +1134,7 @@ textarea {
   display: block;
 
   width: 100%;
+  max-width: 100%;
 
   border: 2px solid var(--border);
 
@@ -1237,12 +1282,18 @@ textarea {
 
 .summary-item span {
   color: var(--muted);
+
+  min-width: 0;
 }
 
 .summary-item strong {
   color: var(--teal);
 
   text-align: right;
+
+  min-width: 0;
+
+  overflow-wrap: break-word;
 }
 
 .summary-message {
@@ -1264,6 +1315,8 @@ textarea {
   line-height: 1.7;
 
   margin-top: 8px;
+
+  overflow-wrap: break-word;
 }
 
 /* =========================================================
@@ -1273,7 +1326,7 @@ textarea {
 .contact-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));  /* FIX */
 
   gap: 20px;
 }
@@ -1283,6 +1336,8 @@ textarea {
   align-items: center;
 
   gap: 15px;
+
+  min-width: 0;
 
   padding: 28px;
 
@@ -1356,6 +1411,8 @@ textarea {
   font-size: 13px;
 
   margin-top: 4px;
+
+  overflow-wrap: break-word;
 }
 
 .contact-card span {
@@ -1476,15 +1533,11 @@ textarea {
 
     min-height: auto;
 
-    padding: 12px 0;
+    padding: 16px 0;
 
-    gap: 12px;
+    gap: 18px;
 
     flex-wrap: wrap;
-  }
-
-  .navbar-brand {
-    flex-shrink: 0;
   }
 
   .navbar-links {
@@ -1500,13 +1553,13 @@ textarea {
 
     flex-wrap: wrap;
 
-    gap: 8px 18px;
+    gap: 10px 24px;
 
-    padding-bottom: 2px;
+    padding-bottom: 4px;
   }
 
   .navbar-links a {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .navbar-button {
@@ -1518,7 +1571,7 @@ textarea {
   .hero-container {
     width: min(680px, calc(100% - 40px));
 
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
 
     text-align: center;
 
@@ -1578,19 +1631,19 @@ textarea {
   }
 
   .how-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   /* MENU */
 
   .menu-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   /* CONTACT */
 
   .contact-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   /* ORDER */
@@ -1614,46 +1667,40 @@ textarea {
   /* NAVBAR */
 
   .navbar-container {
-    width: 92%;
+    width: 90%;
 
-    padding: 8px 0;
+    padding: 14px 0;
 
-    gap: 8px;
+    gap: 12px;
 
     flex-wrap: wrap;
   }
 
   .navbar-logo {
-    width: 36px;
-    height: 36px;
+    width: 46px;
+    height: 46px;
   }
 
   .navbar-brand {
-    gap: 8px;
+    gap: 9px;
   }
 
   .brand-name {
-    font-size: 22px;
+    font-size: clamp(23px, 7vw, 29px);
   }
 
   .brand-tagline {
-    font-size: 7px;
+    font-size: 6px;
 
-    letter-spacing: 1.5px;
-
-    margin-top: 2px;
+    letter-spacing: 1.3px;
   }
 
   .navbar-button {
     min-width: auto;
 
-    min-height: 34px;
+    padding: 10px 16px;
 
-    padding: 6px 14px;
-
-    font-size: 12px;
-
-    letter-spacing: 0.5px;
+    font-size: 13px;
   }
 
   .navbar-links {
@@ -1663,23 +1710,19 @@ textarea {
 
     width: 100%;
 
-    justify-content: space-around;
+    justify-content: center;
 
     align-items: center;
 
-    gap: 6px 12px;
+    gap: 8px 18px;
 
-    padding-top: 4px;
+    padding-top: 6px;
 
     padding-bottom: 2px;
-
-    border-top: 1px solid var(--rose-light);
-
-    margin-top: 4px;
   }
 
   .navbar-links a {
-    font-size: 14px;
+    font-size: 17px;
   }
 
   /* HERO */
@@ -1687,13 +1730,13 @@ textarea {
   .hero-container {
     width: 90%;
 
-    padding: 35px 0 45px;
+    padding: 45px 0 55px;
 
     gap: 5px;
   }
 
   .hero h1 {
-    font-size: clamp(34px, 10vw, 44px);
+    font-size: clamp(38px, 11vw, 48px);
   }
 
   .hero-description {
@@ -1717,12 +1760,12 @@ textarea {
   }
 
   .hero-image-wrapper {
-    min-height: 280px;
+    min-height: 330px;
   }
 
   .hero-circle {
-    width: min(260px, 70vw);
-    height: min(260px, 70vw);
+    width: min(280px, 72vw);
+    height: min(280px, 72vw);
   }
 
   .mainImage {
@@ -1893,7 +1936,7 @@ textarea {
   }
 
   .form-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
 
     gap: 18px;
 
@@ -1952,7 +1995,7 @@ textarea {
   /* CONTACT */
 
   .contact-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
 
     gap: 15px;
   }
@@ -1997,44 +2040,40 @@ textarea {
 @media (max-width: 420px) {
 
   .navbar-container {
-    width: 94%;
-
-    padding: 6px 0;
+    width: 92%;
   }
 
   .navbar-logo {
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
   }
 
   .navbar-brand {
-    gap: 6px;
+    gap: 7px;
   }
 
   .brand-name {
-    font-size: 19px;
+    font-size: 22px;
   }
 
   .brand-tagline {
-    font-size: 6px;
+    font-size: 5px;
 
     letter-spacing: 1px;
   }
 
   .navbar-button {
-    padding: 5px 10px;
+    padding: 9px 12px;
 
-    font-size: 11px;
-
-    min-height: 30px;
+    font-size: 12px;
   }
 
   .navbar-links {
-    gap: 4px 8px;
+    gap: 7px 14px;
   }
 
   .navbar-links a {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .about-container,
