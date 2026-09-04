@@ -34,9 +34,10 @@ function Navbar() {
 
   return (
     <header className="navbar">
+
       <div className="navbar-container">
 
-        {/* Logo */}
+        {/* LOGO */}
         <Link
           to="/"
           className="navbar-brand"
@@ -54,16 +55,16 @@ function Navbar() {
             </span>
 
             <span className="brand-tagline">
-              Baked with love
+              Bake with love
             </span>
           </div>
         </Link>
 
 
-        {/* Desktop Navigation */}
+        {/* DESKTOP NAVIGATION */}
         <nav className="navbar-links">
 
-          <Link to="/">
+          <Link to="/" onClick={closeMenu}>
             Home
           </Link>
 
@@ -74,32 +75,39 @@ function Navbar() {
             About
           </a>
 
-          <Link to="/menu">
+          <Link to="/menu" onClick={closeMenu}>
             Menu
           </Link>
 
-          <Link to="/order">
+          <Link to="/order" onClick={closeMenu}>
             Order
           </Link>
 
         </nav>
 
 
-        {/* Desktop Contact Button */}
+        {/* DESKTOP CONTACT */}
         <Link
           to="/contact"
           className="navbar-button"
+          onClick={closeMenu}
         >
           Get in touch
         </Link>
 
 
-        {/* Mobile Hamburger */}
+        {/* MOBILE MENU BUTTON */}
         <button
           type="button"
-          className="mobile-menu-button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation"
+          className={`mobile-menu-button ${
+            menuOpen ? "is-open" : ""
+          }`}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label={
+            menuOpen
+              ? "Close navigation menu"
+              : "Open navigation menu"
+          }
           aria-expanded={menuOpen}
         >
           <span></span>
@@ -110,8 +118,12 @@ function Navbar() {
       </div>
 
 
-      {/* Mobile Navigation */}
-      {menuOpen && (
+      {/* MOBILE NAVIGATION */}
+      <div
+        className={`mobile-navbar ${
+          menuOpen ? "mobile-navbar-open" : ""
+        }`}
+      >
         <nav className="mobile-navbar-links">
 
           <Link
@@ -151,7 +163,8 @@ function Navbar() {
           </Link>
 
         </nav>
-      )}
+      </div>
+
     </header>
   );
 }

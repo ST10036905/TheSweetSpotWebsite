@@ -1,41 +1,18 @@
 /* =========================================================
-   THE SWEET SPOT
-   Main Website Styles
-========================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=Great+Vibes&display=swap');
-
-
-/* =========================================================
-   ROOT
-========================================================= */
+   THE SWEET SPOT — GLOBAL STYLES
+   ========================================================= */
 
 :root {
+  --teal: #1f6f70;
+  --pink: #c9797d;
+  --pink-light: #f7e4e5;
+  --cream: #fffaf7;
   --white: #ffffff;
-  --cream: #fffaf8;
-  --dusty-white: #f7f3ef;
-
-  --teal: #356575;
-  --teal-dark: #294f5d;
-
-  --rose: #c9797d;
-  --rose-dark: #b9686e;
-  --rose-light: #f8e7e5;
-
-  --pink: #f88796;
-
-  --text: #111111;
-  --muted: #6f777b;
-
-  --border: #eaded9;
-
-  --radius: 18px;
+  --text: #3f3f3f;
+  --muted: #777777;
+  --border: #ead8d8;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
-
-
-/* =========================================================
-   GLOBAL
-========================================================= */
 
 * {
   box-sizing: border-box;
@@ -45,68 +22,52 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  scroll-padding-top: 90px;
 }
 
 body {
   margin: 0;
-  min-width: 320px;
   background: var(--white);
   color: var(--text);
-
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-#root {
-  min-height: 100vh;
-  background: var(--white);
-  overflow-x: hidden;
+img {
+  max-width: 100%;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
 button,
 input,
-select,
-textarea {
+textarea,
+select {
   font: inherit;
 }
 
 
 /* =========================================================
    NAVBAR
-========================================================= */
+   ========================================================= */
 
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-
   width: 100%;
-
-  background: #ffffff;
-
+  background: rgba(255, 255, 255, 0.98);
   border-bottom: 1.5px solid var(--pink);
-
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .navbar-container {
   width: min(1525px, 92%);
   min-height: 82px;
-
   margin: 0 auto;
 
   display: flex;
@@ -117,14 +78,11 @@ textarea {
 }
 
 
-/* =========================================================
-   NAVBAR BRAND
-========================================================= */
+/* ---------- BRAND ---------- */
 
 .navbar-brand {
   display: flex;
   align-items: center;
-
   gap: 13px;
 
   flex-shrink: 0;
@@ -136,8 +94,8 @@ textarea {
   height: 54px;
 
   display: block;
-
   object-fit: contain;
+
   flex-shrink: 0;
 }
 
@@ -153,7 +111,6 @@ textarea {
   color: var(--teal);
 
   font-family: "Great Vibes", cursive;
-
   font-size: 32px;
   font-weight: 400;
 
@@ -167,28 +124,19 @@ textarea {
 
   margin-top: 5px;
 
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   font-size: 9px;
   font-weight: 500;
 
   letter-spacing: 3px;
+  line-height: 1;
 
   text-transform: uppercase;
-
   white-space: nowrap;
 }
 
 
-/* =========================================================
-   DESKTOP NAVIGATION
-========================================================= */
+/* ---------- DESKTOP NAVIGATION ---------- */
 
 .navbar-links {
   display: flex;
@@ -196,18 +144,13 @@ textarea {
   justify-content: flex-end;
 
   gap: 34px;
-
   margin-left: auto;
 }
 
 .navbar-links a {
   color: var(--teal);
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 19px;
   font-weight: 600;
 
@@ -216,7 +159,9 @@ textarea {
 
   white-space: nowrap;
 
-  transition: color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .navbar-links a:hover,
@@ -225,9 +170,7 @@ textarea {
 }
 
 
-/* =========================================================
-   NAVBAR BUTTON
-========================================================= */
+/* ---------- CONTACT BUTTON ---------- */
 
 .navbar-button {
   display: inline-flex;
@@ -244,13 +187,9 @@ textarea {
   border-radius: 999px;
 
   background: var(--pink);
-  color: #ffffff;
+  color: var(--white);
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 14px;
   font-weight: 500;
 
@@ -267,14 +206,13 @@ textarea {
 .navbar-button:hover {
   transform: translateY(-2px);
 
-  box-shadow:
-    0 8px 20px rgba(201, 121, 125, 0.25);
+  box-shadow: 0 8px 20px rgba(201, 121, 125, 0.25);
 }
 
 
 /* =========================================================
-   HAMBURGER
-========================================================= */
+   MOBILE MENU BUTTON
+   ========================================================= */
 
 .mobile-menu-button {
   display: none;
@@ -285,6 +223,7 @@ textarea {
   padding: 8px;
 
   border: none;
+  border-radius: 50%;
 
   background: transparent;
 
@@ -299,6 +238,10 @@ textarea {
   gap: 5px;
 
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .mobile-menu-button span {
@@ -310,1485 +253,143 @@ textarea {
   background: var(--teal);
 
   border-radius: 2px;
-}
 
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-.mobile-navbar-links {
-  display: none;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-  background: #ffffff;
-  overflow: hidden;
-}
-
-.hero-container {
-  width: min(1200px, 92%);
-
-  min-height: 650px;
-
-  margin: auto;
-
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  align-items: center;
-
-  gap: 50px;
-
-  padding: 70px 0;
-}
-
-.hero-content {
-  max-width: 540px;
-}
-
-.hero h1 {
-  color: var(--teal);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: clamp(48px, 6vw, 76px);
-
-  font-weight: 500;
-
-  line-height: 1.05;
-}
-
-.hero h1 span {
-  display: block;
-
-  margin-top: 10px;
-
-  color: var(--pink);
-
-  font-family: "Great Vibes", cursive;
-
-  font-size: 1.15em;
-  font-weight: 400;
-
-  line-height: 0.9;
-}
-
-.hero-description {
-  max-width: 500px;
-
-  margin-top: 28px;
-
-  color: var(--muted);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 20px;
-
-  line-height: 1.8;
-}
-
-.hero-buttons {
-  display: flex;
-
-  gap: 14px;
-
-  margin-top: 34px;
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 14px 24px;
-
-  border-radius: 999px;
-
-  font-size: 14px;
-  font-weight: 600;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn-primary {
-  background: var(--pink);
-  color: #ffffff;
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-weight: 400;
-  letter-spacing: 2px;
-
-  box-shadow:
-    0 8px 22px rgba(201, 121, 125, 0.2);
-}
-
-.btn-primary:hover {
-  box-shadow:
-    0 12px 28px rgba(201, 121, 125, 0.3);
-}
-
-.btn-secondary {
-  border: 1px solid rgba(53, 101, 117, 0.5);
-
-  background: #ffffff;
-  color: var(--teal);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-weight: 400;
-  letter-spacing: 2px;
-}
-
-.btn-secondary:hover {
-  background: #faf6f5;
-}
-
-
-/* =========================================================
-   HERO IMAGE
-========================================================= */
-
-.hero-image-wrapper {
-  position: relative;
-
-  width: 100%;
-  min-height: 520px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  overflow: visible;
-}
-
-.hero-circle {
-  position: absolute;
-
-  width: 460px;
-  height: 460px;
-
-  border-radius: 50%;
-
-  background: var(--rose-light);
-
-  z-index: 0;
-}
-
-.mainImage {
-  position: relative;
-
-  z-index: 1;
-
-  width: min(100%, 520px);
-  height: auto;
-
-  display: block;
-
-  object-fit: contain;
-
-  filter:
-    drop-shadow(
-      0 20px 25px rgba(50, 70, 80, 0.12)
-    );
-
-  transition: transform 0.3s ease;
-}
-
-.mainImage:hover {
-  transform: translateY(-5px);
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about-section {
-  width: min(1200px, 92%);
-
-  margin: auto;
-
-  padding: 75px 0 65px;
-
-  scroll-margin-top: 100px;
-}
-
-.about-container {
-  width: 100%;
-
-  padding: 50px 65px;
-
-  background: var(--cream);
-
-  border: 1px solid var(--border);
-
-  border-radius: 24px;
-
-  box-shadow:
-    0 10px 35px rgba(50, 70, 80, 0.035);
-}
-
-.about-content {
-  max-width: 900px;
-
-  margin: 0 auto;
-
-  text-align: center;
-}
-
-.about-content h2 {
-  margin-top: 10px;
-
-  color: var(--teal);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: clamp(36px, 4vw, 48px);
-
-  font-weight: 400;
-
-  line-height: 1.1;
-}
-
-.about-content h2 span {
-  color: var(--pink);
-
-  font-family:
-    "Great Vibes",
-    cursive;
-
-  font-size: 1.1em;
-  font-weight: 400;
-}
-
-.about-content p {
-  margin-top: 15px;
-
-  color: var(--muted);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 18px;
-
-  line-height: 1.8;
-}
-
-.about-content p strong {
-  color: var(--teal);
-  font-weight: 600;
-}
-
-
-/* =========================================================
-   OCCASIONS
-========================================================= */
-
-.occasions-section {
-  width: min(1200px, 92%);
-
-  margin: auto;
-
-  padding-bottom: 20px;
-}
-
-.section-card {
-  padding: 35px;
-
-  background: var(--rose-light);
-
-  border: 1px solid var(--border);
-
-  border-radius: var(--radius);
-
-  text-align: center;
-
-  box-shadow:
-    0 10px 35px rgba(50, 70, 80, 0.04);
-}
-
-.section-card h2,
-.section-heading h2 {
-  color: var(--pink);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 32px;
-  font-weight: 400;
-
-  letter-spacing: 1px;
-}
-
-.heart-divider {
-  margin-top: 8px;
-
-  color: var(--pink);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 20px;
-}
-
-.occasion-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  gap: 10px;
-
-  margin-top: 22px;
-}
-
-.occasion-list span {
-  padding: 10px 17px;
-
-  border: 1px solid rgba(201, 121, 125, 0.35);
-
-  border-radius: 999px;
-
-  background: #fff8f7;
-  color: var(--pink);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 16px;
-
-  letter-spacing: 1px;
-}
-
-
-/* =========================================================
-   HOW IT WORKS
-========================================================= */
-
-.how-section {
-  width: min(1280px, 92%);
-
-  margin: auto;
-
-  padding: 70px 0 90px;
-}
-
-.section-heading {
-  margin-bottom: 48px;
-
-  text-align: center;
-}
-
-.section-heading h2 {
-  color: var(--teal);
-
-  font-size: clamp(34px, 4vw, 42px);
-
-  font-weight: 400;
-
-  letter-spacing: 0.5px;
-
-  line-height: 1.1;
-}
-
-.how-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 28px 30px;
-}
-
-
-/* =========================================================
-   INFO CARDS
-========================================================= */
-
-.info-card {
-  display: flex;
-  align-items: flex-start;
-
-  gap: 20px;
-
-  min-width: 0;
-  min-height: 177px;
-
-  padding: 30px;
-
-  background: #ffffff;
-
-  border-radius: 20px;
-
-  box-shadow:
-    0 8px 30px rgba(50, 70, 80, 0.025);
-}
-
-.rose-card {
-  border: 2px solid rgba(201, 121, 125, 0.45);
-}
-
-.teal-card {
-  border: 2px solid rgba(53, 101, 117, 0.35);
-}
-
-.info-icon {
-  width: 70px;
-  height: 70px;
-
-  flex-shrink: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid var(--pink);
-  border-radius: 50%;
-
-  color: var(--pink);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 27px;
-}
-
-.teal-icon {
-  border-color: rgba(53, 101, 117, 0.35);
-  color: var(--teal);
-}
-
-.info-content {
-  min-width: 0;
-  padding-top: 2px;
-}
-
-.info-card h3 {
-  margin-bottom: 17px;
-
-  color: var(--pink);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 25px;
-  font-weight: 400;
-
-  letter-spacing: 1px;
-
-  line-height: 1.2;
-}
-
-.teal-card h3 {
-  color: var(--teal);
-}
-
-.info-card ul {
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-}
-
-.info-card li {
-  position: relative;
-
-  margin-bottom: 9px;
-  padding-left: 26px;
-
-  color: var(--muted);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 17px;
-
-  line-height: 1.5;
-}
-
-.info-card li::before {
-  content: "♥";
-
-  position: absolute;
-
-  top: 2px;
-  left: 0;
-
-  color: var(--pink);
-
-  font-family: Arial, sans-serif;
-
-  font-size: 12px;
-}
-
-
-/* =========================================================
-   INNER PAGES
-========================================================= */
-
-.page {
-  width: min(1200px, 92%);
-
-  margin: auto;
-
-  padding: 70px 0 100px;
-
-  background: #ffffff;
-}
-
-.page-header {
-  max-width: 680px;
-
-  margin: 0 auto 55px;
-
-  text-align: center;
-}
-
-.page-header h1 {
-  color: var(--pink);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: clamp(42px, 6vw, 62px);
-
-  font-weight: 500;
-
-  letter-spacing: 0.5px;
-
-  line-height: 1.1;
-}
-
-.page-header p:last-child {
-  margin-top: 0;
-
-  color: var(--teal);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 18px;
-  font-weight: 500;
-
-  line-height: 1.8;
-}
-
-
-/* =========================================================
-   MENU
-========================================================= */
-
-.menu-page {
-  width: min(1100px, 92%);
-
-  margin: 0 auto;
-
-  padding: 75px 0 100px;
-}
-
-.menu-header {
-  max-width: 680px;
-
-  margin: 0 auto 55px;
-
-  text-align: center;
-}
-
-.menu-header h1 {
-  color: var(--pink);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: clamp(42px, 6vw, 62px);
-
-  font-weight: 500;
-
-  letter-spacing: 0.5px;
-
-  line-height: 1.1;
-}
-
-.menu-header .heart-divider {
-  margin: 14px 0 18px;
-
-  color: var(--pink);
-
-  font-size: 18px;
-}
-
-.menu-header p {
-  max-width: 590px;
-
-  margin: auto;
-
-  color: var(--teal);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 18px;
-  font-weight: 500;
-
-  line-height: 1.8;
-}
-
-
-/* =========================================================
-   MENU GRID
-========================================================= */
-
-.menu-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 24px;
-}
-
-.menu-card {
-  position: relative;
-
-  min-width: 0;
-  min-height: 235px;
-
-  padding: 32px;
-
-  background: #ffffff;
-
-  border-radius: 20px;
-
-  box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.045);
+  transform-origin: center;
 
   transition:
     transform 0.25s ease,
-    box-shadow 0.25s ease;
+    opacity 0.2s ease;
 }
 
-.menu-card:hover {
-  transform: translateY(-4px);
 
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.08);
+/* ---------- HAMBURGER → X ---------- */
+
+.mobile-menu-button.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
 }
 
-.menu-card.pink-card {
-  border: 2px solid #f0d8d7;
+.mobile-menu-button.is-open span:nth-child(2) {
+  opacity: 0;
 }
 
-.menu-card.teal-card {
-  border: 2px solid #d9e4e7;
-}
-
-.menu-label {
-  display: inline-flex;
-  align-items: center;
-
-  padding: 8px 14px;
-
-  border-radius: 999px;
-
-  font-size: 11px;
-  font-weight: 600;
-
-  letter-spacing: 1.2px;
-
-  text-transform: uppercase;
-}
-
-.pink-label {
-  background: var(--pink);
-  color: #ffffff;
-}
-
-.teal-label {
-  background: #e8f0f2;
-  color: var(--teal);
-}
-
-.menu-list {
-  display: flex;
-  flex-direction: column;
-
-  gap: 2px;
-
-  margin-top: 22px;
-
-  list-style: none;
-}
-
-.menu-list li {
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
-
-  min-width: 0;
-
-  padding: 9px 0;
-
-  color: var(--teal-dark);
-
-  font-size: 15px;
-
-  line-height: 1.5;
-}
-
-.menu-list li svg {
-  width: 15px;
-  height: 15px;
-
-  flex-shrink: 0;
-
-  color: var(--pink);
-
-  fill: var(--pink);
-  stroke: var(--pink);
-
-  stroke-width: 2;
-}
-
-.menu-list li span {
-  color: var(--teal-dark);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 17px;
-  font-weight: 500;
-
-  letter-spacing: 0.2px;
+.mobile-menu-button.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 
 /* =========================================================
-   MENU OCCASIONS
-========================================================= */
+   MOBILE NAVIGATION
+   ========================================================= */
 
-.occasion-section {
-  margin-top: 30px;
+/*
+   IMPORTANT:
+   The mobile navbar is always present in the DOM.
+   JavaScript only adds/removes "mobile-navbar-open".
 
-  padding: 35px;
+   This is more reliable on mobile Safari than relying on
+   conditional rendering + display:none.
+*/
 
-  background: var(--rose-light);
+.mobile-navbar {
+  width: 100%;
 
-  border: 2px solid var(--border);
+  display: none;
 
-  border-radius: var(--radius);
+  background: var(--white);
+
+  border-top: 1px solid var(--border);
+
+  overflow: hidden;
+}
+
+.mobile-navbar-open {
+  display: block;
+}
+
+.mobile-navbar-links {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 22px 18px 28px;
+
+  background: var(--white);
+}
+
+.mobile-navbar-links a {
+  display: block;
+
+  padding: 5px 12px;
+
+  color: var(--teal);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+
+  line-height: 1.2;
+  letter-spacing: 0.5px;
 
   text-align: center;
 
-  box-shadow:
-    0 10px 35px rgba(50, 70, 80, 0.04);
-}
-
-.occasion-section h2 {
-  color: var(--pink);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 32px;
-  font-weight: 400;
-
-  letter-spacing: 1px;
-}
-
-.occasion-section .occasion-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  gap: 10px;
-
-  margin-top: 22px;
-}
-
-.occasion-section .occasion-list span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 10px 17px;
-
-  border: 1px solid rgba(201, 121, 125, 0.35);
-
-  border-radius: 999px;
-
-  background: #fff8f7;
-  color: var(--pink);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 16px;
-
-  letter-spacing: 1px;
+  -webkit-tap-highlight-color: transparent;
 
   transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
+    color 0.2s ease,
     transform 0.2s ease;
 }
 
-.occasion-section .occasion-list span:hover {
-  background: #ffffff;
+.mobile-navbar-links a:hover {
+  color: var(--pink);
+}
 
-  border-color: rgba(201, 121, 125, 0.5);
-
-  transform: translateY(-2px);
+.mobile-navbar-links a:active {
+  transform: scale(0.97);
 }
 
 
-/* =========================================================
-   MENU ORDER BUTTON
-========================================================= */
+/* ---------- MOBILE CONTACT BUTTON ---------- */
 
-.menu-order-button {
+.mobile-navbar-links .mobile-contact-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  margin-top: 30px;
+  width: min(220px, 90%);
 
-  padding: 13px 25px;
+  min-height: 46px;
+
+  margin-top: 3px;
+
+  padding: 12px 20px;
 
   border-radius: 999px;
 
-  background: var(--rose);
-  color: #ffffff;
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 15px;
-  font-weight: 500;
-
-  letter-spacing: 1px;
-
-  box-shadow:
-    0 7px 20px rgba(201, 121, 125, 0.18);
-
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.menu-order-button:hover {
   background: var(--pink);
+  color: var(--white);
 
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 10px 25px rgba(201, 121, 125, 0.25);
-}
-
-
-/* =========================================================
-   ORDER
-========================================================= */
-
-.order-layout {
-  display: flex;
-  flex-direction: column;
-
-  gap: 30px;
-
-  width: 100%;
-
-  align-items: stretch;
-
-  min-width: 0;
-}
-
-.order-form-card {
-  width: 100%;
-
-  min-width: 0;
-
-  padding: 38px;
-
-  background: #ffffff;
-
-  border: 2px solid var(--border);
-
-  border-radius: var(--radius);
-
-  box-shadow:
-    0 10px 35px rgba(50, 70, 80, 0.04);
-}
-
-.order-form-card h2 {
-  color: var(--teal);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 32px;
-  font-weight: 500;
-}
-
-.form-intro {
-  margin-top: 8px;
-
-  color: var(--muted);
-
-  font-size: 14px;
-
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   FORM
-========================================================= */
-
-.form-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 22px 24px;
-
-  width: 100%;
-
-  margin-top: 30px;
-
-  min-width: 0;
-}
-
-.form-grid label {
-  display: block;
-
-  width: 100%;
-
-  min-width: 0;
-}
-
-.form-grid label span {
-  display: block;
-
-  margin-bottom: 9px;
-
-  color: var(--teal);
-
-  font-size: 14px;
-  font-weight: 500;
-
-  letter-spacing: 0.3px;
-}
-
-.form-grid input,
-.form-grid select,
-.form-grid textarea {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
-  padding: 14px 16px;
-
-  border: 2px solid var(--border);
-  border-radius: 14px;
-
-  outline: none;
-
-  background: #ffffff;
-  color: var(--teal-dark);
-
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.form-grid input,
-.form-grid select {
-  min-height: 52px;
-}
-
-.form-grid textarea {
-  min-height: 130px;
-
-  resize: vertical;
-
-  line-height: 1.6;
-}
-
-.form-grid input::placeholder,
-.form-grid textarea::placeholder {
-  color: #9a9a9a;
-}
-
-.form-grid input:focus,
-.form-grid select:focus,
-.form-grid textarea:focus {
-  border-color: var(--pink);
-
-  box-shadow:
-    0 0 0 3px rgba(248, 135, 150, 0.12);
-}
-
-.form-grid input[type="date"] {
-  width: 100%;
-
-  min-height: 52px;
-
-  font-size: 16px;
-
-  color: var(--teal-dark);
-}
-
-.full-width {
-  grid-column: 1 / -1;
-}
-
-
-/* =========================================================
-   WHATSAPP ORDER
-========================================================= */
-
-.whatsapp-order-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  min-height: 58px;
-
-  margin-top: 28px;
-
-  padding: 15px 25px;
-
-  border: none;
-  border-radius: 999px;
-
-  background: var(--pink);
-  color: #ffffff;
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 18px;
   font-weight: 500;
 
   letter-spacing: 1px;
 
-  cursor: pointer;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
+  box-shadow: 0 6px 18px rgba(201, 121, 125, 0.16);
 }
 
-.whatsapp-order-button:hover:not(.disabled) {
-  background: var(--rose-dark);
-
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 10px 25px rgba(248, 135, 150, 0.25);
-}
-
-.whatsapp-order-button.disabled {
-  background: #e5e1df;
-  color: var(--muted);
-
-  cursor: not-allowed;
-
-  box-shadow: none;
-}
-
-.form-help {
-  margin-top: 12px;
-
-  color: var(--muted);
-
-  font-size: 12px;
-
-  text-align: center;
+.mobile-navbar-links .mobile-contact-button:hover {
+  color: var(--white);
+  transform: translateY(-1px);
 }
 
 
 /* =========================================================
-   ORDER SUMMARY
-========================================================= */
-
-.order-summary {
-  position: static;
-
-  width: 100%;
-  min-width: 0;
-
-  padding: 32px 36px;
-
-  background: #ffffff;
-
-  border: 2px solid rgba(53, 101, 117, 0.3);
-
-  border-radius: var(--radius);
-
-  box-shadow:
-    0 10px 35px rgba(50, 70, 80, 0.04);
-}
-
-.order-summary h2 {
-  color: var(--teal);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 32px;
-  font-weight: 500;
-
-  letter-spacing: 1px;
-}
-
-.order-summary .heart-divider {
-  margin-bottom: 20px;
-}
-
-.summary-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 20px;
-
-  min-width: 0;
-
-  padding: 14px 0;
-
-  border-bottom:
-    1px solid rgba(53, 101, 117, 0.12);
-
-  font-size: 14px;
-}
-
-.summary-item span {
-  color: var(--muted);
-}
-
-.summary-item strong {
-  color: var(--teal);
-
-  font-weight: 600;
-
-  text-align: right;
-}
-
-.summary-message {
-  margin-top: 22px;
-  padding-top: 5px;
-}
-
-.summary-message span {
-  color: var(--teal);
-
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.summary-message p {
-  max-width: 800px;
-
-  margin-top: 8px;
-
-  color: var(--muted);
-
-  font-size: 14px;
-
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 20px;
-
-  min-width: 0;
-}
-
-.contact-card {
-  display: flex;
-  align-items: center;
-
-  gap: 15px;
-
-  min-width: 0;
-
-  padding: 28px;
-
-  background: #ffffff;
-
-  border: 2px solid rgba(201, 121, 125, 0.4);
-
-  border-radius: 18px;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.contact-card:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 12px 30px rgba(50, 70, 80, 0.07);
-}
-
-.contact-card.teal {
-  border-color: rgba(53, 101, 117, 0.35);
-}
-
-.contact-icon {
-  width: 45px;
-  height: 45px;
-
-  flex-shrink: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid rgba(201, 121, 125, 0.45);
-
-  border-radius: 50%;
-
-  background: #fffafa;
-
-  color: var(--pink);
-}
-
-.contact-icon svg {
-  width: 20px;
-  height: 20px;
-}
-
-.contact-card.teal .contact-icon {
-  border-color: rgba(53, 101, 117, 0.4);
-
-  background: #f7fbfc;
-
-  color: var(--teal);
-}
-
-.contact-card h2 {
-  color: var(--teal);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 22px;
-  font-weight: 500;
-}
-
-.contact-card p {
-  margin-top: 4px;
-
-  color: var(--muted);
-
-  font-size: 13px;
-}
-
-.contact-card span {
-  display: block;
-
-  margin-top: 7px;
-
-  color: var(--pink);
-
-  font-size: 12px;
-}
-
-.contact-cta {
-  margin-top: 30px;
-
-  padding: 45px 25px;
-
-  background: #ffffff;
-
-  border: 2px solid var(--border);
-
-  border-radius: 18px;
-
-  text-align: center;
-}
-
-.contact-cta h2 {
-  color: var(--teal);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 32px;
-  font-weight: 500;
-}
-
-.contact-cta p {
-  margin-top: 25px;
-
-  color: var(--teal-dark);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 16px;
-
-  line-height: 1.6;
-}
-
-.contact-cta .btn {
-  margin-top: 25px;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.footer {
-  margin-top: auto;
-
-  background: #ffffff;
-
-  border-top: 1.5px solid var(--pink);
-}
-
-.footer-container {
-  width: min(1200px, 92%);
-
-  margin: auto;
-
-  padding: 45px 0 25px;
-}
-
-.footer-title {
-  color: var(--teal-dark);
-
-  font-family:
-    "Great Vibes",
-    cursive;
-
-  font-size: 32px;
-
-  letter-spacing: 1.5px;
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 25px;
-
-  margin-top: 25px;
-
-  color: var(--teal-dark);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 16px;
-
-  letter-spacing: 0.5px;
-}
-
-.footer-links a {
-  color: var(--teal-dark);
-
-  transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
-  color: var(--rose-dark);
-}
-
-.copyright {
-  margin-top: 30px;
-
-  color: var(--muted);
-
-  font-size: 11px;
-}
-
-
-/* =========================================================
-   TABLET / MOBILE NAVBAR
-========================================================= */
+   TABLET / MOBILE
+   ========================================================= */
 
 @media screen and (max-width: 900px) {
 
@@ -1799,10 +400,14 @@ textarea {
     gap: 10px;
   }
 
+  /* Hide desktop navigation */
+
   .navbar-links,
   .navbar-container > .navbar-button {
     display: none;
   }
+
+  /* Brand */
 
   .navbar-brand {
     flex: 1;
@@ -1827,15 +432,18 @@ textarea {
     font-size: 25px;
 
     overflow: hidden;
-
     text-overflow: ellipsis;
   }
 
   .brand-tagline {
     font-size: 6px;
-
     letter-spacing: 1.5px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
+
+  /* Hamburger */
 
   .mobile-menu-button {
     display: flex;
@@ -1846,572 +454,26 @@ textarea {
     height: 42px;
   }
 
-  .mobile-navbar-links {
-    display: flex;
+  /* Mobile navigation */
 
-    width: 100%;
-
-    flex-direction: column;
-    align-items: center;
-
-    gap: 18px;
-
-    padding: 22px 18px 28px;
-
-    background: #ffffff;
-
-    border-top: 1px solid var(--border);
-    border-bottom: 1.5px solid var(--pink);
+  .mobile-navbar {
+    display: none;
   }
 
-  .mobile-navbar-links a {
+  .mobile-navbar.mobile-navbar-open {
     display: block;
-
-    padding: 4px 10px;
-
-    color: var(--teal);
-
-    font-family:
-      "Cormorant Garamond",
-      Georgia,
-      serif;
-
-    font-size: 21px;
-    font-weight: 600;
-
-    line-height: 1.2;
-
-    letter-spacing: 0.5px;
-  }
-
-  .mobile-navbar-links a:hover {
-    color: var(--pink);
-  }
-
-  .mobile-navbar-links .mobile-contact-button {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: min(220px, 90%);
-    min-height: 46px;
-
-    padding: 12px 20px;
-
-    border-radius: 999px;
-
-    background: var(--pink);
-    color: #ffffff;
-
-    font-family:
-      "Cormorant Garamond",
-      Georgia,
-      serif;
-
-    font-size: 18px;
-    font-weight: 500;
-
-    letter-spacing: 1px;
-  }
-
-
-  /* =======================================================
-     HERO
-  ======================================================= */
-
-  .hero-container {
-    grid-template-columns: 1fr;
-
-    min-height: auto;
-
-    padding: 55px 0;
-
-    gap: 20px;
-
-    text-align: center;
-  }
-
-  .hero-content {
-    max-width: 650px;
-
-    margin: auto;
-  }
-
-  .hero-description {
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-image-wrapper {
-    min-height: 420px;
-
-    margin-top: 20px;
-  }
-
-  .hero-circle {
-    width: 350px;
-    height: 350px;
-  }
-
-  .mainImage {
-    width: min(90%, 430px);
-  }
-
-
-  /* =======================================================
-     ABOUT
-  ======================================================= */
-
-  .about-section {
-    padding: 55px 0;
-  }
-
-  .about-container {
-    padding: 40px 35px;
-  }
-
-  .about-content {
-    max-width: 100%;
-  }
-
-
-  /* =======================================================
-     HOW IT WORKS
-  ======================================================= */
-
-  .how-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* =======================================================
-     PAGES
-  ======================================================= */
-
-  .page {
-    padding-top: 50px;
-  }
-
-  .menu-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* =======================================================
-     ORDER
-  ======================================================= */
-
-  .order-form-card,
-  .order-summary {
-    padding: 30px;
-  }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media screen and (max-width: 600px) {
-
-  .hero-container {
-    width: 90%;
-
-    padding: 45px 0;
-
-    gap: 5px;
-  }
-
-  .hero h1 {
-    font-size: 45px;
-  }
-
-  .hero-description {
-    margin-top: 22px;
-
-    font-size: 16px;
-
-    line-height: 1.7;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-
-    width: 100%;
-
-    margin-top: 28px;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .hero-image-wrapper {
-    min-height: 330px;
-
-    margin-top: 10px;
-  }
-
-  .hero-circle {
-    width: 280px;
-    height: 280px;
-  }
-
-  .mainImage {
-    width: 95%;
-  }
-
-
-  /* About */
-
-  .about-section {
-    width: 90%;
-
-    padding: 45px 0;
-  }
-
-  .about-container {
-    padding: 35px 22px;
-
-    border-radius: 20px;
-  }
-
-  .about-content h2 {
-    font-size: 34px;
-  }
-
-  .about-content p {
-    font-size: 16px;
-
-    line-height: 1.7;
-  }
-
-
-  /* Occasions */
-
-  .section-card {
-    padding: 25px 18px;
-  }
-
-  .section-card h2,
-  .section-heading h2 {
-    font-size: 28px;
-  }
-
-  .occasion-list {
-    gap: 8px;
-  }
-
-  .occasion-list span {
-    padding: 9px 14px;
-
-    font-size: 14px;
-  }
-
-
-  /* How It Works */
-
-  .how-section {
-    width: 90%;
-
-    padding: 55px 0 65px;
-  }
-
-  .section-heading {
-    margin-bottom: 35px;
-  }
-
-  .info-card {
-    flex-direction: column;
-
-    align-items: center;
-
-    min-height: auto;
-
-    padding: 25px 20px;
-
-    text-align: center;
-  }
-
-  .info-icon {
-    width: 60px;
-    height: 60px;
-
-    font-size: 24px;
-  }
-
-  .info-content {
-    width: 100%;
-
-    padding-top: 0;
-  }
-
-  .info-card h3 {
-    margin-bottom: 14px;
-
-    font-size: 23px;
-  }
-
-  .info-card li {
-    font-size: 16px;
-
-    text-align: left;
-  }
-
-
-  /* General pages */
-
-  .page {
-    width: 90%;
-
-    padding-top: 45px;
-    padding-bottom: 70px;
-  }
-
-  .page-header {
-    margin-bottom: 40px;
-  }
-
-  .page-header h1 {
-    font-size: 42px;
-  }
-
-  .page-header p:last-child {
-    font-size: 16px;
-
-    line-height: 1.7;
-  }
-
-
-  /* Menu */
-
-  .menu-page {
-    width: 90%;
-
-    padding: 45px 0 70px;
-  }
-
-  .menu-header {
-    margin-bottom: 40px;
-  }
-
-  .menu-header h1 {
-    font-size: 42px;
-
-    letter-spacing: -1px;
-  }
-
-  .menu-header p {
-    font-size: 16px;
-
-    line-height: 1.7;
-  }
-
-  .menu-card {
-    min-height: auto;
-
-    padding: 25px;
-  }
-
-  .menu-list li {
-    font-size: 14px;
-  }
-
-  .menu-list li span {
-    font-size: 16px;
-  }
-
-
-  /* Menu occasions */
-
-  .occasion-section {
-    padding: 25px 18px;
-  }
-
-  .occasion-section h2 {
-    font-size: 28px;
-  }
-
-  .occasion-section .occasion-list {
-    gap: 8px;
-  }
-
-  .occasion-section .occasion-list span {
-    padding: 9px 14px;
-
-    font-size: 14px;
-  }
-
-  .menu-order-button {
-    width: 100%;
-  }
-
-
-  /* Order */
-
-  .order-layout {
-    width: 100%;
-
-    gap: 22px;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-
-    gap: 18px;
-
-    margin-top: 25px;
-  }
-
-  .full-width {
-    grid-column: auto;
-  }
-
-  .order-form-card {
-    padding: 24px 18px;
-
-    border-radius: 18px;
-  }
-
-  .order-form-card h2,
-  .order-summary h2 {
-    font-size: 28px;
-
-    line-height: 1.2;
-  }
-
-  .form-intro {
-    font-size: 13px;
-
-    line-height: 1.6;
-  }
-
-  .form-grid input,
-  .form-grid select,
-  .form-grid textarea {
-    width: 100%;
-
-    max-width: 100%;
-    min-width: 0;
-
-    padding: 13px 14px;
-
-    font-size: 16px;
-  }
-
-  .form-grid input,
-  .form-grid select {
-    min-height: 50px;
-  }
-
-  .form-grid textarea {
-    min-height: 120px;
-  }
-
-  .form-grid input[type="date"] {
-    min-height: 50px;
-
-    font-size: 16px;
-  }
-
-  .order-summary {
-    padding: 25px 18px;
-
-    border-radius: 18px;
-  }
-
-  .summary-item {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 5px;
-
-    padding: 12px 0;
-  }
-
-  .summary-item strong {
-    text-align: left;
-
-    overflow-wrap: anywhere;
-  }
-
-  .summary-message p {
-    font-size: 13px;
-
-    line-height: 1.6;
-  }
-
-  .whatsapp-order-button {
-    min-height: 55px;
-
-    padding: 14px 18px;
-
-    font-size: 16px;
-  }
-
-
-  /* Contact */
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-
-    gap: 15px;
-  }
-
-  .contact-card {
-    gap: 12px;
-
-    padding: 22px;
-  }
-
-  .contact-card h2 {
-    font-size: 20px;
-  }
-
-  .contact-card p {
-    font-size: 12px;
-  }
-
-  .contact-card span {
-    font-size: 11px;
-  }
-
-  .contact-cta {
-    padding: 35px 20px;
-  }
-
-  .contact-cta h2 {
-    font-size: 28px;
-  }
-
-  .contact-cta p {
-    margin-top: 20px;
-
-    font-size: 15px;
-
-    line-height: 1.7;
   }
 }
 
 
 /* =========================================================
    SMALL PHONES
-========================================================= */
+   ========================================================= */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
 
   .navbar-container {
-    width: 92%;
+    width: 90%;
     min-height: 65px;
   }
 
@@ -2426,90 +488,96 @@ textarea {
 
   .brand-tagline {
     font-size: 5.5px;
-
-    letter-spacing: 1.3px;
+    letter-spacing: 1.4px;
   }
 
   .mobile-menu-button {
-    flex-basis: 40px;
-
     width: 40px;
-    min-width: 40px;
-
     height: 40px;
-    min-height: 40px;
+
+    flex-basis: 40px;
   }
 
   .mobile-menu-button span {
     width: 22px;
   }
 
-  .hero h1 {
-    font-size: 42px;
+  .mobile-navbar-links {
+    gap: 16px;
+
+    padding: 20px 16px 26px;
   }
 
-  .hero-description {
-    font-size: 15px;
+  .mobile-navbar-links a {
+    font-size: 20px;
   }
 
-  .hero-circle {
-    width: 260px;
-    height: 260px;
-  }
+  .mobile-navbar-links .mobile-contact-button {
+    width: min(210px, 90%);
 
-  .mainImage {
-    width: 100%;
-  }
+    min-height: 45px;
 
-  .about-content h2 {
-    font-size: 32px;
-  }
-
-  .about-content p {
-    font-size: 15px;
-  }
-
-  .occasion-section {
-    padding: 25px 15px;
-  }
-
-  .occasion-section .occasion-list span {
-    padding: 8px 12px;
-
-    font-size: 13px;
-  }
-
-  .info-card {
-    padding: 22px 17px;
-  }
-
-  .menu-card {
-    padding: 22px 18px;
-  }
-
-  .order-form-card {
-    padding: 22px 16px;
-  }
-
-  .order-summary {
-    padding: 22px 16px;
+    font-size: 17px;
   }
 }
 
 
 /* =========================================================
-   EXTRA SMALL PHONES
-========================================================= */
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 500px) {
+
+  .navbar-container {
+    width: 90%;
+  }
+
+  .navbar-logo {
+    width: 39px;
+    height: 39px;
+  }
+
+  .brand-name {
+    font-size: 23px;
+  }
+
+  .brand-tagline {
+    font-size: 5.3px;
+    letter-spacing: 1.3px;
+  }
+
+  .mobile-menu-button {
+    width: 40px;
+    height: 40px;
+
+    flex-basis: 40px;
+  }
+
+  .mobile-navbar-links {
+    padding-top: 19px;
+    padding-bottom: 25px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES — iPhone SE / SIMILAR
+   ========================================================= */
 
 @media screen and (max-width: 380px) {
 
   .navbar-container {
     width: 94%;
+    min-height: 63px;
   }
 
   .navbar-logo {
     width: 37px;
     height: 37px;
+  }
+
+  .navbar-brand {
+    gap: 7px;
   }
 
   .brand-name {
@@ -2518,47 +586,899 @@ textarea {
 
   .brand-tagline {
     font-size: 5px;
-
     letter-spacing: 1.1px;
   }
 
   .mobile-menu-button {
-    flex-basis: 38px;
-
     width: 38px;
-    min-width: 38px;
-
     height: 38px;
-    min-height: 38px;
+
+    flex-basis: 38px;
   }
 
   .mobile-menu-button span {
     width: 21px;
   }
 
-  .hero h1 {
-    font-size: 38px;
+  .mobile-navbar-links {
+    gap: 15px;
+
+    padding: 18px 14px 23px;
   }
 
-  .hero-circle {
-    width: 230px;
-    height: 230px;
+  .mobile-navbar-links a {
+    font-size: 19px;
+  }
+
+  .mobile-navbar-links .mobile-contact-button {
+    width: min(200px, 90%);
+
+    min-height: 43px;
+
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   GENERAL PAGE CONTAINER
+   ========================================================= */
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.section {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.page-header {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+
+  padding: 90px 0 60px;
+
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+
+  color: var(--pink);
+
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.page-header h1 {
+  color: var(--teal);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 500;
+
+  line-height: 1.05;
+}
+
+.page-header p {
+  max-width: 700px;
+
+  margin: 18px auto 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  width: 100%;
+  min-height: 680px;
+
+  display: flex;
+  align-items: center;
+
+  background: var(--cream);
+}
+
+.hero-container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 60px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-eyebrow {
+  color: var(--pink);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  color: var(--teal);
+
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(58px, 7vw, 96px);
+  font-weight: 400;
+
+  line-height: 0.95;
+}
+
+.hero h2 {
+  margin-top: 18px;
+
+  color: var(--text);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 500;
+}
+
+.hero p {
+  max-width: 560px;
+
+  margin-top: 22px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 30px;
+}
+
+.hero-image {
+  width: 100%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 13px 25px;
+
+  border-radius: 999px;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--pink);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background: transparent;
+
+  color: var(--teal);
+
+  border: 1px solid var(--teal);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: var(--shadow);
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.about-container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.about-content h2 {
+  color: var(--teal);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 500;
+
+  line-height: 1.05;
+}
+
+.about-content p {
+  margin-top: 20px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.about-image img {
+  width: 100%;
+  display: block;
+}
+
+
+/* =========================================================
+   OCCASIONS
+   ========================================================= */
+
+.occasions {
+  padding: 100px 0;
+
+  background: var(--cream);
+}
+
+.occasions-container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
+
+.occasions-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+
+  margin-top: 50px;
+}
+
+.occasion-card {
+  padding: 35px 25px;
+
+  background: var(--white);
+
+  border: 1px solid var(--border);
+
+  text-align: center;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.occasion-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: var(--shadow);
+}
+
+.occasion-card h3 {
+  margin-top: 18px;
+
+  color: var(--teal);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.occasion-card p {
+  margin-top: 10px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   HOW IT WORKS
+   ========================================================= */
+
+.how-it-works {
+  padding: 100px 0;
+
+  background: var(--white);
+}
+
+.steps {
+  width: min(1100px, 90%);
+  margin: 50px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 40px;
+}
+
+.step {
+  text-align: center;
+}
+
+.step-number {
+  width: 55px;
+  height: 55px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--pink-light);
+  color: var(--pink);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.step h3 {
+  margin-top: 20px;
+
+  color: var(--teal);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 25px;
+}
+
+.step p {
+  margin-top: 10px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.menu-section {
+  padding: 90px 0;
+
+  background: var(--cream);
+}
+
+.menu-container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+.menu-category {
+  margin-bottom: 60px;
+}
+
+.menu-category h2 {
+  margin-bottom: 25px;
+
+  color: var(--teal);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.menu-list {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px 50px;
+}
+
+.menu-item {
+  padding: 15px 0;
+
+  border-bottom: 1px solid var(--border);
+
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.menu-item-name {
+  color: var(--text);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.menu-item-price {
+  color: var(--pink);
+
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   ORDER
+   ========================================================= */
+
+.order-section {
+  padding: 100px 0;
+
+  background: var(--white);
+}
+
+.order-container {
+  width: min(900px, 90%);
+  margin: 0 auto;
+}
+
+.order-form {
+  margin-top: 45px;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  color: var(--teal);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: var(--white);
+
+  color: var(--text);
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--pink);
+
+  box-shadow: 0 0 0 3px rgba(201, 121, 125, 0.1);
+}
+
+.form-group textarea {
+  min-height: 150px;
+
+  resize: vertical;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact-section {
+  padding: 100px 0;
+
+  background: var(--cream);
+}
+
+.contact-container {
+  width: min(1000px, 90%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 60px;
+}
+
+.contact-info h2 {
+  color: var(--teal);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.contact-info p {
+  margin-top: 18px;
+
+  color: var(--muted);
+
+  line-height: 1.8;
+}
+
+.contact-details {
+  margin-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.contact-item span {
+  color: var(--teal);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+  width: 100%;
+
+  padding: 60px 0 30px;
+
+  background: var(--teal);
+
+  color: var(--white);
+}
+
+.footer-container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+
+  gap: 50px;
+}
+
+.footer-brand h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.footer-brand p {
+  max-width: 350px;
+
+  margin-top: 15px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer-column h3 {
+  margin-bottom: 18px;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.footer-column a {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 14px;
+
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  width: min(1200px, 90%);
+
+  margin: 50px auto 0;
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 12px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+  .hero {
+    min-height: auto;
+
+    padding: 80px 0;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
   }
 
   .about-container {
-    padding: 30px 16px;
+    grid-template-columns: 1fr;
+
+    gap: 45px;
   }
 
-  .about-content h2 {
-    font-size: 29px;
+  .about-content {
+    text-align: center;
   }
 
-  .about-content p {
+  .occasions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+
+    max-width: 600px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .contact-details {
+    align-items: center;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .footer-brand p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+  html {
+    scroll-padding-top: 75px;
+  }
+
+  .page-header {
+    padding: 65px 0 45px;
+  }
+
+  .hero {
+    padding: 65px 0;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: min(260px, 100%);
+  }
+
+  .about,
+  .occasions,
+  .how-it-works,
+  .menu-section,
+  .order-section,
+  .contact-section {
+    padding: 70px 0;
+  }
+
+  .occasions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-list {
+    grid-template-columns: 1fr;
+  }
+
+  .order-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full {
+    grid-column: auto;
+  }
+
+  .contact-info h2 {
+    font-size: 40px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+
+    gap: 35px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-column a {
+    margin-bottom: 12px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 380px) {
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .hero h2 {
+    font-size: 25px;
+  }
+
+  .hero p {
     font-size: 14px;
   }
 
-  .order-form-card,
-  .order-summary {
-    padding: 20px 14px;
+  .page-header h1 {
+    font-size: 42px;
+  }
+
+  .contact-info h2 {
+    font-size: 36px;
   }
 }
