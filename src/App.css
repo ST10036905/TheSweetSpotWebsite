@@ -82,34 +82,46 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 1000;
+
   width: 100%;
+
   background: rgba(255, 255, 255, 0.97);
+
   backdrop-filter: blur(10px);
+
   border-bottom: 1.5px solid var(--pink);
 }
 
 .navbar-container {
   width: min(1525px, calc(100% - 48px));
   min-height: 82px;
+
   margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+
+  gap: 30px;
 }
 
-/* BRAND */
+/* =========================================================
+   BRAND
+   ========================================================= */
 
 .navbar-brand {
   display: flex;
   align-items: center;
+
   gap: 13px;
+
   flex-shrink: 0;
 }
 
 .navbar-logo {
   width: 54px;
   height: 54px;
+
   object-fit: contain;
 }
 
@@ -121,40 +133,58 @@ textarea {
 
 .brand-name {
   color: var(--teal);
+
   font-family: "Great Vibes", cursive;
+
   font-size: clamp(27px, 2.2vw, 32px);
   font-weight: 400;
+
   line-height: 1;
   white-space: nowrap;
 }
 
 .brand-tagline {
   color: var(--pink);
+
   font-family: Inter, Arial, sans-serif;
+
   font-size: 9px;
   font-weight: 500;
+
   letter-spacing: 3px;
   text-transform: uppercase;
+
   margin-top: 5px;
+
   white-space: nowrap;
 }
 
-/* NAVIGATION LINKS */
+/* =========================================================
+   NAVIGATION LINKS
+   ========================================================= */
 
 .navbar-links {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+
   gap: clamp(18px, 2.2vw, 34px);
+
   margin-left: auto;
 }
 
 .navbar-links a {
   color: var(--teal);
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   font-size: clamp(17px, 1.4vw, 19px);
   font-weight: 600;
+
   letter-spacing: 0.5px;
+
   white-space: nowrap;
+
   transition: color 0.2s ease;
 }
 
@@ -163,30 +193,44 @@ textarea {
   color: var(--pink);
 }
 
-/* NAVBAR BUTTON */
+/* =========================================================
+   NAVBAR BUTTON
+   ========================================================= */
 
 .navbar-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   flex-shrink: 0;
+
   min-width: 124px;
   min-height: 44px;
+
   padding: 12px 21px;
+
   border-radius: 999px;
+
   background: var(--pink);
   color: #ffffff;
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   font-size: 14px;
   font-weight: 500;
+
   letter-spacing: 1px;
+
   white-space: nowrap;
+
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .navbar-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(201, 121, 125, 0.25);
+
+  box-shadow:
+    0 8px 20px rgba(201, 121, 125, 0.25);
 }
 
 /* =========================================================
@@ -200,12 +244,19 @@ textarea {
 
 .hero-container {
   width: min(1200px, var(--content-width));
+
   min-height: 650px;
+
   margin: 0 auto;
+
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   align-items: center;
+
   gap: clamp(30px, 5vw, 70px);
+
   padding: 70px 0;
 }
 
@@ -216,27 +267,40 @@ textarea {
 
 .hero h1 {
   color: var(--teal);
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   font-size: clamp(48px, 6vw, 76px);
+
   line-height: 1.05;
+
   font-weight: 500;
 }
 
 .hero h1 span {
   display: block;
+
   color: var(--pink);
+
   font-family: "Great Vibes", cursive;
+
   font-size: 1.15em;
   font-weight: 400;
+
   line-height: 0.9;
+
   margin-top: 10px;
 }
 
 .hero-description {
   max-width: 500px;
+
   margin-top: 28px;
+
   color: var(--muted);
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   font-size: 20px;
   line-height: 1.8;
 }
@@ -244,7 +308,9 @@ textarea {
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
+
   gap: 14px;
+
   margin-top: 34px;
 }
 
@@ -256,11 +322,16 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   min-height: 46px;
+
   padding: 14px 24px;
+
   border-radius: 999px;
+
   font-size: 14px;
   font-weight: 600;
+
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -274,21 +345,30 @@ textarea {
 .btn-primary {
   background: var(--pink);
   color: #ffffff;
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   letter-spacing: 2px;
   font-weight: 400;
-  box-shadow: 0 8px 22px rgba(201, 121, 125, 0.2);
+
+  box-shadow:
+    0 8px 22px rgba(201, 121, 125, 0.2);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 12px 28px rgba(201, 121, 125, 0.3);
+  box-shadow:
+    0 12px 28px rgba(201, 121, 125, 0.3);
 }
 
 .btn-secondary {
   background: #ffffff;
+
   border: 1px solid rgba(53, 101, 117, 0.5);
+
   color: var(--teal);
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   letter-spacing: 2px;
   font-weight: 400;
 }
@@ -303,8 +383,10 @@ textarea {
 
 .hero-image-wrapper {
   position: relative;
+
   width: 100%;
   min-height: 520px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -312,20 +394,30 @@ textarea {
 
 .hero-circle {
   position: absolute;
+
   width: clamp(300px, 36vw, 460px);
   height: clamp(300px, 36vw, 460px);
+
   border-radius: 50%;
+
   background: var(--rose-light);
+
   z-index: 0;
 }
 
 .mainImage {
   position: relative;
   z-index: 1;
+
   width: min(100%, 520px);
+
   height: auto;
+
   object-fit: contain;
-  filter: drop-shadow(0 20px 25px rgba(50, 70, 80, 0.12));
+
+  filter:
+    drop-shadow(0 20px 25px rgba(50, 70, 80, 0.12));
+
   transition: transform 0.3s ease;
 }
 
@@ -339,44 +431,64 @@ textarea {
 
 .about-section {
   width: min(1200px, var(--content-width));
+
   margin: 0 auto;
+
   padding: 75px 0 65px;
+
   scroll-margin-top: 100px;
 }
 
 .about-container {
   padding: 50px 65px;
+
   background: var(--cream);
+
   border: 1px solid var(--border);
+
   border-radius: 24px;
-  box-shadow: 0 10px 35px rgba(50, 70, 80, 0.035);
+
+  box-shadow:
+    0 10px 35px rgba(50, 70, 80, 0.035);
 }
 
 .about-content {
   max-width: 900px;
+
   margin: 0 auto;
+
   text-align: center;
 }
 
 .about-content h2 {
   color: var(--teal);
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   font-size: clamp(34px, 4vw, 48px);
+
   font-weight: 400;
+
   line-height: 1.1;
 }
 
 .about-content h2 span {
   color: var(--pink);
+
   font-family: "Great Vibes", cursive;
+
   font-size: 1.1em;
 }
 
 .about-content p {
   color: var(--muted);
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   font-size: 18px;
+
   line-height: 1.8;
+
   margin-top: 15px;
 }
 
@@ -390,32 +502,47 @@ textarea {
 
 .occasions-section {
   width: min(1200px, var(--content-width));
+
   margin: 0 auto;
+
   padding-bottom: 20px;
 }
 
 .section-card {
   padding: 35px;
+
   text-align: center;
+
   background: var(--rose-light);
+
   border: 1px solid var(--border);
+
   border-radius: var(--radius);
-  box-shadow: 0 10px 35px rgba(50, 70, 80, 0.04);
+
+  box-shadow:
+    0 10px 35px rgba(50, 70, 80, 0.04);
 }
 
 .section-card h2,
 .section-heading h2 {
   color: var(--pink);
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   font-size: clamp(28px, 3vw, 32px);
+
   font-weight: 400;
+
   letter-spacing: 1px;
 }
 
 .heart-divider {
   color: var(--pink);
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   font-size: 20px;
+
   margin-top: 8px;
 }
 
@@ -423,18 +550,27 @@ textarea {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
   gap: 10px;
+
   margin-top: 22px;
 }
 
 .occasion-list span {
   padding: 10px 17px;
+
   border-radius: 999px;
+
   border: 1px solid rgba(201, 121, 125, 0.35);
+
   background: #fff8f7;
+
   color: var(--pink);
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   font-size: 16px;
+
   letter-spacing: 1px;
 }
 
@@ -444,37 +580,52 @@ textarea {
 
 .how-section {
   width: min(1280px, var(--content-width));
+
   margin: 0 auto;
+
   padding: 70px 0 90px;
 }
 
 .section-heading {
   text-align: center;
+
   margin-bottom: 48px;
 }
 
 .section-heading h2 {
   color: var(--teal);
+
   font-size: clamp(34px, 4vw, 42px);
 }
 
-/* HOW IT WORKS GRID */
+/* =========================================================
+   HOW IT WORKS GRID
+   ========================================================= */
 
 .how-grid {
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
+
   gap: 28px 30px;
 }
 
 .info-card {
   display: flex;
   align-items: flex-start;
+
   gap: 20px;
+
   min-height: 177px;
+
   padding: 30px;
+
   background: #ffffff;
+
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(50, 70, 80, 0.025);
+
+  box-shadow:
+    0 8px 30px rgba(50, 70, 80, 0.025);
 }
 
 .rose-card {
@@ -488,19 +639,27 @@ textarea {
 .info-icon {
   width: 70px;
   height: 70px;
+
   flex-shrink: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 50%;
+
   border: 1px solid var(--pink);
+
   color: var(--pink);
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 27px;
 }
 
 .teal-icon {
   border-color: rgba(53, 101, 117, 0.35);
+
   color: var(--teal);
 }
 
@@ -510,10 +669,15 @@ textarea {
 
 .info-card h3 {
   color: var(--pink);
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 25px;
+
   font-weight: 400;
+
   letter-spacing: 1px;
+
   margin-bottom: 17px;
 }
 
@@ -527,20 +691,30 @@ textarea {
 
 .info-card li {
   position: relative;
+
   color: var(--muted);
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 17px;
+
   line-height: 1.5;
+
   margin-bottom: 9px;
+
   padding-left: 26px;
 }
 
 .info-card li::before {
   content: "♥";
+
   position: absolute;
+
   left: 0;
   top: 2px;
+
   color: var(--pink);
+
   font-size: 12px;
 }
 
@@ -550,29 +724,41 @@ textarea {
 
 .page {
   width: min(1200px, var(--content-width));
+
   margin: 0 auto;
+
   padding: 70px 0 100px;
 }
 
 .page-header {
   max-width: 680px;
+
   margin: 0 auto 55px;
+
   text-align: center;
 }
 
 .page-header h1 {
   color: var(--pink);
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: clamp(42px, 6vw, 62px);
+
   font-weight: 500;
+
   line-height: 1.1;
 }
 
 .page-header p:last-child {
   color: var(--teal);
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 18px;
+
   line-height: 1.8;
+
   margin-top: 10px;
 }
 
@@ -582,21 +768,29 @@ textarea {
 
 .menu-page {
   width: min(1100px, var(--content-width));
+
   margin: 0 auto;
+
   padding: 75px 0 100px;
 }
 
 .menu-header {
   max-width: 680px;
+
   margin: 0 auto 55px;
+
   text-align: center;
 }
 
 .menu-header h1 {
   color: var(--pink);
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: clamp(42px, 6vw, 62px);
+
   font-weight: 500;
+
   line-height: 1.1;
 }
 
@@ -606,26 +800,40 @@ textarea {
 
 .menu-header p {
   max-width: 590px;
+
   margin: auto;
+
   color: var(--teal);
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 18px;
+
   font-weight: 500;
+
   line-height: 1.8;
 }
 
 .menu-grid {
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
+
   gap: 24px;
 }
 
 .menu-card {
   min-height: 235px;
+
   padding: 32px;
+
   background: #ffffff;
+
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.045);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.045);
+
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
@@ -633,7 +841,9 @@ textarea {
 
 .menu-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
 .menu-card.pink-card {
@@ -647,11 +857,16 @@ textarea {
 .menu-label {
   display: inline-flex;
   align-items: center;
+
   padding: 8px 14px;
+
   border-radius: 999px;
+
   font-size: 11px;
   font-weight: 600;
+
   letter-spacing: 1.2px;
+
   text-transform: uppercase;
 }
 
@@ -667,32 +882,43 @@ textarea {
 
 .menu-list {
   list-style: none;
+
   margin-top: 22px;
+
   display: flex;
   flex-direction: column;
+
   gap: 2px;
 }
 
 .menu-list li {
   display: flex;
   align-items: center;
+
   gap: 12px;
+
   padding: 9px 0;
+
   color: var(--teal-dark);
 }
 
 .menu-list li svg {
   width: 15px;
   height: 15px;
+
   flex-shrink: 0;
+
   color: var(--pink);
+
   fill: var(--pink);
   stroke: var(--pink);
 }
 
 .menu-list li span {
   color: var(--teal-dark);
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 17px;
   font-weight: 500;
 }
@@ -703,18 +929,27 @@ textarea {
 
 .occasion-section {
   margin-top: 30px;
+
   padding: 35px;
+
   background: var(--rose-light);
+
   border: 2px solid var(--border);
+
   border-radius: var(--radius);
+
   text-align: center;
 }
 
 .occasion-section h2 {
   color: var(--pink);
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 32px;
+
   font-weight: 400;
+
   letter-spacing: 1px;
 }
 
@@ -726,12 +961,19 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   padding: 10px 17px;
+
   border-radius: 999px;
+
   border: 1px solid rgba(201, 121, 125, 0.35);
+
   background: #fff8f7;
+
   color: var(--pink);
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   font-size: 16px;
 }
 
@@ -739,14 +981,23 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   margin-top: 30px;
+
   padding: 13px 25px;
+
   border-radius: 999px;
+
   background: var(--rose);
+
   color: #ffffff;
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 15px;
+
   letter-spacing: 1px;
+
   transition:
     transform 0.2s ease,
     background 0.2s ease;
@@ -754,6 +1005,7 @@ textarea {
 
 .menu-order-button:hover {
   background: var(--pink);
+
   transform: translateY(-2px);
 }
 
@@ -764,38 +1016,55 @@ textarea {
 .order-layout {
   display: flex;
   flex-direction: column;
+
   gap: 30px;
+
   width: 100%;
 }
 
 .order-form-card {
   width: 100%;
+
   background: #ffffff;
+
   border: 2px solid var(--border);
+
   border-radius: var(--radius);
+
   padding: 38px;
-  box-shadow: 0 10px 35px rgba(50, 70, 80, 0.04);
+
+  box-shadow:
+    0 10px 35px rgba(50, 70, 80, 0.04);
 }
 
 .order-form-card h2,
 .order-summary h2 {
   color: var(--teal);
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 32px;
+
   font-weight: 500;
 }
 
 .form-intro {
   color: var(--muted);
+
   font-size: 14px;
+
   line-height: 1.7;
+
   margin-top: 8px;
 }
 
 .form-grid {
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
+
   gap: 22px 24px;
+
   margin-top: 30px;
 }
 
@@ -806,9 +1075,12 @@ textarea {
 
 .form-grid label span {
   display: block;
+
   color: var(--teal);
+
   font-size: 14px;
   font-weight: 500;
+
   margin-bottom: 9px;
 }
 
@@ -816,13 +1088,21 @@ textarea {
 .form-grid select,
 .form-grid textarea {
   display: block;
+
   width: 100%;
+
   border: 2px solid var(--border);
+
   background: #ffffff;
+
   color: var(--teal-dark);
+
   border-radius: 14px;
+
   padding: 14px 16px;
+
   outline: none;
+
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
@@ -835,7 +1115,9 @@ textarea {
 
 .form-grid textarea {
   min-height: 130px;
+
   resize: vertical;
+
   line-height: 1.6;
 }
 
@@ -848,7 +1130,9 @@ textarea {
 .form-grid select:focus,
 .form-grid textarea:focus {
   border-color: var(--pink);
-  box-shadow: 0 0 0 3px rgba(248, 135, 150, 0.12);
+
+  box-shadow:
+    0 0 0 3px rgba(248, 135, 150, 0.12);
 }
 
 .full-width {
@@ -863,18 +1147,30 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 100%;
+
   min-height: 58px;
+
   margin-top: 28px;
+
   padding: 15px 25px;
+
   border: none;
   border-radius: 999px;
+
   background: var(--pink);
+
   color: #ffffff;
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 18px;
+
   letter-spacing: 1px;
+
   cursor: pointer;
+
   transition:
     transform 0.2s ease,
     background 0.2s ease;
@@ -882,19 +1178,25 @@ textarea {
 
 .whatsapp-order-button:hover:not(.disabled) {
   background: var(--rose-dark);
+
   transform: translateY(-2px);
 }
 
 .whatsapp-order-button.disabled {
   background: #e5e1df;
+
   color: var(--muted);
+
   cursor: not-allowed;
 }
 
 .form-help {
   text-align: center;
+
   color: var(--muted);
+
   font-size: 12px;
+
   margin-top: 12px;
 }
 
@@ -904,11 +1206,17 @@ textarea {
 
 .order-summary {
   width: 100%;
+
   background: #ffffff;
+
   border: 2px solid rgba(53, 101, 117, 0.3);
+
   border-radius: var(--radius);
+
   padding: 32px 36px;
-  box-shadow: 0 10px 35px rgba(50, 70, 80, 0.04);
+
+  box-shadow:
+    0 10px 35px rgba(50, 70, 80, 0.04);
 }
 
 .order-summary .heart-divider {
@@ -919,8 +1227,11 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   gap: 20px;
+
   padding: 14px 0;
+
   border-bottom: 1px solid rgba(53, 101, 117, 0.12);
 }
 
@@ -930,6 +1241,7 @@ textarea {
 
 .summary-item strong {
   color: var(--teal);
+
   text-align: right;
 }
 
@@ -939,14 +1251,18 @@ textarea {
 
 .summary-message span {
   color: var(--teal);
+
   font-size: 14px;
   font-weight: 600;
 }
 
 .summary-message p {
   color: var(--muted);
+
   font-size: 14px;
+
   line-height: 1.7;
+
   margin-top: 8px;
 }
 
@@ -956,18 +1272,26 @@ textarea {
 
 .contact-grid {
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
+
   gap: 20px;
 }
 
 .contact-card {
   display: flex;
   align-items: center;
+
   gap: 15px;
+
   padding: 28px;
+
   background: #ffffff;
+
   border: 2px solid rgba(201, 121, 125, 0.4);
+
   border-radius: 18px;
+
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -975,7 +1299,9 @@ textarea {
 
 .contact-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(50, 70, 80, 0.07);
+
+  box-shadow:
+    0 12px 30px rgba(50, 70, 80, 0.07);
 }
 
 .contact-card.teal {
@@ -985,13 +1311,19 @@ textarea {
 .contact-icon {
   width: 45px;
   height: 45px;
+
   flex-shrink: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 50%;
+
   border: 1px solid rgba(201, 121, 125, 0.45);
+
   color: var(--pink);
+
   background: #fffafa;
 }
 
@@ -1002,51 +1334,73 @@ textarea {
 
 .contact-card.teal .contact-icon {
   border-color: rgba(53, 101, 117, 0.4);
+
   color: var(--teal);
+
   background: #f7fbfc;
 }
 
 .contact-card h2 {
   color: var(--teal);
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 22px;
+
   font-weight: 500;
 }
 
 .contact-card p {
   color: var(--muted);
+
   font-size: 13px;
+
   margin-top: 4px;
 }
 
 .contact-card span {
   display: block;
+
   color: var(--pink);
+
   font-size: 12px;
+
   margin-top: 7px;
 }
 
 .contact-cta {
   margin-top: 30px;
+
   padding: 45px 25px;
+
   background: #ffffff;
+
   border: 2px solid var(--border);
+
   border-radius: 18px;
+
   text-align: center;
 }
 
 .contact-cta h2 {
   color: var(--teal);
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 32px;
+
   font-weight: 500;
 }
 
 .contact-cta p {
   color: var(--teal-dark);
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 16px;
+
   line-height: 1.7;
+
   margin-top: 25px;
 }
 
@@ -1060,29 +1414,40 @@ textarea {
 
 .footer {
   margin-top: auto;
+
   border-top: 1.5px solid var(--pink);
+
   background: #ffffff;
 }
 
 .footer-container {
   width: min(1200px, var(--content-width));
+
   margin: auto;
+
   padding: 45px 0 25px;
 }
 
 .footer-title {
   color: var(--teal-dark);
+
   font-family: "Great Vibes", cursive;
+
   font-size: 32px;
 }
 
 .footer-links {
   display: flex;
   flex-wrap: wrap;
+
   gap: 25px;
+
   margin-top: 25px;
+
   color: var(--teal-dark);
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   font-size: 16px;
 }
 
@@ -1092,74 +1457,81 @@ textarea {
 
 .copyright {
   color: var(--muted);
+
   font-size: 11px;
+
   margin-top: 30px;
 }
 
 /* =========================================================
-   TABLET & RESPONSIVE BREAKPOINTS
+   TABLET
    ========================================================= */
 
 @media (max-width: 850px) {
 
-  /* NAVBAR FIX FOR TABLET / MOBILE */
+  /* NAVBAR */
 
   .navbar-container {
-    width: calc(100% - 24px);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-areas: 
-      "brand button"
-      "links links";
-    row-gap: 12px;
-    padding: 12px 0;
+    width: calc(100% - 32px);
+
     min-height: auto;
+
+    padding: 12px 0;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
   }
 
   .navbar-brand {
-    grid-area: brand;
-    align-self: center;
-  }
-
-  .navbar-button {
-    grid-area: button;
-    align-self: center;
-    justify-self: end;
-    min-width: auto;
-    min-height: 36px;
-    padding: 8px 16px;
-    font-size: 13px;
+    flex-shrink: 0;
   }
 
   .navbar-links {
-    grid-area: links;
-    margin-left: 0;
-    width: 100%;
+    order: 3;
+
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 1px solid var(--rose-light);
-    padding-top: 10px;
-    gap: 8px;
+
+    width: 100%;
+
+    margin-left: 0;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px 18px;
+
+    padding-bottom: 2px;
   }
 
   .navbar-links a {
-    font-size: 15px;
+    font-size: 16px;
+  }
+
+  .navbar-button {
+    margin-left: auto;
   }
 
   /* HERO */
 
   .hero-container {
     width: min(680px, calc(100% - 40px));
+
     grid-template-columns: 1fr;
+
     text-align: center;
+
     min-height: auto;
+
     gap: 20px;
+
     padding: 60px 0;
   }
 
   .hero-content {
     max-width: 680px;
+
     margin: 0 auto;
   }
 
@@ -1185,7 +1557,7 @@ textarea {
     width: min(90%, 450px);
   }
 
-  /* OTHER SECTIONS */
+  /* ABOUT */
 
   .about-section,
   .occasions-section,
@@ -1199,15 +1571,29 @@ textarea {
     padding: 55px 0;
   }
 
+  /* HOW */
+
   .how-section {
     padding: 60px 0 75px;
   }
 
-  .how-grid,
-  .menu-grid,
+  .how-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* MENU */
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* CONTACT */
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
+
+  /* ORDER */
 
   .order-form-card,
   .order-summary {
@@ -1225,11 +1611,84 @@ textarea {
     --content-width: 90%;
   }
 
+  /* NAVBAR */
+
+  .navbar-container {
+    width: 92%;
+
+    padding: 8px 0;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+  }
+
+  .navbar-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .navbar-brand {
+    gap: 8px;
+  }
+
+  .brand-name {
+    font-size: 22px;
+  }
+
+  .brand-tagline {
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+
+    margin-top: 2px;
+  }
+
+  .navbar-button {
+    min-width: auto;
+
+    min-height: 34px;
+
+    padding: 6px 14px;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+  }
+
+  .navbar-links {
+    order: 3;
+
+    display: flex;
+
+    width: 100%;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    gap: 6px 12px;
+
+    padding-top: 4px;
+
+    padding-bottom: 2px;
+
+    border-top: 1px solid var(--rose-light);
+
+    margin-top: 4px;
+  }
+
+  .navbar-links a {
+    font-size: 14px;
+  }
+
   /* HERO */
 
   .hero-container {
     width: 90%;
+
     padding: 35px 0 45px;
+
     gap: 5px;
   }
 
@@ -1239,13 +1698,17 @@ textarea {
 
   .hero-description {
     font-size: 16px;
+
     line-height: 1.7;
+
     margin-top: 22px;
   }
 
   .hero-buttons {
     flex-direction: column;
+
     width: 100%;
+
     margin-top: 28px;
   }
 
@@ -1270,11 +1733,13 @@ textarea {
 
   .about-section {
     width: 90%;
+
     padding: 45px 0;
   }
 
   .about-container {
     padding: 32px 20px;
+
     border-radius: 20px;
   }
 
@@ -1302,6 +1767,7 @@ textarea {
 
   .occasion-list span {
     font-size: 14px;
+
     padding: 9px 13px;
   }
 
@@ -1309,6 +1775,7 @@ textarea {
 
   .how-section {
     width: 90%;
+
     padding: 55px 0 65px;
   }
 
@@ -1318,16 +1785,22 @@ textarea {
 
   .info-card {
     flex-direction: column;
+
     align-items: center;
+
     text-align: center;
+
     padding: 25px 18px;
+
     min-height: auto;
+
     gap: 16px;
   }
 
   .info-icon {
     width: 60px;
     height: 60px;
+
     font-size: 24px;
   }
 
@@ -1341,34 +1814,53 @@ textarea {
 
   .info-card li {
     text-align: left;
+
     font-size: 16px;
   }
 
   /* GENERAL PAGES */
 
-  .page,
-  .menu-page {
+  .page {
     width: 90%;
+
     padding: 45px 0 70px;
   }
 
-  .page-header,
+  .page-header {
+    margin-bottom: 40px;
+  }
+
+  .page-header h1 {
+    font-size: clamp(38px, 11vw, 48px);
+  }
+
+  .page-header p:last-child {
+    font-size: 16px;
+  }
+
+  /* MENU */
+
+  .menu-page {
+    width: 90%;
+
+    padding: 45px 0 70px;
+  }
+
   .menu-header {
     margin-bottom: 40px;
   }
 
-  .page-header h1,
   .menu-header h1 {
     font-size: clamp(38px, 11vw, 48px);
   }
 
-  .page-header p:last-child,
   .menu-header p {
     font-size: 16px;
   }
 
   .menu-card {
     padding: 24px 20px;
+
     min-height: auto;
   }
 
@@ -1386,6 +1878,7 @@ textarea {
 
   .occasion-section .occasion-list span {
     font-size: 14px;
+
     padding: 9px 13px;
   }
 
@@ -1401,7 +1894,9 @@ textarea {
 
   .form-grid {
     grid-template-columns: 1fr;
+
     gap: 18px;
+
     margin-top: 25px;
   }
 
@@ -1409,9 +1904,9 @@ textarea {
     grid-column: auto;
   }
 
-  .order-form-card,
-  .order-summary {
+  .order-form-card {
     padding: 24px 18px;
+
     border-radius: 18px;
   }
 
@@ -1430,9 +1925,17 @@ textarea {
     font-size: 16px !important;
   }
 
+  .order-summary {
+    padding: 24px 18px;
+
+    border-radius: 18px;
+  }
+
   .summary-item {
     flex-direction: column;
+
     align-items: flex-start;
+
     gap: 5px;
   }
 
@@ -1442,13 +1945,21 @@ textarea {
 
   .whatsapp-order-button {
     font-size: 16px;
+
     min-height: 55px;
   }
 
   /* CONTACT */
 
+  .contact-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
   .contact-card {
     padding: 21px 18px;
+
     gap: 12px;
   }
 
@@ -1468,11 +1979,13 @@ textarea {
 
   .footer-container {
     width: 90%;
+
     padding: 40px 0 25px;
   }
 
   .footer-links {
     gap: 16px 22px;
+
     font-size: 15px;
   }
 }
@@ -1481,35 +1994,47 @@ textarea {
    SMALL PHONES
    ========================================================= */
 
-@media (max-width: 450px) {
+@media (max-width: 420px) {
 
   .navbar-container {
-    width: calc(100% - 16px);
-    padding: 8px 0;
+    width: 94%;
+
+    padding: 6px 0;
   }
 
   .navbar-logo {
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar-brand {
+    gap: 6px;
   }
 
   .brand-name {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .brand-tagline {
-    font-size: 7px;
-    letter-spacing: 1.5px;
+    font-size: 6px;
+
+    letter-spacing: 1px;
   }
 
   .navbar-button {
-    padding: 6px 12px;
-    font-size: 12px;
-    min-height: 32px;
+    padding: 5px 10px;
+
+    font-size: 11px;
+
+    min-height: 30px;
+  }
+
+  .navbar-links {
+    gap: 4px 8px;
   }
 
   .navbar-links a {
-    font-size: 13.5px;
+    font-size: 13px;
   }
 
   .about-container,
