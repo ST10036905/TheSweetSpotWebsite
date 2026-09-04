@@ -1,74 +1,75 @@
 /* =========================================================
    THE SWEET SPOT
-   Main Website Styles — FIXED mobile version
-   ========================================================= */
+   Main Website Styles
+========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=Great+Vibes&display=swap');
 
+
 /* =========================================================
-   VARIABLES
-   ========================================================= */
+   ROOT
+========================================================= */
 
 :root {
   --white: #ffffff;
   --cream: #fffaf8;
-  --rose-light: #f8e7e5;
+  --dusty-white: #f7f3ef;
 
   --teal: #356575;
   --teal-dark: #294f5d;
 
-  --pink: #f88796;
   --rose: #c9797d;
   --rose-dark: #b9686e;
+  --rose-light: #f8e7e5;
+
+  --pink: #f88796;
 
   --text: #111111;
   --muted: #6f777b;
+
   --border: #eaded9;
 
   --radius: 18px;
-  --content-width: 92%;
 }
 
-/* =========================================================
-   RESET
-   ========================================================= */
 
-*,
-*::before,
-*::after {
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* FIX 1: never put overflow-x on <html> — it breaks position:sticky
-   and clips content on mobile Safari/Chrome. Clip on body only,
-   using `clip` so sticky keeps working. */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
+  margin: 0;
+  min-width: 320px;
   background: var(--white);
   color: var(--text);
-  font-family: Inter, Arial, sans-serif;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
   -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
-  overflow-wrap: break-word;
+  overflow-x: hidden;
 }
 
 #root {
   min-height: 100vh;
-  min-height: 100dvh;
   background: var(--white);
-}
-
-img,
-svg,
-video {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  overflow-x: hidden;
 }
 
 a {
@@ -81,26 +82,12 @@ input,
 select,
 textarea {
   font: inherit;
-  max-width: 100%;
 }
 
-/* FIX 2: flex/grid children can't shrink below their content by
-   default. This single rule stops almost every "content cut off
-   on mobile" bug. */
-.hero-content,
-.info-content,
-.contact-card > div,
-.navbar-brand-text,
-.about-content,
-.menu-card,
-.order-form-card,
-.order-summary {
-  min-width: 0;
-}
 
 /* =========================================================
    NAVBAR
-   ========================================================= */
+========================================================= */
 
 .navbar {
   position: sticky;
@@ -109,16 +96,15 @@ textarea {
 
   width: 100%;
 
-  background: rgba(255, 255, 255, 0.97);
-
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: #ffffff;
 
   border-bottom: 1.5px solid var(--pink);
+
+  backdrop-filter: blur(10px);
 }
 
 .navbar-container {
-  width: min(1525px, calc(100% - 48px));
+  width: min(1525px, 92%);
   min-height: 82px;
 
   margin: 0 auto;
@@ -127,12 +113,13 @@ textarea {
   align-items: center;
   justify-content: space-between;
 
-  gap: 30px;
+  gap: 40px;
 }
 
+
 /* =========================================================
-   BRAND
-   ========================================================= */
+   NAVBAR BRAND
+========================================================= */
 
 .navbar-brand {
   display: flex;
@@ -140,7 +127,7 @@ textarea {
 
   gap: 13px;
 
-  flex-shrink: 1;   /* FIX: was 0 — let the brand shrink on tiny screens */
+  flex-shrink: 0;
   min-width: 0;
 }
 
@@ -148,9 +135,10 @@ textarea {
   width: 54px;
   height: 54px;
 
-  flex-shrink: 0;
+  display: block;
 
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .navbar-brand-text {
@@ -166,39 +154,48 @@ textarea {
 
   font-family: "Great Vibes", cursive;
 
-  font-size: clamp(27px, 2.2vw, 32px);
+  font-size: 32px;
   font-weight: 400;
 
   line-height: 1;
+
   white-space: nowrap;
 }
 
 .brand-tagline {
   color: var(--pink);
 
-  font-family: Inter, Arial, sans-serif;
+  margin-top: 5px;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
 
   font-size: 9px;
   font-weight: 500;
 
   letter-spacing: 3px;
-  text-transform: uppercase;
 
-  margin-top: 5px;
+  text-transform: uppercase;
 
   white-space: nowrap;
 }
 
+
 /* =========================================================
-   NAVIGATION LINKS
-   ========================================================= */
+   DESKTOP NAVIGATION
+========================================================= */
 
 .navbar-links {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 
-  gap: clamp(18px, 2.2vw, 34px);
+  gap: 34px;
 
   margin-left: auto;
 }
@@ -206,12 +203,16 @@ textarea {
 .navbar-links a {
   color: var(--teal);
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  font-size: clamp(17px, 1.4vw, 19px);
+  font-size: 19px;
   font-weight: 600;
 
   letter-spacing: 0.5px;
+  line-height: 1;
 
   white-space: nowrap;
 
@@ -223,9 +224,10 @@ textarea {
   color: var(--pink);
 }
 
+
 /* =========================================================
    NAVBAR BUTTON
-   ========================================================= */
+========================================================= */
 
 .navbar-button {
   display: inline-flex;
@@ -244,16 +246,22 @@ textarea {
   background: var(--pink);
   color: #ffffff;
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 14px;
   font-weight: 500;
 
   letter-spacing: 1px;
+  line-height: 1;
 
   white-space: nowrap;
 
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .navbar-button:hover {
@@ -263,9 +271,60 @@ textarea {
     0 8px 20px rgba(201, 121, 125, 0.25);
 }
 
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.mobile-menu-button {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 8px;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-menu-button span {
+  display: block;
+
+  width: 24px;
+  height: 2px;
+
+  background: var(--teal);
+
+  border-radius: 2px;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-navbar-links {
+  display: none;
+}
+
+
 /* =========================================================
    HERO
-   ========================================================= */
+========================================================= */
 
 .hero {
   background: #ffffff;
@@ -273,47 +332,46 @@ textarea {
 }
 
 .hero-container {
-  width: min(1200px, var(--content-width));
+  width: min(1200px, 92%);
 
   min-height: 650px;
 
-  margin: 0 auto;
+  margin: auto;
 
   display: grid;
 
-  /* FIX: minmax(0,1fr) lets columns shrink — plain 1fr refuses to
-     go below content width and overflows on mobile */
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: 1fr 1fr;
 
   align-items: center;
 
-  gap: clamp(30px, 5vw, 70px);
+  gap: 50px;
 
   padding: 70px 0;
 }
 
 .hero-content {
-  width: 100%;
   max-width: 540px;
-  min-width: 0;
 }
 
 .hero h1 {
   color: var(--teal);
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: clamp(48px, 6vw, 76px);
 
-  line-height: 1.05;
-
   font-weight: 500;
 
-  overflow-wrap: break-word;
+  line-height: 1.05;
 }
 
 .hero h1 span {
   display: block;
+
+  margin-top: 10px;
 
   color: var(--pink);
 
@@ -323,8 +381,6 @@ textarea {
   font-weight: 400;
 
   line-height: 0.9;
-
-  margin-top: 10px;
 }
 
 .hero-description {
@@ -334,31 +390,33 @@ textarea {
 
   color: var(--muted);
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 20px;
+
   line-height: 1.8;
 }
 
 .hero-buttons {
   display: flex;
-  flex-wrap: wrap;
 
   gap: 14px;
 
   margin-top: 34px;
 }
 
+
 /* =========================================================
    BUTTONS
-   ========================================================= */
+========================================================= */
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  min-height: 46px;
 
   padding: 14px 24px;
 
@@ -381,10 +439,13 @@ textarea {
   background: var(--pink);
   color: #ffffff;
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  letter-spacing: 2px;
   font-weight: 400;
+  letter-spacing: 2px;
 
   box-shadow:
     0 8px 22px rgba(201, 121, 125, 0.2);
@@ -396,43 +457,47 @@ textarea {
 }
 
 .btn-secondary {
-  background: #ffffff;
-
   border: 1px solid rgba(53, 101, 117, 0.5);
 
+  background: #ffffff;
   color: var(--teal);
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  letter-spacing: 2px;
   font-weight: 400;
+  letter-spacing: 2px;
 }
 
 .btn-secondary:hover {
   background: #faf6f5;
 }
 
+
 /* =========================================================
    HERO IMAGE
-   ========================================================= */
+========================================================= */
 
 .hero-image-wrapper {
   position: relative;
 
   width: 100%;
   min-height: 520px;
-  min-width: 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  overflow: visible;
 }
 
 .hero-circle {
   position: absolute;
 
-  width: clamp(300px, 36vw, 460px);
-  height: clamp(300px, 36vw, 460px);
+  width: 460px;
+  height: 460px;
 
   border-radius: 50%;
 
@@ -443,16 +508,20 @@ textarea {
 
 .mainImage {
   position: relative;
+
   z-index: 1;
 
   width: min(100%, 520px);
-
   height: auto;
+
+  display: block;
 
   object-fit: contain;
 
   filter:
-    drop-shadow(0 20px 25px rgba(50, 70, 80, 0.12));
+    drop-shadow(
+      0 20px 25px rgba(50, 70, 80, 0.12)
+    );
 
   transition: transform 0.3s ease;
 }
@@ -461,14 +530,15 @@ textarea {
   transform: translateY(-5px);
 }
 
+
 /* =========================================================
    ABOUT
-   ========================================================= */
+========================================================= */
 
 .about-section {
-  width: min(1200px, var(--content-width));
+  width: min(1200px, 92%);
 
-  margin: 0 auto;
+  margin: auto;
 
   padding: 75px 0 65px;
 
@@ -476,6 +546,8 @@ textarea {
 }
 
 .about-container {
+  width: 100%;
+
   padding: 50px 65px;
 
   background: var(--cream);
@@ -497,11 +569,16 @@ textarea {
 }
 
 .about-content h2 {
+  margin-top: 10px;
+
   color: var(--teal);
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  font-size: clamp(34px, 4vw, 48px);
+  font-size: clamp(36px, 4vw, 48px);
 
   font-weight: 400;
 
@@ -511,35 +588,43 @@ textarea {
 .about-content h2 span {
   color: var(--pink);
 
-  font-family: "Great Vibes", cursive;
+  font-family:
+    "Great Vibes",
+    cursive;
 
   font-size: 1.1em;
+  font-weight: 400;
 }
 
 .about-content p {
+  margin-top: 15px;
+
   color: var(--muted);
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 18px;
 
   line-height: 1.8;
-
-  margin-top: 15px;
 }
 
 .about-content p strong {
   color: var(--teal);
+  font-weight: 600;
 }
+
 
 /* =========================================================
    OCCASIONS
-   ========================================================= */
+========================================================= */
 
 .occasions-section {
-  width: min(1200px, var(--content-width));
+  width: min(1200px, 92%);
 
-  margin: 0 auto;
+  margin: auto;
 
   padding-bottom: 20px;
 }
@@ -547,13 +632,13 @@ textarea {
 .section-card {
   padding: 35px;
 
-  text-align: center;
-
   background: var(--rose-light);
 
   border: 1px solid var(--border);
 
   border-radius: var(--radius);
+
+  text-align: center;
 
   box-shadow:
     0 10px 35px rgba(50, 70, 80, 0.04);
@@ -563,23 +648,28 @@ textarea {
 .section-heading h2 {
   color: var(--pink);
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  font-size: clamp(28px, 3vw, 32px);
-
+  font-size: 32px;
   font-weight: 400;
 
   letter-spacing: 1px;
 }
 
 .heart-divider {
+  margin-top: 8px;
+
   color: var(--pink);
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 20px;
-
-  margin-top: 8px;
 }
 
 .occasion-list {
@@ -595,56 +685,67 @@ textarea {
 .occasion-list span {
   padding: 10px 17px;
 
-  border-radius: 999px;
-
   border: 1px solid rgba(201, 121, 125, 0.35);
 
-  background: #fff8f7;
+  border-radius: 999px;
 
+  background: #fff8f7;
   color: var(--pink);
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 16px;
 
   letter-spacing: 1px;
 }
 
+
 /* =========================================================
    HOW IT WORKS
-   ========================================================= */
+========================================================= */
 
 .how-section {
-  width: min(1280px, var(--content-width));
+  width: min(1280px, 92%);
 
-  margin: 0 auto;
+  margin: auto;
 
   padding: 70px 0 90px;
 }
 
 .section-heading {
-  text-align: center;
-
   margin-bottom: 48px;
+
+  text-align: center;
 }
 
 .section-heading h2 {
   color: var(--teal);
 
   font-size: clamp(34px, 4vw, 42px);
-}
 
-/* =========================================================
-   HOW IT WORKS GRID
-   ========================================================= */
+  font-weight: 400;
+
+  letter-spacing: 0.5px;
+
+  line-height: 1.1;
+}
 
 .how-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));  /* FIX */
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
   gap: 28px 30px;
 }
+
+
+/* =========================================================
+   INFO CARDS
+========================================================= */
 
 .info-card {
   display: flex;
@@ -652,8 +753,8 @@ textarea {
 
   gap: 20px;
 
-  min-height: 177px;
   min-width: 0;
+  min-height: 177px;
 
   padding: 30px;
 
@@ -683,40 +784,43 @@ textarea {
   align-items: center;
   justify-content: center;
 
-  border-radius: 50%;
-
   border: 1px solid var(--pink);
+  border-radius: 50%;
 
   color: var(--pink);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: 27px;
 }
 
 .teal-icon {
   border-color: rgba(53, 101, 117, 0.35);
-
   color: var(--teal);
 }
 
 .info-content {
-  flex: 1;
   min-width: 0;
+  padding-top: 2px;
 }
 
 .info-card h3 {
+  margin-bottom: 17px;
+
   color: var(--pink);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: 25px;
-
   font-weight: 400;
 
   letter-spacing: 1px;
 
-  margin-bottom: 17px;
+  line-height: 1.2;
 }
 
 .teal-card h3 {
@@ -724,23 +828,27 @@ textarea {
 }
 
 .info-card ul {
+  margin: 0;
+  padding: 0;
+
   list-style: none;
 }
 
 .info-card li {
   position: relative;
 
+  margin-bottom: 9px;
+  padding-left: 26px;
+
   color: var(--muted);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: 17px;
 
   line-height: 1.5;
-
-  margin-bottom: 9px;
-
-  padding-left: 26px;
 }
 
 .info-card li::before {
@@ -748,24 +856,29 @@ textarea {
 
   position: absolute;
 
-  left: 0;
   top: 2px;
+  left: 0;
 
   color: var(--pink);
+
+  font-family: Arial, sans-serif;
 
   font-size: 12px;
 }
 
+
 /* =========================================================
-   GENERAL PAGE
-   ========================================================= */
+   INNER PAGES
+========================================================= */
 
 .page {
-  width: min(1200px, var(--content-width));
+  width: min(1200px, 92%);
 
-  margin: 0 auto;
+  margin: auto;
 
   padding: 70px 0 100px;
+
+  background: #ffffff;
 }
 
 .page-header {
@@ -779,33 +892,41 @@ textarea {
 .page-header h1 {
   color: var(--pink);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: clamp(42px, 6vw, 62px);
 
   font-weight: 500;
 
+  letter-spacing: 0.5px;
+
   line-height: 1.1;
 }
 
 .page-header p:last-child {
+  margin-top: 0;
+
   color: var(--teal);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: 18px;
+  font-weight: 500;
 
   line-height: 1.8;
-
-  margin-top: 10px;
 }
+
 
 /* =========================================================
    MENU
-   ========================================================= */
+========================================================= */
 
 .menu-page {
-  width: min(1100px, var(--content-width));
+  width: min(1100px, 92%);
 
   margin: 0 auto;
 
@@ -823,17 +944,25 @@ textarea {
 .menu-header h1 {
   color: var(--pink);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: clamp(42px, 6vw, 62px);
 
   font-weight: 500;
+
+  letter-spacing: 0.5px;
 
   line-height: 1.1;
 }
 
 .menu-header .heart-divider {
   margin: 14px 0 18px;
+
+  color: var(--pink);
+
+  font-size: 18px;
 }
 
 .menu-header p {
@@ -843,26 +972,35 @@ textarea {
 
   color: var(--teal);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: 18px;
-
   font-weight: 500;
 
   line-height: 1.8;
 }
 
+
+/* =========================================================
+   MENU GRID
+========================================================= */
+
 .menu-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));  /* FIX */
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
   gap: 24px;
 }
 
 .menu-card {
-  min-height: 235px;
+  position: relative;
+
   min-width: 0;
+  min-height: 235px;
 
   padding: 32px;
 
@@ -920,14 +1058,14 @@ textarea {
 }
 
 .menu-list {
-  list-style: none;
-
-  margin-top: 22px;
-
   display: flex;
   flex-direction: column;
 
   gap: 2px;
+
+  margin-top: 22px;
+
+  list-style: none;
 }
 
 .menu-list li {
@@ -936,11 +1074,15 @@ textarea {
 
   gap: 12px;
 
+  min-width: 0;
+
   padding: 9px 0;
 
   color: var(--teal-dark);
 
-  min-width: 0;
+  font-size: 15px;
+
+  line-height: 1.5;
 }
 
 .menu-list li svg {
@@ -953,22 +1095,27 @@ textarea {
 
   fill: var(--pink);
   stroke: var(--pink);
+
+  stroke-width: 2;
 }
 
 .menu-list li span {
   color: var(--teal-dark);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: 17px;
   font-weight: 500;
 
-  min-width: 0;
+  letter-spacing: 0.2px;
 }
+
 
 /* =========================================================
    MENU OCCASIONS
-   ========================================================= */
+========================================================= */
 
 .occasion-section {
   margin-top: 30px;
@@ -982,21 +1129,32 @@ textarea {
   border-radius: var(--radius);
 
   text-align: center;
+
+  box-shadow:
+    0 10px 35px rgba(50, 70, 80, 0.04);
 }
 
 .occasion-section h2 {
   color: var(--pink);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: 32px;
-
   font-weight: 400;
 
   letter-spacing: 1px;
 }
 
 .occasion-section .occasion-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
   margin-top: 22px;
 }
 
@@ -1007,18 +1165,40 @@ textarea {
 
   padding: 10px 17px;
 
-  border-radius: 999px;
-
   border: 1px solid rgba(201, 121, 125, 0.35);
 
-  background: #fff8f7;
+  border-radius: 999px;
 
+  background: #fff8f7;
   color: var(--pink);
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 16px;
+
+  letter-spacing: 1px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
+
+.occasion-section .occasion-list span:hover {
+  background: #ffffff;
+
+  border-color: rgba(201, 121, 125, 0.5);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MENU ORDER BUTTON
+========================================================= */
 
 .menu-order-button {
   display: inline-flex;
@@ -1031,30 +1211,40 @@ textarea {
 
   border-radius: 999px;
 
-  background: var(--rose);
-
+  background: #f88796;
   color: #ffffff;
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: 15px;
+  font-weight: 500;
 
   letter-spacing: 1px;
 
+  box-shadow:
+    0 7px 20px rgba(201, 121, 125, 0.18);
+
   transition:
     transform 0.2s ease,
-    background 0.2s ease;
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .menu-order-button:hover {
-  background: var(--pink);
+  background: #f88796;
 
   transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(201, 121, 125, 0.25);
 }
+
 
 /* =========================================================
    ORDER
-   ========================================================= */
+========================================================= */
 
 .order-layout {
   display: flex;
@@ -1063,10 +1253,18 @@ textarea {
   gap: 30px;
 
   width: 100%;
+
+  align-items: stretch;
+
+  min-width: 0;
 }
 
 .order-form-card {
   width: 100%;
+
+  min-width: 0;
+
+  padding: 38px;
 
   background: #ffffff;
 
@@ -1074,79 +1272,88 @@ textarea {
 
   border-radius: var(--radius);
 
-  padding: 38px;
-
   box-shadow:
     0 10px 35px rgba(50, 70, 80, 0.04);
 }
 
-.order-form-card h2,
-.order-summary h2 {
+.order-form-card h2 {
   color: var(--teal);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: 32px;
-
   font-weight: 500;
 }
 
 .form-intro {
+  margin-top: 8px;
+
   color: var(--muted);
 
   font-size: 14px;
 
   line-height: 1.7;
-
-  margin-top: 8px;
 }
+
+
+/* =========================================================
+   FORM
+========================================================= */
 
 .form-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));  /* FIX */
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
   gap: 22px 24px;
 
+  width: 100%;
+
   margin-top: 30px;
+
+  min-width: 0;
 }
 
 .form-grid label {
   display: block;
+
   width: 100%;
+
   min-width: 0;
 }
 
 .form-grid label span {
   display: block;
 
+  margin-bottom: 9px;
+
   color: var(--teal);
 
   font-size: 14px;
   font-weight: 500;
 
-  margin-bottom: 9px;
+  letter-spacing: 0.3px;
 }
 
 .form-grid input,
 .form-grid select,
 .form-grid textarea {
-  display: block;
-
   width: 100%;
   max-width: 100%;
-
-  border: 2px solid var(--border);
-
-  background: #ffffff;
-
-  color: var(--teal-dark);
-
-  border-radius: 14px;
+  min-width: 0;
 
   padding: 14px 16px;
 
+  border: 2px solid var(--border);
+  border-radius: 14px;
+
   outline: none;
+
+  background: #ffffff;
+  color: var(--teal-dark);
 
   transition:
     border-color 0.2s ease,
@@ -1180,13 +1387,24 @@ textarea {
     0 0 0 3px rgba(248, 135, 150, 0.12);
 }
 
+.form-grid input[type="date"] {
+  width: 100%;
+
+  min-height: 52px;
+
+  font-size: 16px;
+
+  color: var(--teal-dark);
+}
+
 .full-width {
   grid-column: 1 / -1;
 }
 
+
 /* =========================================================
    WHATSAPP ORDER
-   ========================================================= */
+========================================================= */
 
 .whatsapp-order-button {
   display: flex;
@@ -1194,7 +1412,6 @@ textarea {
   justify-content: center;
 
   width: 100%;
-
   min-height: 58px;
 
   margin-top: 28px;
@@ -1205,12 +1422,14 @@ textarea {
   border-radius: 999px;
 
   background: var(--pink);
-
   color: #ffffff;
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: 18px;
+  font-weight: 500;
 
   letter-spacing: 1px;
 
@@ -1218,6 +1437,7 @@ textarea {
 
   transition:
     transform 0.2s ease,
+    box-shadow 0.2s ease,
     background 0.2s ease;
 }
 
@@ -1225,32 +1445,42 @@ textarea {
   background: var(--rose-dark);
 
   transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(248, 135, 150, 0.25);
 }
 
 .whatsapp-order-button.disabled {
   background: #e5e1df;
-
   color: var(--muted);
 
   cursor: not-allowed;
+
+  box-shadow: none;
 }
 
 .form-help {
-  text-align: center;
+  margin-top: 12px;
 
   color: var(--muted);
 
   font-size: 12px;
 
-  margin-top: 12px;
+  text-align: center;
 }
+
 
 /* =========================================================
    ORDER SUMMARY
-   ========================================================= */
+========================================================= */
 
 .order-summary {
+  position: static;
+
   width: 100%;
+  min-width: 0;
+
+  padding: 32px 36px;
 
   background: #ffffff;
 
@@ -1258,10 +1488,21 @@ textarea {
 
   border-radius: var(--radius);
 
-  padding: 32px 36px;
-
   box-shadow:
     0 10px 35px rgba(50, 70, 80, 0.04);
+}
+
+.order-summary h2 {
+  color: var(--teal);
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 32px;
+  font-weight: 500;
+
+  letter-spacing: 1px;
 }
 
 .order-summary .heart-divider {
@@ -1270,34 +1511,36 @@ textarea {
 
 .summary-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   gap: 20px;
 
+  min-width: 0;
+
   padding: 14px 0;
 
-  border-bottom: 1px solid rgba(53, 101, 117, 0.12);
+  border-bottom:
+    1px solid rgba(53, 101, 117, 0.12);
+
+  font-size: 14px;
 }
 
 .summary-item span {
   color: var(--muted);
-
-  min-width: 0;
 }
 
 .summary-item strong {
   color: var(--teal);
 
+  font-weight: 600;
+
   text-align: right;
-
-  min-width: 0;
-
-  overflow-wrap: break-word;
 }
 
 .summary-message {
   margin-top: 22px;
+  padding-top: 5px;
 }
 
 .summary-message span {
@@ -1308,27 +1551,31 @@ textarea {
 }
 
 .summary-message p {
+  max-width: 800px;
+
+  margin-top: 8px;
+
   color: var(--muted);
 
   font-size: 14px;
 
   line-height: 1.7;
-
-  margin-top: 8px;
-
-  overflow-wrap: break-word;
 }
+
 
 /* =========================================================
    CONTACT
-   ========================================================= */
+========================================================= */
 
 .contact-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));  /* FIX */
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
   gap: 20px;
+
+  min-width: 0;
 }
 
 .contact-card {
@@ -1373,13 +1620,13 @@ textarea {
   align-items: center;
   justify-content: center;
 
-  border-radius: 50%;
-
   border: 1px solid rgba(201, 121, 125, 0.45);
 
-  color: var(--pink);
+  border-radius: 50%;
 
   background: #fffafa;
+
+  color: var(--pink);
 }
 
 .contact-icon svg {
@@ -1390,39 +1637,38 @@ textarea {
 .contact-card.teal .contact-icon {
   border-color: rgba(53, 101, 117, 0.4);
 
-  color: var(--teal);
-
   background: #f7fbfc;
+
+  color: var(--teal);
 }
 
 .contact-card h2 {
   color: var(--teal);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: 22px;
-
   font-weight: 500;
 }
 
 .contact-card p {
+  margin-top: 4px;
+
   color: var(--muted);
 
   font-size: 13px;
-
-  margin-top: 4px;
-
-  overflow-wrap: break-word;
 }
 
 .contact-card span {
   display: block;
 
+  margin-top: 7px;
+
   color: var(--pink);
 
   font-size: 12px;
-
-  margin-top: 7px;
 }
 
 .contact-cta {
@@ -1442,43 +1688,47 @@ textarea {
 .contact-cta h2 {
   color: var(--teal);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: 32px;
-
   font-weight: 500;
 }
 
 .contact-cta p {
+  margin-top: 25px;
+
   color: var(--teal-dark);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
   font-size: 16px;
 
-  line-height: 1.7;
-
-  margin-top: 25px;
+  line-height: 1.6;
 }
 
 .contact-cta .btn {
   margin-top: 25px;
 }
 
+
 /* =========================================================
    FOOTER
-   ========================================================= */
+========================================================= */
 
 .footer {
   margin-top: auto;
 
-  border-top: 1.5px solid var(--pink);
-
   background: #ffffff;
+
+  border-top: 1.5px solid var(--pink);
 }
 
 .footer-container {
-  width: min(1200px, var(--content-width));
+  width: min(1200px, 92%);
 
   margin: auto;
 
@@ -1488,9 +1738,13 @@ textarea {
 .footer-title {
   color: var(--teal-dark);
 
-  font-family: "Great Vibes", cursive;
+  font-family:
+    "Great Vibes",
+    cursive;
 
   font-size: 32px;
+
+  letter-spacing: 1.5px;
 }
 
 .footer-links {
@@ -1503,9 +1757,20 @@ textarea {
 
   color: var(--teal-dark);
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 16px;
+
+  letter-spacing: 0.5px;
+}
+
+.footer-links a {
+  color: var(--teal-dark);
+
+  transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
@@ -1513,84 +1778,169 @@ textarea {
 }
 
 .copyright {
+  margin-top: 30px;
+
   color: var(--muted);
 
   font-size: 11px;
-
-  margin-top: 30px;
 }
 
+
 /* =========================================================
-   TABLET
-   ========================================================= */
+   TABLET / MOBILE NAVBAR
+========================================================= */
 
-@media (max-width: 850px) {
-
-  /* NAVBAR */
+@media screen and (max-width: 900px) {
 
   .navbar-container {
-    width: calc(100% - 32px);
+    width: 92%;
+    min-height: 68px;
 
-    min-height: auto;
-
-    padding: 16px 0;
-
-    gap: 18px;
-
-    flex-wrap: wrap;
+    gap: 10px;
   }
 
-  .navbar-links {
-    order: 3;
+  .navbar-links,
+  .navbar-container > .navbar-button {
+    display: none;
+  }
 
+  .navbar-brand {
+    flex: 1;
+
+    min-width: 0;
+
+    gap: 8px;
+  }
+
+  .navbar-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .navbar-brand-text {
+    min-width: 0;
+
+    overflow: hidden;
+  }
+
+  .brand-name {
+    font-size: 25px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+  }
+
+  .brand-tagline {
+    font-size: 6px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+
+    flex: 0 0 42px;
+
+    width: 42px;
+    height: 42px;
+  }
+
+  .mobile-navbar-links {
     display: flex;
 
     width: 100%;
 
-    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
 
+    gap: 18px;
+
+    padding: 22px 18px 28px;
+
+    background: #ffffff;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1.5px solid var(--pink);
+  }
+
+  .mobile-navbar-links a {
+    display: block;
+
+    padding: 4px 10px;
+
+    color: var(--teal);
+
+    font-family:
+      "Cormorant Garamond",
+      Georgia,
+      serif;
+
+    font-size: 21px;
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.5px;
+  }
+
+  .mobile-navbar-links a:hover {
+    color: var(--pink);
+  }
+
+  .mobile-navbar-links .mobile-contact-button {
+    display: inline-flex;
+
+    align-items: center;
     justify-content: center;
 
-    flex-wrap: wrap;
+    width: min(220px, 90%);
+    min-height: 46px;
 
-    gap: 10px 24px;
+    padding: 12px 20px;
 
-    padding-bottom: 4px;
-  }
+    border-radius: 999px;
 
-  .navbar-links a {
+    background: var(--pink);
+    color: #ffffff;
+
+    font-family:
+      "Cormorant Garamond",
+      Georgia,
+      serif;
+
     font-size: 18px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
   }
 
-  .navbar-button {
-    margin-left: auto;
-  }
 
-  /* HERO */
+  /* =======================================================
+     HERO
+  ======================================================= */
 
   .hero-container {
-    width: min(680px, calc(100% - 40px));
-
-    grid-template-columns: minmax(0, 1fr);
-
-    text-align: center;
+    grid-template-columns: 1fr;
 
     min-height: auto;
 
+    padding: 55px 0;
+
     gap: 20px;
 
-    padding: 60px 0;
+    text-align: center;
   }
 
   .hero-content {
-    max-width: 680px;
+    max-width: 650px;
 
-    margin: 0 auto;
+    margin: auto;
   }
 
   .hero-description {
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
   }
 
   .hero-buttons {
@@ -1598,55 +1948,67 @@ textarea {
   }
 
   .hero-image-wrapper {
-    min-height: 430px;
+    min-height: 420px;
+
+    margin-top: 20px;
   }
 
   .hero-circle {
-    width: min(360px, 70vw);
-    height: min(360px, 70vw);
+    width: 350px;
+    height: 350px;
   }
 
   .mainImage {
-    width: min(90%, 450px);
+    width: min(90%, 430px);
   }
 
-  /* ABOUT */
 
-  .about-section,
-  .occasions-section,
-  .how-section,
-  .menu-page,
-  .page {
-    width: min(680px, calc(100% - 40px));
-  }
+  /* =======================================================
+     ABOUT
+  ======================================================= */
 
   .about-section {
     padding: 55px 0;
   }
 
-  /* HOW */
-
-  .how-section {
-    padding: 60px 0 75px;
+  .about-container {
+    padding: 40px 35px;
   }
+
+  .about-content {
+    max-width: 100%;
+  }
+
+
+  /* =======================================================
+     HOW IT WORKS
+  ======================================================= */
 
   .how-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
   }
 
-  /* MENU */
+
+  /* =======================================================
+     PAGES
+  ======================================================= */
+
+  .page {
+    padding-top: 50px;
+  }
 
   .menu-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
   }
-
-  /* CONTACT */
 
   .contact-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
   }
 
-  /* ORDER */
+
+  /* =======================================================
+     ORDER
+  ======================================================= */
 
   .order-form-card,
   .order-summary {
@@ -1654,97 +2016,31 @@ textarea {
   }
 }
 
+
 /* =========================================================
    MOBILE
-   ========================================================= */
+========================================================= */
 
-@media (max-width: 600px) {
-
-  :root {
-    --content-width: 90%;
-  }
-
-  /* NAVBAR */
-
-  .navbar-container {
-    width: 90%;
-
-    padding: 14px 0;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
-  }
-
-  .navbar-logo {
-    width: 46px;
-    height: 46px;
-  }
-
-  .navbar-brand {
-    gap: 9px;
-  }
-
-  .brand-name {
-    font-size: clamp(23px, 7vw, 29px);
-  }
-
-  .brand-tagline {
-    font-size: 6px;
-
-    letter-spacing: 1.3px;
-  }
-
-  .navbar-button {
-    min-width: auto;
-
-    padding: 10px 16px;
-
-    font-size: 13px;
-  }
-
-  .navbar-links {
-    order: 3;
-
-    display: flex;
-
-    width: 100%;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 8px 18px;
-
-    padding-top: 6px;
-
-    padding-bottom: 2px;
-  }
-
-  .navbar-links a {
-    font-size: 17px;
-  }
-
-  /* HERO */
+@media screen and (max-width: 600px) {
 
   .hero-container {
     width: 90%;
 
-    padding: 45px 0 55px;
+    padding: 45px 0;
 
     gap: 5px;
   }
 
   .hero h1 {
-    font-size: clamp(38px, 11vw, 48px);
+    font-size: 45px;
   }
 
   .hero-description {
+    margin-top: 22px;
+
     font-size: 16px;
 
     line-height: 1.7;
-
-    margin-top: 22px;
   }
 
   .hero-buttons {
@@ -1761,18 +2057,21 @@ textarea {
 
   .hero-image-wrapper {
     min-height: 330px;
+
+    margin-top: 10px;
   }
 
   .hero-circle {
-    width: min(280px, 72vw);
-    height: min(280px, 72vw);
+    width: 280px;
+    height: 280px;
   }
 
   .mainImage {
     width: 95%;
   }
 
-  /* ABOUT */
+
+  /* About */
 
   .about-section {
     width: 90%;
@@ -1781,27 +2080,31 @@ textarea {
   }
 
   .about-container {
-    padding: 32px 20px;
+    padding: 35px 22px;
 
     border-radius: 20px;
   }
 
   .about-content h2 {
-    font-size: clamp(29px, 9vw, 36px);
+    font-size: 34px;
   }
 
   .about-content p {
     font-size: 16px;
+
+    line-height: 1.7;
   }
 
-  /* OCCASIONS */
 
-  .occasions-section {
-    width: 90%;
-  }
+  /* Occasions */
 
   .section-card {
-    padding: 25px 16px;
+    padding: 25px 18px;
+  }
+
+  .section-card h2,
+  .section-heading h2 {
+    font-size: 28px;
   }
 
   .occasion-list {
@@ -1809,12 +2112,13 @@ textarea {
   }
 
   .occasion-list span {
-    font-size: 14px;
+    padding: 9px 14px;
 
-    padding: 9px 13px;
+    font-size: 14px;
   }
 
-  /* HOW */
+
+  /* How It Works */
 
   .how-section {
     width: 90%;
@@ -1831,13 +2135,11 @@ textarea {
 
     align-items: center;
 
-    text-align: center;
-
-    padding: 25px 18px;
-
     min-height: auto;
 
-    gap: 16px;
+    padding: 25px 20px;
+
+    text-align: center;
   }
 
   .info-icon {
@@ -1849,24 +2151,30 @@ textarea {
 
   .info-content {
     width: 100%;
+
+    padding-top: 0;
   }
 
   .info-card h3 {
+    margin-bottom: 14px;
+
     font-size: 23px;
   }
 
   .info-card li {
-    text-align: left;
-
     font-size: 16px;
+
+    text-align: left;
   }
 
-  /* GENERAL PAGES */
+
+  /* General pages */
 
   .page {
     width: 90%;
 
-    padding: 45px 0 70px;
+    padding-top: 45px;
+    padding-bottom: 70px;
   }
 
   .page-header {
@@ -1874,14 +2182,17 @@ textarea {
   }
 
   .page-header h1 {
-    font-size: clamp(38px, 11vw, 48px);
+    font-size: 42px;
   }
 
   .page-header p:last-child {
     font-size: 16px;
+
+    line-height: 1.7;
   }
 
-  /* MENU */
+
+  /* Menu */
 
   .menu-page {
     width: 90%;
@@ -1894,49 +2205,67 @@ textarea {
   }
 
   .menu-header h1 {
-    font-size: clamp(38px, 11vw, 48px);
+    font-size: 42px;
+
+    letter-spacing: -1px;
   }
 
   .menu-header p {
     font-size: 16px;
+
+    line-height: 1.7;
   }
 
   .menu-card {
-    padding: 24px 20px;
-
     min-height: auto;
+
+    padding: 25px;
+  }
+
+  .menu-list li {
+    font-size: 14px;
   }
 
   .menu-list li span {
     font-size: 16px;
   }
 
+
+  /* Menu occasions */
+
   .occasion-section {
-    padding: 25px 16px;
+    padding: 25px 18px;
   }
 
   .occasion-section h2 {
     font-size: 28px;
   }
 
-  .occasion-section .occasion-list span {
-    font-size: 14px;
+  .occasion-section .occasion-list {
+    gap: 8px;
+  }
 
-    padding: 9px 13px;
+  .occasion-section .occasion-list span {
+    padding: 9px 14px;
+
+    font-size: 14px;
   }
 
   .menu-order-button {
     width: 100%;
   }
 
-  /* ORDER */
+
+  /* Order */
 
   .order-layout {
+    width: 100%;
+
     gap: 22px;
   }
 
   .form-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
 
     gap: 18px;
 
@@ -1956,20 +2285,46 @@ textarea {
   .order-form-card h2,
   .order-summary h2 {
     font-size: 28px;
+
+    line-height: 1.2;
   }
 
   .form-intro {
     font-size: 13px;
+
+    line-height: 1.6;
   }
 
   .form-grid input,
   .form-grid select,
   .form-grid textarea {
-    font-size: 16px !important;
+    width: 100%;
+
+    max-width: 100%;
+    min-width: 0;
+
+    padding: 13px 14px;
+
+    font-size: 16px;
+  }
+
+  .form-grid input,
+  .form-grid select {
+    min-height: 50px;
+  }
+
+  .form-grid textarea {
+    min-height: 120px;
+  }
+
+  .form-grid input[type="date"] {
+    min-height: 50px;
+
+    font-size: 16px;
   }
 
   .order-summary {
-    padding: 24px 18px;
+    padding: 25px 18px;
 
     border-radius: 18px;
   }
@@ -1980,76 +2335,181 @@ textarea {
     align-items: flex-start;
 
     gap: 5px;
+
+    padding: 12px 0;
   }
 
   .summary-item strong {
     text-align: left;
+
+    overflow-wrap: anywhere;
+  }
+
+  .summary-message p {
+    font-size: 13px;
+
+    line-height: 1.6;
   }
 
   .whatsapp-order-button {
-    font-size: 16px;
-
     min-height: 55px;
+
+    padding: 14px 18px;
+
+    font-size: 16px;
   }
 
-  /* CONTACT */
+
+  /* Contact */
 
   .contact-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
 
     gap: 15px;
   }
 
   .contact-card {
-    padding: 21px 18px;
-
     gap: 12px;
+
+    padding: 22px;
   }
 
   .contact-card h2 {
     font-size: 20px;
   }
 
+  .contact-card p {
+    font-size: 12px;
+  }
+
+  .contact-card span {
+    font-size: 11px;
+  }
+
   .contact-cta {
-    padding: 35px 18px;
+    padding: 35px 20px;
   }
 
   .contact-cta h2 {
     font-size: 28px;
   }
 
-  /* FOOTER */
-
-  .footer-container {
-    width: 90%;
-
-    padding: 40px 0 25px;
-  }
-
-  .footer-links {
-    gap: 16px 22px;
+  .contact-cta p {
+    margin-top: 20px;
 
     font-size: 15px;
+
+    line-height: 1.7;
   }
 }
 
+
 /* =========================================================
    SMALL PHONES
-   ========================================================= */
+========================================================= */
 
-@media (max-width: 420px) {
+@media screen and (max-width: 500px) {
 
   .navbar-container {
     width: 92%;
+    min-height: 65px;
   }
 
   .navbar-logo {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
   }
 
-  .navbar-brand {
-    gap: 7px;
+  .brand-name {
+    font-size: 24px;
+  }
+
+  .brand-tagline {
+    font-size: 5.5px;
+
+    letter-spacing: 1.3px;
+  }
+
+  .mobile-menu-button {
+    flex-basis: 40px;
+
+    width: 40px;
+    min-width: 40px;
+
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .mobile-menu-button span {
+    width: 22px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-circle {
+    width: 260px;
+    height: 260px;
+  }
+
+  .mainImage {
+    width: 100%;
+  }
+
+  .about-content h2 {
+    font-size: 32px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+  }
+
+  .occasion-section {
+    padding: 25px 15px;
+  }
+
+  .occasion-section .occasion-list span {
+    padding: 8px 12px;
+
+    font-size: 13px;
+  }
+
+  .info-card {
+    padding: 22px 17px;
+  }
+
+  .menu-card {
+    padding: 22px 18px;
+  }
+
+  .order-form-card {
+    padding: 22px 16px;
+  }
+
+  .order-summary {
+    padding: 22px 16px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+========================================================= */
+
+@media screen and (max-width: 380px) {
+
+  .navbar-container {
+    width: 94%;
+  }
+
+  .navbar-logo {
+    width: 37px;
+    height: 37px;
   }
 
   .brand-name {
@@ -2059,27 +2519,46 @@ textarea {
   .brand-tagline {
     font-size: 5px;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.1px;
   }
 
-  .navbar-button {
-    padding: 9px 12px;
+  .mobile-menu-button {
+    flex-basis: 38px;
 
-    font-size: 12px;
+    width: 38px;
+    min-width: 38px;
+
+    height: 38px;
+    min-height: 38px;
   }
 
-  .navbar-links {
-    gap: 7px 14px;
+  .mobile-menu-button span {
+    width: 21px;
   }
 
-  .navbar-links a {
-    font-size: 16px;
+  .hero h1 {
+    font-size: 38px;
   }
 
-  .about-container,
+  .hero-circle {
+    width: 230px;
+    height: 230px;
+  }
+
+  .about-container {
+    padding: 30px 16px;
+  }
+
+  .about-content h2 {
+    font-size: 29px;
+  }
+
+  .about-content p {
+    font-size: 14px;
+  }
+
   .order-form-card,
   .order-summary {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 20px 14px;
   }
 }
