@@ -1476,9 +1476,9 @@ textarea {
 
     min-height: auto;
 
-    padding: 16px 0;
+    padding: 12px 0;
 
-    gap: 18px;
+    gap: 12px;
 
     flex-wrap: wrap;
   }
@@ -1500,13 +1500,13 @@ textarea {
 
     flex-wrap: wrap;
 
-    gap: 10px 24px;
+    gap: 8px 18px;
 
-    padding-bottom: 4px;
+    padding-bottom: 2px;
   }
 
   .navbar-links a {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .navbar-button {
@@ -1614,40 +1614,46 @@ textarea {
   /* NAVBAR */
 
   .navbar-container {
-    width: 90%;
+    width: 92%;
 
-    padding: 14px 0;
+    padding: 8px 0;
 
-    gap: 12px;
+    gap: 8px;
 
     flex-wrap: wrap;
   }
 
   .navbar-logo {
-    width: 46px;
-    height: 46px;
+    width: 36px;
+    height: 36px;
   }
 
   .navbar-brand {
-    gap: 9px;
+    gap: 8px;
   }
 
   .brand-name {
-    font-size: clamp(23px, 7vw, 29px);
+    font-size: 22px;
   }
 
   .brand-tagline {
-    font-size: 6px;
+    font-size: 7px;
 
-    letter-spacing: 1.3px;
+    letter-spacing: 1.5px;
+
+    margin-top: 2px;
   }
 
   .navbar-button {
     min-width: auto;
 
-    padding: 10px 16px;
+    min-height: 34px;
 
-    font-size: 13px;
+    padding: 6px 14px;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
   }
 
   .navbar-links {
@@ -1657,19 +1663,23 @@ textarea {
 
     width: 100%;
 
-    justify-content: center;
+    justify-content: space-around;
 
     align-items: center;
 
-    gap: 8px 18px;
+    gap: 6px 12px;
 
-    padding-top: 6px;
+    padding-top: 4px;
 
     padding-bottom: 2px;
+
+    border-top: 1px solid var(--rose-light);
+
+    margin-top: 4px;
   }
 
   .navbar-links a {
-    font-size: 17px;
+    font-size: 14px;
   }
 
   /* HERO */
@@ -1677,13 +1687,13 @@ textarea {
   .hero-container {
     width: 90%;
 
-    padding: 45px 0 55px;
+    padding: 35px 0 45px;
 
     gap: 5px;
   }
 
   .hero h1 {
-    font-size: clamp(38px, 11vw, 48px);
+    font-size: clamp(34px, 10vw, 44px);
   }
 
   .hero-description {
@@ -1707,12 +1717,12 @@ textarea {
   }
 
   .hero-image-wrapper {
-    min-height: 330px;
+    min-height: 280px;
   }
 
   .hero-circle {
-    width: min(280px, 72vw);
-    height: min(280px, 72vw);
+    width: min(260px, 70vw);
+    height: min(260px, 70vw);
   }
 
   .mainImage {
@@ -1987,40 +1997,44 @@ textarea {
 @media (max-width: 420px) {
 
   .navbar-container {
-    width: 92%;
+    width: 94%;
+
+    padding: 6px 0;
   }
 
   .navbar-logo {
-    width: 42px;
-    height: 42px;
+    width: 32px;
+    height: 32px;
   }
 
   .navbar-brand {
-    gap: 7px;
+    gap: 6px;
   }
 
   .brand-name {
-    font-size: 22px;
+    font-size: 19px;
   }
 
   .brand-tagline {
-    font-size: 5px;
+    font-size: 6px;
 
     letter-spacing: 1px;
   }
 
   .navbar-button {
-    padding: 9px 12px;
+    padding: 5px 10px;
 
-    font-size: 12px;
+    font-size: 11px;
+
+    min-height: 30px;
   }
 
   .navbar-links {
-    gap: 7px 14px;
+    gap: 4px 8px;
   }
 
   .navbar-links a {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .about-container,
