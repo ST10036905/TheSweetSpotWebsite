@@ -46,6 +46,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -62,11 +63,14 @@ body {
     sans-serif;
 
   -webkit-font-smoothing: antialiased;
+
+  overflow-x: hidden;
 }
 
 #root {
   min-height: 100vh;
   background: var(--white);
+  overflow-x: hidden;
 }
 
 a {
@@ -89,7 +93,7 @@ textarea {
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 
   width: 100%;
 
@@ -97,7 +101,7 @@ textarea {
 
   backdrop-filter: blur(10px);
 
-  border-bottom: 1.5px solid #f88796;
+  border-bottom: 1.5px solid var(--pink);
 }
 
 .navbar-container {
@@ -146,14 +150,8 @@ textarea {
 
 
 /* =========================================================
-   ACTIVE PAGE
+   BRAND
 ========================================================= */
-
-.navbar-links a.active {
-  color: var(--pink);
-
-  font-weight: 600;
-}
 
 .brand-name {
   color: var(--teal);
@@ -195,6 +193,11 @@ textarea {
   white-space: nowrap;
 }
 
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
 .navbar-links {
   display: flex;
 
@@ -229,8 +232,19 @@ textarea {
 }
 
 .navbar-links a:hover {
-  color: var(--rose);
+  color: var(--pink);
 }
+
+.navbar-links a.active {
+  color: var(--pink);
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   NAVBAR BUTTON
+========================================================= */
 
 .navbar-button {
   display: inline-flex;
@@ -278,6 +292,61 @@ textarea {
 
   box-shadow:
     0 8px 20px rgba(201, 121, 125, 0.25);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.mobile-menu-button {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 8px;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 5px;
+
+  flex-shrink: 0;
+}
+
+.mobile-menu-button span {
+  display: block;
+
+  width: 24px;
+
+  height: 2px;
+
+  background: var(--teal);
+
+  border-radius: 2px;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.mobile-navbar-links {
+  display: none;
 }
 
 
@@ -516,7 +585,6 @@ textarea {
 
   padding: 75px 0 65px;
 
-  /* Keeps the sticky navbar from covering the section */
   scroll-margin-top: 100px;
 }
 
@@ -541,25 +609,6 @@ textarea {
   margin: 0 auto;
 
   text-align: center;
-}
-
-.about-label {
-  display: block;
-
-  color: var(--pink);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 15px;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
-
-  font-weight: 500;
 }
 
 .about-content h2 {
@@ -591,19 +640,6 @@ textarea {
   font-weight: 400;
 }
 
-.about-divider {
-  color: var(--pink);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 20px;
-
-  margin: 15px 0 25px;
-}
-
 .about-content p {
   color: var(--muted);
 
@@ -623,51 +659,6 @@ textarea {
   color: var(--teal);
 
   font-weight: 600;
-}
-
-
-/* =========================================================
-   ABOUT RESPONSIVE
-========================================================= */
-
-@media (max-width: 850px) {
-
-  .about-section {
-    padding: 55px 0;
-  }
-
-  .about-container {
-    padding: 40px 35px;
-  }
-
-  .about-content {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-
-  .about-section {
-    width: 90%;
-
-    padding: 45px 0;
-  }
-
-  .about-container {
-    padding: 35px 22px;
-
-    border-radius: 20px;
-  }
-
-  .about-content h2 {
-    font-size: 36px;
-  }
-
-  .about-content p {
-    font-size: 16px;
-
-    line-height: 1.7;
-  }
 }
 
 
@@ -839,6 +830,8 @@ textarea {
 
   box-shadow:
     0 8px 30px rgba(50, 70, 80, 0.025);
+
+  min-width: 0;
 }
 
 .rose-card {
@@ -869,7 +862,7 @@ textarea {
 
   border-radius: 50%;
 
-  border: 1px solid #f88796;
+  border: 1px solid var(--pink);
 
   color: var(--pink);
 
@@ -893,10 +886,12 @@ textarea {
 
 .info-content {
   padding-top: 2px;
+
+  min-width: 0;
 }
 
 .info-card h3 {
-  color: #f88796;
+  color: var(--pink);
 
   font-family:
     "Cormorant Garamond",
@@ -952,7 +947,7 @@ textarea {
 
   top: 2px;
 
-  color: #f88796;
+  color: var(--pink);
 
   font-family: Arial, sans-serif;
 
@@ -983,7 +978,7 @@ textarea {
 }
 
 .page-header h1 {
-  color: #f88796;
+  color: var(--pink);
 
   font-family:
     "Cormorant Garamond",
@@ -1041,7 +1036,7 @@ textarea {
 }
 
 .menu-header h1 {
-  color: #f88796;
+  color: var(--pink);
 
   font-family:
     "Cormorant Garamond",
@@ -1057,7 +1052,7 @@ textarea {
 }
 
 .menu-header .heart-divider {
-  color: #f88796;
+  color: var(--pink);
 
   font-size: 18px;
 
@@ -1112,6 +1107,8 @@ textarea {
 
   min-height: 235px;
 
+  min-width: 0;
+
   box-shadow:
     0 8px 30px rgba(0, 0, 0, 0.045);
 
@@ -1159,7 +1156,7 @@ textarea {
 }
 
 .pink-label {
-  background: #f88796;
+  background: var(--pink);
 
   color: #ffffff;
 }
@@ -1203,6 +1200,8 @@ textarea {
   font-weight: 400;
 
   line-height: 1.5;
+
+  min-width: 0;
 }
 
 .menu-list li svg {
@@ -1212,11 +1211,11 @@ textarea {
 
   height: 15px;
 
-  color: #f88796;
+  color: var(--pink);
 
-  fill: #f88796;
+  fill: var(--pink);
 
-  stroke: #f88796;
+  stroke: var(--pink);
 
   stroke-width: 2;
 }
@@ -1258,7 +1257,7 @@ textarea {
 }
 
 .occasion-section h2 {
-  color: #f88796;
+  color: var(--pink);
 
   font-family:
     "Cormorant Garamond",
@@ -1300,7 +1299,7 @@ textarea {
 
   background: #fff8f7;
 
-  color: #f88796;
+  color: var(--pink);
 
   font-family:
     "Cormorant Garamond",
@@ -1367,7 +1366,7 @@ textarea {
 }
 
 .menu-order-button:hover {
-  background: #f88796;
+  background: var(--pink);
 
   transform: translateY(-2px);
 
@@ -1390,6 +1389,8 @@ textarea {
   width: 100%;
 
   align-items: stretch;
+
+  min-width: 0;
 }
 
 
@@ -1399,6 +1400,8 @@ textarea {
 
 .order-form-card {
   width: 100%;
+
+  min-width: 0;
 
   background: #ffffff;
 
@@ -1448,12 +1451,18 @@ textarea {
   gap: 22px 24px;
 
   margin-top: 30px;
+
+  width: 100%;
+
+  min-width: 0;
 }
 
 .form-grid label {
   display: block;
 
   min-width: 0;
+
+  width: 100%;
 }
 
 .form-grid label span {
@@ -1479,6 +1488,10 @@ textarea {
 .form-grid select,
 .form-grid textarea {
   width: 100%;
+
+  max-width: 100%;
+
+  min-width: 0;
 
   border: 2px solid var(--border);
 
@@ -1522,6 +1535,29 @@ textarea {
 
   box-shadow:
     0 0 0 3px rgba(248, 135, 150, 0.12);
+}
+
+
+/* =========================================================
+   DATE INPUT
+========================================================= */
+
+.form-grid input[type="date"] {
+  width: 100%;
+
+  max-width: 100%;
+
+  min-width: 0;
+
+  min-height: 52px;
+
+  font-size: 16px;
+
+  color: var(--teal-dark);
+
+  -webkit-appearance: none;
+
+  appearance: none;
 }
 
 
@@ -1616,6 +1652,8 @@ textarea {
 .order-summary {
   width: 100%;
 
+  min-width: 0;
+
   position: static;
 
   background: #ffffff;
@@ -1668,6 +1706,8 @@ textarea {
     1px solid rgba(53, 101, 117, 0.12);
 
   font-size: 14px;
+
+  min-width: 0;
 }
 
 .summary-item span {
@@ -1722,9 +1762,11 @@ textarea {
   display: grid;
 
   grid-template-columns:
-    repeat(2, 1fr);
+    repeat(2, minmax(0, 1fr));
 
   gap: 20px;
+
+  min-width: 0;
 }
 
 .contact-card {
@@ -1735,6 +1777,8 @@ textarea {
   gap: 15px;
 
   padding: 28px;
+
+  min-width: 0;
 
   background: #ffffff;
 
@@ -1780,7 +1824,7 @@ textarea {
 
   border: 1px solid rgba(201, 121, 125, 0.45);
 
-  color: #f88796;
+  color: var(--pink);
 
   background: #fffafa;
 }
@@ -1822,7 +1866,7 @@ textarea {
 .contact-card span {
   display: block;
 
-  color: #f88796;
+  color: var(--pink);
 
   font-size: 12px;
 
@@ -1878,15 +1922,91 @@ textarea {
 
 @media (max-width: 850px) {
 
+  /* ------------------------------
+     NAVIGATION
+  ------------------------------ */
+
   .navbar-links {
     display: none;
+  }
+
+  .navbar-button {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: flex;
   }
 
   .navbar-container {
     width: 92%;
 
     min-height: 72px;
+
+    gap: 15px;
   }
+
+  .mobile-navbar-links {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+
+    width: 100%;
+
+    padding: 22px 20px 28px;
+
+    background: #ffffff;
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1.5px solid var(--pink);
+  }
+
+  .mobile-navbar-links a {
+    color: var(--teal);
+
+    font-family:
+      "Cormorant Garamond",
+      Georgia,
+      serif;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+  }
+
+  .mobile-navbar-links a:hover {
+    color: var(--pink);
+  }
+
+  .mobile-contact-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: min(220px, 100%);
+
+    padding: 12px 20px;
+
+    border-radius: 999px;
+
+    background: var(--pink);
+
+    color: #ffffff !important;
+  }
+
+
+  /* ------------------------------
+     HERO
+  ------------------------------ */
 
   .hero-container {
     grid-template-columns: 1fr;
@@ -1894,10 +2014,16 @@ textarea {
     text-align: center;
 
     padding: 55px 0;
+
+    min-height: auto;
+
+    gap: 20px;
   }
 
   .hero-content {
     margin: auto;
+
+    max-width: 650px;
   }
 
   .hero-description {
@@ -1926,9 +2052,36 @@ textarea {
     width: min(90%, 430px);
   }
 
+
+  /* ------------------------------
+     ABOUT
+  ------------------------------ */
+
+  .about-section {
+    padding: 55px 0;
+  }
+
+  .about-container {
+    padding: 40px 35px;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+
+
+  /* ------------------------------
+     HOW IT WORKS
+  ------------------------------ */
+
   .how-grid {
     grid-template-columns: 1fr;
   }
+
+
+  /* ------------------------------
+     PAGES
+  ------------------------------ */
 
   .page {
     padding-top: 50px;
@@ -1938,6 +2091,11 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+
+  /* ------------------------------
+     ORDER
+  ------------------------------ */
+
   .order-form-card {
     padding: 30px;
   }
@@ -1945,6 +2103,11 @@ textarea {
   .order-summary {
     padding: 30px;
   }
+
+
+  /* ------------------------------
+     CONTACT
+  ------------------------------ */
 
   .contact-grid {
     grid-template-columns: 1fr;
@@ -1958,36 +2121,87 @@ textarea {
 
 @media (max-width: 600px) {
 
+  /* ------------------------------
+     NAVBAR
+  ------------------------------ */
+
   .navbar-container {
     width: 90%;
+
+    min-height: 68px;
+
+    gap: 10px;
   }
 
   .navbar-logo {
-    width: 48px;
+    width: 44px;
 
-    height: 48px;
+    height: 44px;
   }
+
+  .navbar-brand {
+    gap: 9px;
+
+    min-width: 0;
+  }
+
+  .navbar-brand-text {
+    display: flex;
+
+    min-width: 0;
+  }
+
+  .brand-name {
+    font-size: 27px;
+  }
+
+  .brand-tagline {
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    margin-top: 4px;
+  }
+
+  .mobile-menu-button {
+    width: 42px;
+
+    height: 42px;
+  }
+
+
+  /* ------------------------------
+     HERO
+  ------------------------------ */
 
   .hero-container {
     width: 90%;
 
     padding: 45px 0;
+
+    gap: 5px;
   }
 
   .hero h1 {
     font-size: 45px;
+
+    line-height: 1.05;
   }
 
   .hero-description {
-    font-size: 15px;
+    font-size: 16px;
 
     line-height: 1.7;
+
+    margin-top: 22px;
   }
 
   .hero-buttons {
     flex-direction: column;
 
     width: 100%;
+
+    margin-top: 28px;
   }
 
   .btn {
@@ -1996,6 +2210,8 @@ textarea {
 
   .hero-image-wrapper {
     min-height: 330px;
+
+    margin-top: 10px;
   }
 
   .hero-circle {
@@ -2008,6 +2224,40 @@ textarea {
     width: 95%;
   }
 
+
+  /* ------------------------------
+     ABOUT
+  ------------------------------ */
+
+  .about-section {
+    width: 90%;
+
+    padding: 45px 0;
+  }
+
+  .about-container {
+    padding: 35px 22px;
+
+    border-radius: 20px;
+  }
+
+  .about-content h2 {
+    font-size: 34px;
+
+    line-height: 1.15;
+  }
+
+  .about-content p {
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+
+  /* ------------------------------
+     OCCASIONS
+  ------------------------------ */
+
   .section-card {
     padding: 25px 18px;
   }
@@ -2017,13 +2267,73 @@ textarea {
     font-size: 28px;
   }
 
+  .occasion-list {
+    gap: 8px;
+  }
+
+  .occasion-list span {
+    font-size: 14px;
+
+    padding: 9px 14px;
+  }
+
+
+  /* ------------------------------
+     HOW IT WORKS
+  ------------------------------ */
+
   .how-section {
-    padding: 65px 0;
+    width: 90%;
+
+    padding: 55px 0 65px;
+  }
+
+  .section-heading {
+    margin-bottom: 35px;
   }
 
   .info-card {
-    padding: 22px;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px 20px;
+
+    min-height: auto;
   }
+
+  .info-icon {
+    width: 60px;
+
+    height: 60px;
+
+    font-size: 24px;
+  }
+
+  .info-content {
+    width: 100%;
+
+    padding-top: 0;
+  }
+
+  .info-card h3 {
+    font-size: 23px;
+
+    margin-bottom: 14px;
+  }
+
+  .info-card li {
+    text-align: left;
+
+    font-size: 16px;
+  }
+
+
+  /* ------------------------------
+     GENERAL PAGE
+  ------------------------------ */
 
   .page {
     width: 90%;
@@ -2041,10 +2351,16 @@ textarea {
     font-size: 42px;
   }
 
+  .page-header p:last-child {
+    font-size: 16px;
 
-  /* =======================================================
+    line-height: 1.7;
+  }
+
+
+  /* ------------------------------
      MENU
-  ======================================================= */
+  ------------------------------ */
 
   .menu-page {
     width: 90%;
@@ -2063,7 +2379,9 @@ textarea {
   }
 
   .menu-header p {
-    font-size: 14px;
+    font-size: 16px;
+
+    line-height: 1.7;
   }
 
   .menu-card {
@@ -2076,10 +2394,14 @@ textarea {
     font-size: 14px;
   }
 
+  .menu-list li span {
+    font-size: 16px;
+  }
 
-  /* =======================================================
+
+  /* ------------------------------
      MENU OCCASIONS
-  ======================================================= */
+  ------------------------------ */
 
   .occasion-section {
     padding: 25px 18px;
@@ -2104,14 +2426,22 @@ textarea {
   }
 
 
-  /* =======================================================
+  /* ------------------------------
      ORDER
-  ======================================================= */
+  ------------------------------ */
+
+  .order-layout {
+    width: 100%;
+
+    gap: 22px;
+  }
 
   .form-grid {
     grid-template-columns: 1fr;
 
     gap: 18px;
+
+    margin-top: 25px;
   }
 
   .full-width {
@@ -2119,16 +2449,61 @@ textarea {
   }
 
   .order-form-card {
-    padding: 24px 20px;
-  }
+    padding: 24px 18px;
 
-  .order-summary {
-    padding: 25px 20px;
+    border-radius: 18px;
   }
 
   .order-form-card h2,
   .order-summary h2 {
     font-size: 28px;
+
+    line-height: 1.2;
+  }
+
+  .form-intro {
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+  .form-grid input,
+  .form-grid select,
+  .form-grid textarea {
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+
+    font-size: 16px;
+
+    padding: 13px 14px;
+  }
+
+  .form-grid input,
+  .form-grid select {
+    min-height: 50px;
+  }
+
+  .form-grid textarea {
+    min-height: 120px;
+  }
+
+  .form-grid input[type="date"] {
+    width: 100%;
+
+    max-width: 100%;
+
+    font-size: 16px;
+
+    min-height: 50px;
+  }
+
+  .order-summary {
+    padding: 25px 18px;
+
+    border-radius: 18px;
   }
 
   .summary-item {
@@ -2137,23 +2512,57 @@ textarea {
     align-items: flex-start;
 
     gap: 5px;
+
+    padding: 12px 0;
   }
 
   .summary-item strong {
     text-align: left;
+
+    overflow-wrap: anywhere;
+  }
+
+  .summary-message p {
+    font-size: 13px;
+
+    line-height: 1.6;
   }
 
   .whatsapp-order-button {
     font-size: 16px;
+
+    min-height: 55px;
+
+    padding: 14px 18px;
   }
 
 
-  /* =======================================================
+  /* ------------------------------
      CONTACT
-  ======================================================= */
+  ------------------------------ */
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
 
   .contact-card {
     padding: 22px;
+
+    gap: 12px;
+  }
+
+  .contact-card h2 {
+    font-size: 20px;
+  }
+
+  .contact-card p {
+    font-size: 12px;
+  }
+
+  .contact-card span {
+    font-size: 11px;
   }
 
   .contact-cta {
@@ -2162,6 +2571,14 @@ textarea {
 
   .contact-cta h2 {
     font-size: 28px;
+  }
+
+  .contact-cta p {
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-top: 20px;
   }
 }
 
@@ -2172,16 +2589,50 @@ textarea {
 
 @media (max-width: 500px) {
 
-  .navbar-button {
-    display: none;
+  .navbar-container {
+    width: 92%;
+
+    min-height: 65px;
   }
 
-  .navbar-brand-text {
-    display: none;
+  .navbar-logo {
+    width: 42px;
+
+    height: 42px;
+  }
+
+  .navbar-brand {
+    gap: 8px;
+  }
+
+  .brand-name {
+    font-size: 25px;
+  }
+
+  .brand-tagline {
+    font-size: 6px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .mobile-menu-button {
+    width: 40px;
+
+    height: 40px;
+
+    padding: 6px;
+  }
+
+  .mobile-menu-button span {
+    width: 22px;
   }
 
   .hero h1 {
     font-size: 42px;
+  }
+
+  .hero-description {
+    font-size: 15px;
   }
 
   .hero-circle {
@@ -2194,6 +2645,14 @@ textarea {
     width: 100%;
   }
 
+  .about-content h2 {
+    font-size: 32px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+  }
+
   .occasion-section {
     padding: 25px 15px;
   }
@@ -2202,6 +2661,79 @@ textarea {
     font-size: 13px;
 
     padding: 8px 12px;
+  }
+
+  .info-card {
+    padding: 22px 17px;
+  }
+
+  .menu-card {
+    padding: 22px 18px;
+  }
+
+  .order-form-card {
+    padding: 22px 16px;
+  }
+
+  .order-summary {
+    padding: 22px 16px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .brand-name {
+    font-size: 23px;
+  }
+
+  .brand-tagline {
+    font-size: 5.5px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .navbar-logo {
+    width: 39px;
+
+    height: 39px;
+  }
+
+  .mobile-menu-button {
+    width: 38px;
+
+    height: 38px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero-circle {
+    width: 230px;
+
+    height: 230px;
+  }
+
+  .about-container {
+    padding: 30px 16px;
+  }
+
+  .about-content h2 {
+    font-size: 29px;
+  }
+
+  .about-content p {
+    font-size: 14px;
+  }
+
+  .order-form-card,
+  .order-summary {
+    padding: 20px 14px;
   }
 }
 
