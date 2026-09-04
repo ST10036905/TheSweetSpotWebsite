@@ -1490,6 +1490,8 @@ textarea {
   .navbar-links {
     order: 3;
 
+    display: flex;
+
     width: 100%;
 
     margin-left: 0;
@@ -1617,6 +1619,8 @@ textarea {
     padding: 14px 0;
 
     gap: 12px;
+
+    flex-wrap: wrap;
   }
 
   .navbar-logo {
@@ -1647,7 +1651,19 @@ textarea {
   }
 
   .navbar-links {
+    order: 3;
+
+    display: flex;
+
+    width: 100%;
+
+    justify-content: center;
+
+    align-items: center;
+
     gap: 8px 18px;
+
+    padding-top: 6px;
 
     padding-bottom: 2px;
   }
@@ -1896,7 +1912,7 @@ textarea {
   .form-grid input,
   .form-grid select,
   .form-grid textarea {
-    font-size: 16px;
+    font-size: 16px !important;
   }
 
   .order-summary {
