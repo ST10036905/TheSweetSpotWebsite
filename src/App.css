@@ -13,7 +13,6 @@
 :root {
   --white: #ffffff;
   --cream: #fffaf8;
-
   --dusty-white: #f7f3ef;
 
   --teal: #356575;
@@ -106,52 +105,52 @@ textarea {
 
 .navbar-container {
   width: min(1525px, 92%);
-
   min-height: 82px;
 
-  margin: auto;
+  margin: 0 auto;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
   gap: 40px;
 }
 
+
+/* =========================================================
+   NAVBAR BRAND
+========================================================= */
+
 .navbar-brand {
   display: flex;
-
   align-items: center;
 
   gap: 13px;
 
   flex-shrink: 0;
+
+  text-decoration: none;
+
+  min-width: 0;
 }
 
 .navbar-logo {
   width: 54px;
-
   height: 54px;
 
   object-fit: contain;
-
   display: block;
+
+  flex-shrink: 0;
 }
 
 .navbar-brand-text {
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
+
+  min-width: 0;
 }
-
-
-/* =========================================================
-   BRAND
-========================================================= */
 
 .brand-name {
   color: var(--teal);
@@ -159,7 +158,6 @@ textarea {
   font-family: "Great Vibes", cursive;
 
   font-size: 32px;
-
   font-weight: 400;
 
   letter-spacing: 0;
@@ -181,7 +179,6 @@ textarea {
     sans-serif;
 
   font-size: 9px;
-
   font-weight: 500;
 
   letter-spacing: 3px;
@@ -202,7 +199,6 @@ textarea {
   display: flex;
 
   align-items: center;
-
   justify-content: flex-end;
 
   gap: 34px;
@@ -228,6 +224,8 @@ textarea {
 
   white-space: nowrap;
 
+  text-decoration: none;
+
   transition: color 0.2s ease;
 }
 
@@ -237,8 +235,6 @@ textarea {
 
 .navbar-links a.active {
   color: var(--pink);
-
-  font-weight: 600;
 }
 
 
@@ -250,37 +246,37 @@ textarea {
   display: inline-flex;
 
   align-items: center;
-
   justify-content: center;
 
   flex-shrink: 0;
 
-  background: var(--pink);
-
-  color: white;
+  min-width: 124px;
+  min-height: 44px;
 
   padding: 12px 21px;
 
-  min-width: 124px;
-
-  min-height: 44px;
-
   border-radius: 999px;
+
+  background: var(--pink);
+
+  color: #ffffff;
 
   font-family:
     "Cormorant Garamond",
     Georgia,
     serif;
 
-  letter-spacing: 1px;
-
   font-size: 14px;
 
   font-weight: 500;
 
+  letter-spacing: 1px;
+
   line-height: 1;
 
   white-space: nowrap;
+
+  text-decoration: none;
 
   transition:
     transform 0.2s ease,
@@ -298,6 +294,11 @@ textarea {
 /* =========================================================
    MOBILE MENU BUTTON
 ========================================================= */
+
+/*
+   Hidden on desktop.
+   Becomes visible below 850px.
+*/
 
 .mobile-menu-button {
   display: none;
@@ -322,13 +323,14 @@ textarea {
   gap: 5px;
 
   flex-shrink: 0;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-menu-button span {
   display: block;
 
   width: 24px;
-
   height: 2px;
 
   background: var(--teal);
@@ -344,6 +346,11 @@ textarea {
 /* =========================================================
    MOBILE NAVIGATION
 ========================================================= */
+
+/*
+   Important:
+   The menu is hidden until React sets {menuOpen}.
+*/
 
 .mobile-navbar-links {
   display: none;
@@ -447,7 +454,6 @@ textarea {
   display: inline-flex;
 
   align-items: center;
-
   justify-content: center;
 
   padding: 14px 24px;
@@ -527,7 +533,6 @@ textarea {
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   overflow: visible;
@@ -537,7 +542,6 @@ textarea {
   position: absolute;
 
   width: 460px;
-
   height: 460px;
 
   border-radius: 50%;
@@ -766,11 +770,6 @@ textarea {
   padding: 70px 0 90px;
 }
 
-
-/* =========================================================
-   SECTION TITLE
-========================================================= */
-
 .section-heading {
   text-align: center;
 
@@ -849,7 +848,6 @@ textarea {
 
 .info-icon {
   width: 70px;
-
   height: 70px;
 
   flex-shrink: 0;
@@ -857,7 +855,6 @@ textarea {
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   border-radius: 50%;
@@ -916,7 +913,6 @@ textarea {
   list-style: none;
 
   margin: 0;
-
   padding: 0;
 }
 
@@ -944,7 +940,6 @@ textarea {
   position: absolute;
 
   left: 0;
-
   top: 2px;
 
   color: var(--pink);
@@ -1021,11 +1016,6 @@ textarea {
 
   padding: 75px 0 100px;
 }
-
-
-/* =========================================================
-   MENU HEADER
-========================================================= */
 
 .menu-header {
   max-width: 680px;
@@ -1208,7 +1198,6 @@ textarea {
   flex-shrink: 0;
 
   width: 15px;
-
   height: 15px;
 
   color: var(--pink);
@@ -1554,10 +1543,6 @@ textarea {
   font-size: 16px;
 
   color: var(--teal-dark);
-
-  -webkit-appearance: none;
-
-  appearance: none;
 }
 
 
@@ -1809,7 +1794,6 @@ textarea {
 
 .contact-icon {
   width: 45px;
-
   height: 45px;
 
   flex-shrink: 0;
@@ -1817,7 +1801,6 @@ textarea {
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   border-radius: 50%;
@@ -1831,7 +1814,6 @@ textarea {
 
 .contact-icon svg {
   width: 20px;
-
   height: 20px;
 }
 
@@ -1917,25 +1899,27 @@ textarea {
 
 
 /* =========================================================
-   TABLET
+   TABLET + MOBILE NAVIGATION
 ========================================================= */
 
 @media (max-width: 850px) {
 
-  /* ------------------------------
-     NAVIGATION
-  ------------------------------ */
+  /*
+     IMPORTANT:
+     Desktop navigation disappears.
+     Hamburger appears.
+  */
 
   .navbar-links {
-    display: none;
+    display: none !important;
   }
 
   .navbar-button {
-    display: none;
+    display: none !important;
   }
 
   .mobile-menu-button {
-    display: flex;
+    display: flex !important;
   }
 
   .navbar-container {
@@ -1945,6 +1929,11 @@ textarea {
 
     gap: 15px;
   }
+
+  /*
+     React only renders this element when menuOpen === true.
+     When rendered, it MUST display.
+  */
 
   .mobile-navbar-links {
     display: flex;
@@ -1967,6 +1956,8 @@ textarea {
   }
 
   .mobile-navbar-links a {
+    display: block;
+
     color: var(--teal);
 
     font-family:
@@ -1974,11 +1965,15 @@ textarea {
       Georgia,
       serif;
 
-    font-size: 20px;
+    font-size: 21px;
 
     font-weight: 600;
 
     letter-spacing: 0.5px;
+
+    line-height: 1;
+
+    text-decoration: none;
   }
 
   .mobile-navbar-links a:hover {
@@ -1986,7 +1981,7 @@ textarea {
   }
 
   .mobile-contact-button {
-    display: inline-flex;
+    display: inline-flex !important;
 
     align-items: center;
 
@@ -2004,9 +1999,9 @@ textarea {
   }
 
 
-  /* ------------------------------
-     HERO
-  ------------------------------ */
+  /* =======================================================
+     HERO — TABLET
+  ======================================================= */
 
   .hero-container {
     grid-template-columns: 1fr;
@@ -2053,9 +2048,9 @@ textarea {
   }
 
 
-  /* ------------------------------
-     ABOUT
-  ------------------------------ */
+  /* =======================================================
+     ABOUT — TABLET
+  ======================================================= */
 
   .about-section {
     padding: 55px 0;
@@ -2070,18 +2065,18 @@ textarea {
   }
 
 
-  /* ------------------------------
-     HOW IT WORKS
-  ------------------------------ */
+  /* =======================================================
+     HOW IT WORKS — TABLET
+  ======================================================= */
 
   .how-grid {
     grid-template-columns: 1fr;
   }
 
 
-  /* ------------------------------
-     PAGES
-  ------------------------------ */
+  /* =======================================================
+     PAGES — TABLET
+  ======================================================= */
 
   .page {
     padding-top: 50px;
@@ -2092,9 +2087,9 @@ textarea {
   }
 
 
-  /* ------------------------------
-     ORDER
-  ------------------------------ */
+  /* =======================================================
+     ORDER — TABLET
+  ======================================================= */
 
   .order-form-card {
     padding: 30px;
@@ -2105,9 +2100,9 @@ textarea {
   }
 
 
-  /* ------------------------------
-     CONTACT
-  ------------------------------ */
+  /* =======================================================
+     CONTACT — TABLET
+  ======================================================= */
 
   .contact-grid {
     grid-template-columns: 1fr;
@@ -2121,12 +2116,12 @@ textarea {
 
 @media (max-width: 600px) {
 
-  /* ------------------------------
+  /* =======================================================
      NAVBAR
-  ------------------------------ */
+  ======================================================= */
 
   .navbar-container {
-    width: 90%;
+    width: 92%;
 
     min-height: 68px;
 
@@ -2164,15 +2159,47 @@ textarea {
   }
 
   .mobile-menu-button {
+    display: flex !important;
+
     width: 42px;
 
     height: 42px;
+
+    padding: 6px;
+  }
+
+  .mobile-menu-button span {
+    width: 22px;
+
+    height: 2px;
+  }
+
+  /*
+     Make the opened mobile menu easy to tap.
+  */
+
+  .mobile-navbar-links {
+    gap: 18px;
+
+    padding: 22px 18px 28px;
+  }
+
+  .mobile-navbar-links a {
+    font-size: 20px;
+
+    padding: 4px 10px;
+  }
+
+  .mobile-contact-button {
+    width: min(220px, 90%);
+
+    padding: 13px 20px !important;
   }
 
 
-  /* ------------------------------
+  /* =======================================================
      HERO
-  ------------------------------ */
+  ======================================================= */
 
   .hero-container {
     width: 90%;
@@ -2225,9 +2252,9 @@ textarea {
   }
 
 
-  /* ------------------------------
+  /* =======================================================
      ABOUT
-  ------------------------------ */
+  ======================================================= */
 
   .about-section {
     width: 90%;
@@ -2254,9 +2281,9 @@ textarea {
   }
 
 
-  /* ------------------------------
+  /* =======================================================
      OCCASIONS
-  ------------------------------ */
+  ======================================================= */
 
   .section-card {
     padding: 25px 18px;
@@ -2278,9 +2305,9 @@ textarea {
   }
 
 
-  /* ------------------------------
+  /* =======================================================
      HOW IT WORKS
-  ------------------------------ */
+  ======================================================= */
 
   .how-section {
     width: 90%;
@@ -2331,9 +2358,9 @@ textarea {
   }
 
 
-  /* ------------------------------
+  /* =======================================================
      GENERAL PAGE
-  ------------------------------ */
+  ======================================================= */
 
   .page {
     width: 90%;
@@ -2358,9 +2385,9 @@ textarea {
   }
 
 
-  /* ------------------------------
+  /* =======================================================
      MENU
-  ------------------------------ */
+  ======================================================= */
 
   .menu-page {
     width: 90%;
@@ -2399,9 +2426,9 @@ textarea {
   }
 
 
-  /* ------------------------------
+  /* =======================================================
      MENU OCCASIONS
-  ------------------------------ */
+  ======================================================= */
 
   .occasion-section {
     padding: 25px 18px;
@@ -2426,9 +2453,9 @@ textarea {
   }
 
 
-  /* ------------------------------
+  /* =======================================================
      ORDER
-  ------------------------------ */
+  ======================================================= */
 
   .order-layout {
     width: 100%;
@@ -2537,9 +2564,9 @@ textarea {
   }
 
 
-  /* ------------------------------
+  /* =======================================================
      CONTACT
-  ------------------------------ */
+  ======================================================= */
 
   .contact-grid {
     grid-template-columns: 1fr;
@@ -2613,18 +2640,30 @@ textarea {
     font-size: 6px;
 
     letter-spacing: 1.8px;
+
+    margin-top: 3px;
   }
 
   .mobile-menu-button {
+    display: flex !important;
+
     width: 40px;
 
     height: 40px;
-
-    padding: 6px;
   }
 
   .mobile-menu-button span {
     width: 22px;
+  }
+
+  .mobile-navbar-links {
+    gap: 17px;
+
+    padding: 20px 16px 25px;
+  }
+
+  .mobile-navbar-links a {
+    font-size: 20px;
   }
 
   .hero h1 {
@@ -2687,6 +2726,16 @@ textarea {
 
 @media (max-width: 380px) {
 
+  .navbar-container {
+    width: 94%;
+  }
+
+  .navbar-logo {
+    width: 39px;
+
+    height: 39px;
+  }
+
   .brand-name {
     font-size: 23px;
   }
@@ -2697,16 +2746,24 @@ textarea {
     letter-spacing: 1.5px;
   }
 
-  .navbar-logo {
-    width: 39px;
-
-    height: 39px;
-  }
-
   .mobile-menu-button {
     width: 38px;
 
     height: 38px;
+  }
+
+  .mobile-menu-button span {
+    width: 21px;
+  }
+
+  .mobile-navbar-links {
+    gap: 15px;
+
+    padding: 18px 14px 23px;
+  }
+
+  .mobile-navbar-links a {
+    font-size: 19px;
   }
 
   .hero h1 {
