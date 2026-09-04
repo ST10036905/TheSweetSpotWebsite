@@ -8,8 +8,8 @@ function Navbar() {
   const handleAboutClick = (e) => {
     e.preventDefault();
 
-    // If already on the home page, scroll directly to About
     if (location.pathname === "/") {
+      // Already on Home — scroll directly to About
       const aboutSection = document.getElementById("about");
 
       if (aboutSection) {
@@ -18,24 +18,10 @@ function Navbar() {
           block: "start",
         });
       }
-
-      return;
+    } else {
+      // Go to Home and tell React that we want the About section
+      navigate("/#about");
     }
-
-    // If on another page, go home first
-    navigate("/");
-
-    // Wait for the Home page to render, then scroll to About
-    setTimeout(() => {
-      const aboutSection = document.getElementById("about");
-
-      if (aboutSection) {
-        aboutSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }, 100);
   };
 
   return (
