@@ -20,13 +20,17 @@ function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <Link to="/order" className="btn btn-primary">
-              Place an order
-            </Link>
+
 
             <Link to="/menu" className="btn btn-secondary">
               View menu
             </Link>
+            
+            <Link to="/order" className="btn btn-primary">
+              Place an order
+            </Link>
+
+            
           </div>
 
         </div>
