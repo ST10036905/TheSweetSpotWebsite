@@ -295,11 +295,6 @@ textarea {
    MOBILE MENU BUTTON
 ========================================================= */
 
-/*
-   Hidden on desktop.
-   Becomes visible below 850px.
-*/
-
 .mobile-menu-button {
   display: none;
 
@@ -346,11 +341,6 @@ textarea {
 /* =========================================================
    MOBILE NAVIGATION
 ========================================================= */
-
-/*
-   Important:
-   The menu is hidden until React sets {menuOpen}.
-*/
 
 .mobile-navbar-links {
   display: none;
@@ -1899,17 +1889,12 @@ textarea {
 
 
 /* =========================================================
-   TABLET + MOBILE NAVIGATION
+   TABLET
 ========================================================= */
 
 @media (max-width: 850px) {
 
-  /*
-     IMPORTANT:
-     Desktop navigation disappears.
-     Hamburger appears.
-  */
-
+  /* Desktop navigation hidden */
   .navbar-links {
     display: none !important;
   }
@@ -1918,6 +1903,7 @@ textarea {
     display: none !important;
   }
 
+  /* Hamburger visible */
   .mobile-menu-button {
     display: flex !important;
   }
@@ -1930,11 +1916,7 @@ textarea {
     gap: 15px;
   }
 
-  /*
-     React only renders this element when menuOpen === true.
-     When rendered, it MUST display.
-  */
-
+  /* Mobile menu */
   .mobile-navbar-links {
     display: flex;
 
@@ -2115,91 +2097,6 @@ textarea {
 ========================================================= */
 
 @media (max-width: 600px) {
-
-  /* =======================================================
-     NAVBAR
-  ======================================================= */
-
-  .navbar-container {
-    width: 92%;
-
-    min-height: 68px;
-
-    gap: 10px;
-  }
-
-  .navbar-logo {
-    width: 44px;
-
-    height: 44px;
-  }
-
-  .navbar-brand {
-    gap: 9px;
-
-    min-width: 0;
-  }
-
-  .navbar-brand-text {
-    display: flex;
-
-    min-width: 0;
-  }
-
-  .brand-name {
-    font-size: 27px;
-  }
-
-  .brand-tagline {
-    font-size: 7px;
-
-    letter-spacing: 2px;
-
-    margin-top: 4px;
-  }
-
-  .mobile-menu-button {
-    display: flex !important;
-
-    width: 42px;
-
-    height: 42px;
-
-    padding: 6px;
-  }
-
-  .mobile-menu-button span {
-    width: 22px;
-
-    height: 2px;
-  }
-
-  /*
-     Make the opened mobile menu easy to tap.
-  */
-
-  .mobile-navbar-links {
-    gap: 18px;
-
-    padding: 22px 18px 28px;
-  }
-
-  .mobile-navbar-links a {
-    font-size: 20px;
-
-    padding: 4px 10px;
-  }
-
-  .mobile-contact-button {
-    width: min(220px, 90%);
-
-    padding: 13px 20px !important;
-  }
-
-
-  /* =======================================================
-     HERO
-  ======================================================= */
 
   .hero-container {
     width: 90%;
@@ -2616,56 +2513,6 @@ textarea {
 
 @media (max-width: 500px) {
 
-  .navbar-container {
-    width: 92%;
-
-    min-height: 65px;
-  }
-
-  .navbar-logo {
-    width: 42px;
-
-    height: 42px;
-  }
-
-  .navbar-brand {
-    gap: 8px;
-  }
-
-  .brand-name {
-    font-size: 25px;
-  }
-
-  .brand-tagline {
-    font-size: 6px;
-
-    letter-spacing: 1.8px;
-
-    margin-top: 3px;
-  }
-
-  .mobile-menu-button {
-    display: flex !important;
-
-    width: 40px;
-
-    height: 40px;
-  }
-
-  .mobile-menu-button span {
-    width: 22px;
-  }
-
-  .mobile-navbar-links {
-    gap: 17px;
-
-    padding: 20px 16px 25px;
-  }
-
-  .mobile-navbar-links a {
-    font-size: 20px;
-  }
-
   .hero h1 {
     font-size: 42px;
   }
@@ -2725,46 +2572,6 @@ textarea {
 ========================================================= */
 
 @media (max-width: 380px) {
-
-  .navbar-container {
-    width: 94%;
-  }
-
-  .navbar-logo {
-    width: 39px;
-
-    height: 39px;
-  }
-
-  .brand-name {
-    font-size: 23px;
-  }
-
-  .brand-tagline {
-    font-size: 5.5px;
-
-    letter-spacing: 1.5px;
-  }
-
-  .mobile-menu-button {
-    width: 38px;
-
-    height: 38px;
-  }
-
-  .mobile-menu-button span {
-    width: 21px;
-  }
-
-  .mobile-navbar-links {
-    gap: 15px;
-
-    padding: 18px 14px 23px;
-  }
-
-  .mobile-navbar-links a {
-    font-size: 19px;
-  }
 
   .hero h1 {
     font-size: 38px;
@@ -2864,4 +2671,449 @@ textarea {
   font-size: 11px;
 
   margin-top: 30px;
+}
+
+
+/* =========================================================
+   FINAL MOBILE NAVBAR FIX
+   KEEP THIS AT THE VERY END
+========================================================= */
+
+@media screen and (max-width: 850px) {
+
+  /* =======================================================
+     NAVBAR
+  ======================================================= */
+
+  .navbar {
+    width: 100% !important;
+
+    position: sticky !important;
+
+    top: 0 !important;
+
+    z-index: 1000 !important;
+  }
+
+  .navbar-container {
+    width: calc(100% - 24px) !important;
+
+    max-width: none !important;
+
+    min-height: 68px !important;
+
+    margin: 0 auto !important;
+
+    padding: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: space-between !important;
+
+    gap: 10px !important;
+  }
+
+
+  /* =======================================================
+     BRAND
+  ======================================================= */
+
+  .navbar-brand {
+    display: flex !important;
+
+    align-items: center !important;
+
+    flex: 1 1 auto !important;
+
+    min-width: 0 !important;
+
+    max-width: calc(100% - 52px) !important;
+
+    gap: 8px !important;
+  }
+
+  .navbar-logo {
+    display: block !important;
+
+    width: 42px !important;
+
+    height: 42px !important;
+
+    flex: 0 0 auto !important;
+  }
+
+  .navbar-brand-text {
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    min-width: 0 !important;
+
+    flex: 1 1 auto !important;
+
+    overflow: hidden !important;
+  }
+
+  .brand-name {
+    display: block !important;
+
+    font-size: 25px !important;
+
+    line-height: 1 !important;
+
+    white-space: nowrap !important;
+
+    overflow: hidden !important;
+
+    text-overflow: ellipsis !important;
+  }
+
+  .brand-tagline {
+    display: block !important;
+
+    font-size: 6px !important;
+
+    letter-spacing: 1.5px !important;
+
+    white-space: nowrap !important;
+  }
+
+
+  /* =======================================================
+     DESKTOP NAVIGATION
+     HIDDEN ON MOBILE
+  ======================================================= */
+
+  .navbar-links {
+    display: none !important;
+
+    visibility: hidden !important;
+
+    opacity: 0 !important;
+  }
+
+  .navbar-container > .navbar-button {
+    display: none !important;
+
+    visibility: hidden !important;
+
+    opacity: 0 !important;
+  }
+
+
+  /* =======================================================
+     HAMBURGER
+  ======================================================= */
+
+  .mobile-menu-button {
+    display: flex !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    position: relative !important;
+
+    z-index: 1002 !important;
+
+    flex: 0 0 42px !important;
+
+    width: 42px !important;
+
+    min-width: 42px !important;
+
+    height: 42px !important;
+
+    min-height: 42px !important;
+
+    margin: 0 !important;
+
+    padding: 6px !important;
+
+    border: none !important;
+
+    outline: none !important;
+
+    background: transparent !important;
+
+    cursor: pointer !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 5px !important;
+
+    -webkit-appearance: none !important;
+
+    appearance: none !important;
+
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  .mobile-menu-button span {
+    display: block !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    width: 24px !important;
+
+    min-width: 24px !important;
+
+    height: 2px !important;
+
+    min-height: 2px !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    background: var(--teal) !important;
+
+    border-radius: 2px !important;
+  }
+
+
+  /* =======================================================
+     MOBILE DROPDOWN
+  ======================================================= */
+
+  .mobile-navbar-links {
+    display: flex !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    width: 100% !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    gap: 18px !important;
+
+    padding: 22px 18px 28px !important;
+
+    background: #ffffff !important;
+
+    border-top: 1px solid var(--border) !important;
+
+    border-bottom: 1.5px solid var(--pink) !important;
+
+    box-sizing: border-box !important;
+  }
+
+  .mobile-navbar-links a {
+    display: block !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    color: var(--teal) !important;
+
+    font-family:
+      "Cormorant Garamond",
+      Georgia,
+      serif !important;
+
+    font-size: 21px !important;
+
+    font-weight: 600 !important;
+
+    line-height: 1.2 !important;
+
+    letter-spacing: 0.5px !important;
+
+    text-decoration: none !important;
+
+    padding: 4px 10px !important;
+  }
+
+  .mobile-navbar-links a:hover {
+    color: var(--pink) !important;
+  }
+
+
+  /* =======================================================
+     MOBILE GET IN TOUCH
+  ======================================================= */
+
+  .mobile-navbar-links .mobile-contact-button {
+    display: inline-flex !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    width: min(220px, 90%) !important;
+
+    min-height: 46px !important;
+
+    padding: 12px 20px !important;
+
+    border-radius: 999px !important;
+
+    background: var(--pink) !important;
+
+    color: #ffffff !important;
+
+    font-family:
+      "Cormorant Garamond",
+      Georgia,
+      serif !important;
+
+    font-size: 18px !important;
+
+    font-weight: 500 !important;
+
+    letter-spacing: 1px !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL SMALL PHONE NAVBAR
+========================================================= */
+
+@media screen and (max-width: 500px) {
+
+  .navbar-container {
+    width: calc(100% - 20px) !important;
+
+    min-height: 65px !important;
+  }
+
+  .navbar-logo {
+    width: 40px !important;
+
+    height: 40px !important;
+  }
+
+  .navbar-brand {
+    gap: 8px !important;
+  }
+
+  .brand-name {
+    font-size: 24px !important;
+  }
+
+  .brand-tagline {
+    font-size: 5.5px !important;
+
+    letter-spacing: 1.3px !important;
+  }
+
+  .mobile-menu-button {
+    display: flex !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    flex: 0 0 40px !important;
+
+    width: 40px !important;
+
+    min-width: 40px !important;
+
+    height: 40px !important;
+
+    min-height: 40px !important;
+  }
+
+  .mobile-menu-button span {
+    display: block !important;
+
+    width: 22px !important;
+
+    min-width: 22px !important;
+
+    height: 2px !important;
+  }
+
+  .navbar-links,
+  .navbar-container > .navbar-button {
+    display: none !important;
+
+    visibility: hidden !important;
+  }
+
+  .mobile-navbar-links {
+    display: flex !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL EXTRA SMALL PHONE NAVBAR
+========================================================= */
+
+@media screen and (max-width: 380px) {
+
+  .navbar-container {
+    width: calc(100% - 16px) !important;
+  }
+
+  .navbar-logo {
+    width: 37px !important;
+
+    height: 37px !important;
+  }
+
+  .brand-name {
+    font-size: 22px !important;
+  }
+
+  .brand-tagline {
+    font-size: 5px !important;
+
+    letter-spacing: 1.1px !important;
+  }
+
+  .mobile-menu-button {
+    display: flex !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    flex: 0 0 38px !important;
+
+    width: 38px !important;
+
+    min-width: 38px !important;
+
+    height: 38px !important;
+
+    min-height: 38px !important;
+  }
+
+  .mobile-menu-button span {
+    display: block !important;
+
+    width: 21px !important;
+
+    min-width: 21px !important;
+
+    height: 2px !important;
+  }
+
+  .navbar-links,
+  .navbar-container > .navbar-button {
+    display: none !important;
+
+    visibility: hidden !important;
+  }
 }
