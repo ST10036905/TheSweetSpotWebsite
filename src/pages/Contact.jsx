@@ -7,10 +7,6 @@ function Contact() {
       {/* PAGE HEADER */}
       <section className="page-header">
 
-        <p className="eyebrow">
-          THE SWEET SPOT
-        </p>
-
         <h1>Get in touch</h1>
 
         <div className="heart-divider">
@@ -172,7 +168,7 @@ function Contact() {
             <h2>Collections</h2>
 
             <p>
-              Cape Town, Central
+              Cape Town, CBD
             </p>
 
             <span>
