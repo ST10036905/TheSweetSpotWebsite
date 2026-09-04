@@ -103,7 +103,7 @@ textarea {
 
   backdrop-filter: blur(10px);
 
-  border-bottom: 1.5px solid var(--rose-dark);
+  border-bottom: 1.5px solid #f88796;
 }
 
 .navbar-container {
@@ -709,14 +709,12 @@ textarea {
 
   border-radius: 50%;
 
-  border: 1px solid var(--pink);
+  border: 1px solid var#f88796;
 
   color: var(--pink);
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Cormorant Garamond", serif;
 
   font-size: 27px;
 }
@@ -737,12 +735,10 @@ textarea {
 }
 
 .info-card h3 {
-  color: var(--pink);
+  color:#f88796;
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Cormorant Garamond", serif;
 
   font-size: 25px;
 
@@ -773,9 +769,7 @@ textarea {
   color: var(--muted);
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Cormorant Garamond", serif;
 
   font-size: 17px;
 
@@ -795,7 +789,7 @@ textarea {
 
   top: 2px;
 
-  color: var(--pink);
+  color:#f88796;
 
   font-family: Arial, sans-serif;
 
@@ -818,44 +812,40 @@ textarea {
 }
 
 .page-header {
-  max-width: 650px;
+  max-width: 680px;
 
   margin: 0 auto 55px;
 
   text-align: center;
 }
 
-.eyebrow {
-  color: var(--rose);
-
-  font-size: 11px;
-
-  font-weight: 600;
-
-  letter-spacing: 4px;
-
-  margin-bottom: 18px;
-}
-
 .page-header h1 {
-  color: var(--teal);
+  color: #f88796;
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Cormorant Garamond", serif;
 
-  font-size: clamp(42px, 6vw, 64px);
+  font-size: clamp(42px, 6vw, 62px);
 
   font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  line-height: 1.1;
 }
 
 .page-header p:last-child {
-  color: var(--muted);
+  color: var(--teal);
+
+  font-size: 18px;
+
+  font-family: "Cormorant Garamond" , serif;
 
   line-height: 1.8;
 
-  margin-top: 15px;
+  font-weight: 500;
+
+  margin-top: auto;
 }
 
 
@@ -885,16 +875,14 @@ textarea {
 }
 
 .menu-header h1 {
-  color: var(--pink);
+  color: #f88796;
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Cormorant Garamond", serif;
 
   font-size: clamp(42px, 6vw, 62px);
 
-  font-weight: 600;
+  font-weight: 500;
 
   letter-spacing: 0.5px;
 
@@ -902,7 +890,7 @@ textarea {
 }
 
 .menu-header .heart-divider {
-  color: var(--pink);
+  color: #f88796;
 
   font-size: 18px;
 
@@ -917,9 +905,7 @@ textarea {
   color: var(--teal);
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Cormorant Garamond", serif;
 
   font-weight: 500;
 
@@ -1005,9 +991,9 @@ textarea {
 }
 
 .pink-label {
-  background: var(--rose-light);
+  background: #f88796;
 
-  color: #a9585e;
+  color: #f88796;
 }
 
 .teal-label {
@@ -1058,11 +1044,11 @@ textarea {
 
   height: 15px;
 
-  color: var(--pink);
+  color: #f88796;
 
-  fill: var(--pink);
+  fill: #f88796;
 
-  stroke: var(--pink);
+  stroke: #f88796;
 
   stroke-width: 2;
 }
@@ -1071,9 +1057,7 @@ textarea {
   color: var(--teal-dark);
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Cormorant Garamond", serif;
 
   font-weight: 500;
 
@@ -1105,12 +1089,10 @@ textarea {
 }
 
 .occasion-section h2 {
-  color: var(--pink);
+  color: #f88796;
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Cormorant Garamond", serif;
 
   font-size: 32px;
 
@@ -1148,7 +1130,7 @@ textarea {
 
   background: #fff8f7;
 
-  color: var(--pink);
+  color: #f88796;
 
   font-family:
     "Cormorant Garamond",
@@ -1196,9 +1178,7 @@ textarea {
   color: #ffffff;
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Cormorant Garamond", serif;
 
   font-size: 15px;
 
@@ -1216,7 +1196,7 @@ textarea {
 }
 
 .menu-order-button:hover {
-  background: var(--rose-dark);
+  background: #f88796;
 
   transform: translateY(-2px);
 
@@ -1251,7 +1231,7 @@ textarea {
 
   background: #ffffff;
 
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
 
   border-radius: var(--radius);
 
@@ -1265,9 +1245,7 @@ textarea {
   color: var(--teal);
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Cormorant Garamond", serif;
 
   font-size: 32px;
 
@@ -1330,7 +1308,7 @@ textarea {
 .form-grid textarea {
   width: 100%;
 
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
 
   background: #ffffff;
 
@@ -1412,9 +1390,7 @@ textarea {
   color: #ffffff;
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Cormorant Garamond" , serif;
 
   font-size: 18px;
 
@@ -1471,7 +1447,7 @@ textarea {
 
   background: #ffffff;
 
-  border: 1px solid rgba(53, 101, 117, 0.3);
+  border: 2px solid rgba(53, 101, 117, 0.3);
 
   border-radius: var(--radius);
 
@@ -1485,9 +1461,7 @@ textarea {
   color: var(--teal);
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Cormorant Garamond", serif;
 
   font-size: 32px;
 
@@ -1636,9 +1610,7 @@ textarea {
   color: var(--teal);
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Cormorant Garamond", serif;
 
   font-size: 22px;
 

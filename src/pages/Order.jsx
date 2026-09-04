@@ -98,10 +98,6 @@ Thank you! ♡`;
 
       <section className="page-header">
 
-        <p className="eyebrow">
-          THE SWEET SPOT
-        </p>
-
         <h1>Order Your Cake</h1>
 
         <div className="heart-divider">
@@ -109,8 +105,7 @@ Thank you! ♡`;
         </div>
 
         <p>
-          Tell us a little about the cake you're dreaming of.
-          We'll take care of the rest.
+          Tell us a little about the cake you're dreaming of and we will take care of the rest.
         </p>
 
       </section>
@@ -124,7 +119,7 @@ Thank you! ♡`;
 
           <p className="form-intro">
             Complete the details below and your order will be
-            prepared as a WhatsApp message.
+            sent as a WhatsApp message.
           </p>
 
 
@@ -295,7 +290,7 @@ Thank you! ♡`;
 
         <aside className="order-summary">
 
-          <h2>Your order</h2>
+          <h2>Order Summary</h2>
 
           <div className="heart-divider">
             ♡
