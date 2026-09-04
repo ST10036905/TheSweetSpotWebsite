@@ -3,8 +3,6 @@ import logo from "../assets/The-Sweet-Spot-Logo.png";
 
 function Navbar() {
 return ( <nav className="navbar"> <div className="navbar-container">
-
-```
     {/* Logo and Brand */}
     <Link to="/" className="navbar-brand">
       <img
