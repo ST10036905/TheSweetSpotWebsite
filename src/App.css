@@ -5,44 +5,35 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=Great+Vibes&display=swap');
 
-
 /* =========================================================
-   ROOT VARIABLES
+   VARIABLES
    ========================================================= */
 
 :root {
   --white: #ffffff;
   --cream: #fffaf8;
-  --dusty-white: #f7f3ef;
+  --rose-light: #f8e7e5;
 
   --teal: #356575;
   --teal-dark: #294f5d;
 
+  --pink: #f88796;
   --rose: #c9797d;
   --rose-dark: #b9686e;
-  --rose-light: #f8e7e5;
-
-  --pink: #f88796;
 
   --text: #111111;
   --muted: #6f777b;
-
   --border: #eaded9;
 
   --radius: 18px;
-
-  --page-width: 1200px;
   --content-width: 92%;
 }
 
-
 /* =========================================================
-   GLOBAL RESET
+   RESET
    ========================================================= */
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -50,43 +41,25 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 body {
-  margin: 0;
-
   background: var(--white);
   color: var(--text);
-
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
+  font-family: Inter, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 #root {
   min-height: 100vh;
-
   background: var(--white);
-
-  overflow-x: clip;
-}
-
-img,
-svg {
-  max-width: 100%;
 }
 
 img {
   display: block;
+  max-width: 100%;
 }
 
 a {
@@ -100,11 +73,6 @@ select,
 textarea {
   font: inherit;
 }
-
-button {
-  -webkit-tap-highlight-color: transparent;
-}
-
 
 /* =========================================================
    NAVBAR
@@ -126,37 +94,28 @@ button {
 
 .navbar-container {
   width: min(1525px, calc(100% - 48px));
-
   min-height: 82px;
 
   margin: 0 auto;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
   gap: 30px;
 }
 
-
 /* =========================================================
-   NAVBAR BRAND
+   BRAND
    ========================================================= */
 
 .navbar-brand {
   display: flex;
-
   align-items: center;
 
   gap: 13px;
 
-  flex: 0 1 auto;
-
-  min-width: 0;
-
-  text-decoration: none;
+  flex-shrink: 0;
 }
 
 .navbar-logo {
@@ -164,18 +123,12 @@ button {
   height: 54px;
 
   object-fit: contain;
-
-  flex: 0 0 auto;
 }
 
 .navbar-brand-text {
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
-
-  min-width: 0;
 }
 
 .brand-name {
@@ -184,31 +137,21 @@ button {
   font-family: "Great Vibes", cursive;
 
   font-size: clamp(27px, 2.2vw, 32px);
-
   font-weight: 400;
 
   line-height: 1;
-
   white-space: nowrap;
 }
 
 .brand-tagline {
   color: var(--pink);
 
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
-    sans-serif;
+  font-family: Inter, Arial, sans-serif;
 
   font-size: 9px;
-
   font-weight: 500;
 
   letter-spacing: 3px;
-
   text-transform: uppercase;
 
   margin-top: 5px;
@@ -216,40 +159,29 @@ button {
   white-space: nowrap;
 }
 
-
 /* =========================================================
-   DESKTOP NAVIGATION
+   NAVIGATION LINKS
    ========================================================= */
 
 .navbar-links {
   display: flex;
-
   align-items: center;
-
   justify-content: flex-end;
 
   gap: clamp(18px, 2.2vw, 34px);
 
   margin-left: auto;
-
-  min-width: 0;
 }
 
 .navbar-links a {
   color: var(--teal);
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: clamp(17px, 1.4vw, 19px);
-
-  letter-spacing: 0.5px;
-
   font-weight: 600;
 
-  line-height: 1;
+  letter-spacing: 0.5px;
 
   white-space: nowrap;
 
@@ -261,22 +193,18 @@ button {
   color: var(--pink);
 }
 
-
 /* =========================================================
    NAVBAR BUTTON
    ========================================================= */
 
 .navbar-button {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
-  flex: 0 0 auto;
+  flex-shrink: 0;
 
   min-width: 124px;
-
   min-height: 44px;
 
   padding: 12px 21px;
@@ -284,27 +212,18 @@ button {
   border-radius: 999px;
 
   background: var(--pink);
-
   color: #ffffff;
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: 14px;
-
   font-weight: 500;
 
   letter-spacing: 1px;
 
-  line-height: 1;
-
   white-space: nowrap;
 
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .navbar-button:hover {
@@ -314,168 +233,12 @@ button {
     0 8px 20px rgba(201, 121, 125, 0.25);
 }
 
-
-/* =========================================================
-   MOBILE MENU BUTTON
-   ========================================================= */
-
-.mobile-menu-button {
-  display: none;
-
-  width: 44px;
-  height: 44px;
-
-  min-width: 44px;
-
-  padding: 8px;
-
-  border: none;
-
-  outline: none;
-
-  background: transparent;
-
-  cursor: pointer;
-
-  flex: 0 0 44px;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  align-items: center;
-
-  gap: 5px;
-
-  -webkit-appearance: none;
-
-  appearance: none;
-
-  -webkit-tap-highlight-color: transparent;
-
-  touch-action: manipulation;
-}
-
-.mobile-menu-button span {
-  display: block;
-
-  width: 24px;
-  height: 2px;
-
-  background: var(--teal);
-
-  border-radius: 2px;
-
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
-}
-
-
-/* =========================================================
-   MOBILE NAVIGATION
-   ========================================================= */
-
-.mobile-navbar {
-  display: none;
-
-  width: 100%;
-
-  background: #ffffff;
-
-  overflow: hidden;
-}
-
-.mobile-navbar.mobile-navbar-open {
-  display: block;
-}
-
-.mobile-navbar-links {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  width: 100%;
-
-  gap: 18px;
-
-  padding: 24px 20px 30px;
-
-  background: #ffffff;
-
-  border-top: 1px solid var(--border);
-
-  border-bottom: 1.5px solid var(--pink);
-}
-
-.mobile-navbar-links a {
-  display: block;
-
-  color: var(--teal);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 21px;
-
-  font-weight: 600;
-
-  line-height: 1.2;
-
-  letter-spacing: 0.5px;
-
-  padding: 4px 10px;
-
-  text-decoration: none;
-}
-
-.mobile-navbar-links a:hover {
-  color: var(--pink);
-}
-
-.mobile-contact-button {
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  width: min(220px, 100%);
-
-  min-height: 46px;
-
-  padding: 12px 20px;
-
-  border-radius: 999px;
-
-  background: var(--pink);
-
-  color: #ffffff !important;
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 18px;
-
-  font-weight: 500;
-
-  letter-spacing: 1px;
-}
-
-
 /* =========================================================
    HERO
    ========================================================= */
 
 .hero {
   background: #ffffff;
-
   overflow: hidden;
 }
 
@@ -488,30 +251,24 @@ button {
 
   display: grid;
 
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 1fr);
+  grid-template-columns: 1fr 1fr;
 
   align-items: center;
 
   gap: clamp(30px, 5vw, 70px);
 
-  padding: clamp(50px, 6vw, 80px) 0;
+  padding: 70px 0;
 }
 
 .hero-content {
   width: 100%;
-
   max-width: 540px;
 }
 
 .hero h1 {
   color: var(--teal);
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: clamp(48px, 6vw, 76px);
 
@@ -528,7 +285,6 @@ button {
   font-family: "Great Vibes", cursive;
 
   font-size: 1.15em;
-
   font-weight: 400;
 
   line-height: 0.9;
@@ -543,19 +299,14 @@ button {
 
   color: var(--muted);
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: 20px;
-
   line-height: 1.8;
 }
 
 .hero-buttons {
   display: flex;
-
   flex-wrap: wrap;
 
   gap: 14px;
@@ -563,16 +314,13 @@ button {
   margin-top: 34px;
 }
 
-
 /* =========================================================
    BUTTONS
    ========================================================= */
 
 .btn {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
   min-height: 46px;
@@ -582,7 +330,6 @@ button {
   border-radius: 999px;
 
   font-size: 14px;
-
   font-weight: 600;
 
   transition:
@@ -597,16 +344,11 @@ button {
 
 .btn-primary {
   background: var(--pink);
-
   color: #ffffff;
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   letter-spacing: 2px;
-
   font-weight: 400;
 
   box-shadow:
@@ -619,26 +361,21 @@ button {
 }
 
 .btn-secondary {
+  background: #ffffff;
+
   border: 1px solid rgba(53, 101, 117, 0.5);
 
   color: var(--teal);
 
-  background: #ffffff;
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   letter-spacing: 2px;
-
   font-weight: 400;
 }
 
 .btn-secondary:hover {
   background: #faf6f5;
 }
-
 
 /* =========================================================
    HERO IMAGE
@@ -648,23 +385,17 @@ button {
   position: relative;
 
   width: 100%;
-
   min-height: 520px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-  overflow: visible;
 }
 
 .hero-circle {
   position: absolute;
 
   width: clamp(300px, 36vw, 460px);
-
   height: clamp(300px, 36vw, 460px);
 
   border-radius: 50%;
@@ -676,7 +407,6 @@ button {
 
 .mainImage {
   position: relative;
-
   z-index: 1;
 
   width: min(100%, 520px);
@@ -686,9 +416,7 @@ button {
   object-fit: contain;
 
   filter:
-    drop-shadow(
-      0 20px 25px rgba(50, 70, 80, 0.12)
-    );
+    drop-shadow(0 20px 25px rgba(50, 70, 80, 0.12));
 
   transition: transform 0.3s ease;
 }
@@ -697,9 +425,8 @@ button {
   transform: translateY(-5px);
 }
 
-
 /* =========================================================
-   ABOUT SECTION
+   ABOUT
    ========================================================= */
 
 .about-section {
@@ -713,11 +440,7 @@ button {
 }
 
 .about-container {
-  width: 100%;
-
-  padding:
-    clamp(35px, 5vw, 50px)
-    clamp(22px, 5vw, 65px);
+  padding: 50px 65px;
 
   background: var(--cream);
 
@@ -730,8 +453,6 @@ button {
 }
 
 .about-content {
-  width: 100%;
-
   max-width: 900px;
 
   margin: 0 auto;
@@ -742,18 +463,13 @@ button {
 .about-content h2 {
   color: var(--teal);
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: clamp(34px, 4vw, 48px);
 
   font-weight: 400;
 
   line-height: 1.1;
-
-  margin-top: 10px;
 }
 
 .about-content h2 span {
@@ -762,19 +478,14 @@ button {
   font-family: "Great Vibes", cursive;
 
   font-size: 1.1em;
-
-  font-weight: 400;
 }
 
 .about-content p {
   color: var(--muted);
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
-  font-size: clamp(16px, 1.6vw, 18px);
+  font-size: 18px;
 
   line-height: 1.8;
 
@@ -783,10 +494,7 @@ button {
 
 .about-content p strong {
   color: var(--teal);
-
-  font-weight: 600;
 }
-
 
 /* =========================================================
    OCCASIONS
@@ -801,15 +509,15 @@ button {
 }
 
 .section-card {
+  padding: 35px;
+
+  text-align: center;
+
   background: var(--rose-light);
 
   border: 1px solid var(--border);
 
   border-radius: var(--radius);
-
-  padding: clamp(25px, 4vw, 35px);
-
-  text-align: center;
 
   box-shadow:
     0 10px 35px rgba(50, 70, 80, 0.04);
@@ -819,25 +527,19 @@ button {
 .section-heading h2 {
   color: var(--pink);
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: clamp(28px, 3vw, 32px);
 
-  letter-spacing: 1px;
-
   font-weight: 400;
+
+  letter-spacing: 1px;
 }
 
 .heart-divider {
   color: var(--pink);
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: 20px;
 
@@ -846,9 +548,7 @@ button {
 
 .occasion-list {
   display: flex;
-
   justify-content: center;
-
   flex-wrap: wrap;
 
   gap: 10px;
@@ -867,18 +567,12 @@ button {
 
   color: var(--pink);
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: 16px;
 
   letter-spacing: 1px;
-
-  font-weight: 400;
 }
-
 
 /* =========================================================
    HOW IT WORKS
@@ -902,12 +596,7 @@ button {
   color: var(--teal);
 
   font-size: clamp(34px, 4vw, 42px);
-
-  line-height: 1.1;
-
-  letter-spacing: 0.5px;
 }
-
 
 /* =========================================================
    HOW IT WORKS GRID
@@ -916,25 +605,16 @@ button {
 .how-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, 1fr);
 
   gap: 28px 30px;
 }
 
-
-/* =========================================================
-   INFO CARD
-   ========================================================= */
-
 .info-card {
   display: flex;
-
   align-items: flex-start;
 
   gap: 20px;
-
-  min-width: 0;
 
   min-height: 177px;
 
@@ -956,21 +636,14 @@ button {
   border: 2px solid rgba(53, 101, 117, 0.35);
 }
 
-
-/* =========================================================
-   INFO ICON
-   ========================================================= */
-
 .info-icon {
   width: 70px;
   height: 70px;
 
-  flex: 0 0 auto;
+  flex-shrink: 0;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   border-radius: 50%;
@@ -979,9 +652,7 @@ button {
 
   color: var(--pink);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 27px;
 }
@@ -992,31 +663,20 @@ button {
   color: var(--teal);
 }
 
-
-/* =========================================================
-   INFO CONTENT
-   ========================================================= */
-
 .info-content {
-  min-width: 0;
-
   flex: 1;
 }
 
 .info-card h3 {
   color: var(--pink);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 25px;
 
   font-weight: 400;
 
   letter-spacing: 1px;
-
-  line-height: 1.2;
 
   margin-bottom: 17px;
 }
@@ -1027,10 +687,6 @@ button {
 
 .info-card ul {
   list-style: none;
-
-  margin: 0;
-
-  padding: 0;
 }
 
 .info-card li {
@@ -1038,9 +694,7 @@ button {
 
   color: var(--muted);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 17px;
 
@@ -1049,8 +703,6 @@ button {
   margin-bottom: 9px;
 
   padding-left: 26px;
-
-  overflow-wrap: break-word;
 }
 
 .info-card li::before {
@@ -1059,19 +711,15 @@ button {
   position: absolute;
 
   left: 0;
-
   top: 2px;
 
   color: var(--pink);
 
-  font-family: Arial, sans-serif;
-
   font-size: 12px;
 }
 
-
 /* =========================================================
-   INNER PAGE
+   GENERAL PAGE
    ========================================================= */
 
 .page {
@@ -1080,13 +728,9 @@ button {
   margin: 0 auto;
 
   padding: 70px 0 100px;
-
-  background: #ffffff;
 }
 
 .page-header {
-  width: 100%;
-
   max-width: 680px;
 
   margin: 0 auto 55px;
@@ -1097,15 +741,11 @@ button {
 .page-header h1 {
   color: var(--pink);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: clamp(42px, 6vw, 62px);
 
   font-weight: 500;
-
-  letter-spacing: 0.5px;
 
   line-height: 1.1;
 }
@@ -1113,20 +753,17 @@ button {
 .page-header p:last-child {
   color: var(--teal);
 
-  font-size: 18px;
+  font-family: "Cormorant Garamond", serif;
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-size: 18px;
 
   line-height: 1.8;
 
-  font-weight: 500;
+  margin-top: 10px;
 }
 
-
 /* =========================================================
-   MENU PAGE
+   MENU
    ========================================================= */
 
 .menu-page {
@@ -1138,8 +775,6 @@ button {
 }
 
 .menu-header {
-  width: 100%;
-
   max-width: 680px;
 
   margin: 0 auto 55px;
@@ -1150,24 +785,16 @@ button {
 .menu-header h1 {
   color: var(--pink);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: clamp(42px, 6vw, 62px);
 
   font-weight: 500;
 
-  letter-spacing: 0.5px;
-
   line-height: 1.1;
 }
 
 .menu-header .heart-divider {
-  color: var(--pink);
-
-  font-size: 18px;
-
   margin: 14px 0 18px;
 }
 
@@ -1178,41 +805,24 @@ button {
 
   color: var(--teal);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-weight: 500;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 18px;
+
+  font-weight: 500;
 
   line-height: 1.8;
 }
 
-
-/* =========================================================
-   MENU GRID
-   ========================================================= */
-
 .menu-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, 1fr);
 
   gap: 24px;
 }
 
-
-/* =========================================================
-   MENU CARD
-   ========================================================= */
-
 .menu-card {
-  position: relative;
-
-  min-width: 0;
-
   min-height: 235px;
 
   padding: 32px;
@@ -1244,14 +854,8 @@ button {
   border: 2px solid #d9e4e7;
 }
 
-
-/* =========================================================
-   MENU LABEL
-   ========================================================= */
-
 .menu-label {
   display: inline-flex;
-
   align-items: center;
 
   padding: 8px 14px;
@@ -1259,7 +863,6 @@ button {
   border-radius: 999px;
 
   font-size: 11px;
-
   font-weight: 600;
 
   letter-spacing: 1.2px;
@@ -1269,20 +872,13 @@ button {
 
 .pink-label {
   background: var(--pink);
-
   color: #ffffff;
 }
 
 .teal-label {
   background: #e8f0f2;
-
   color: var(--teal);
 }
-
-
-/* =========================================================
-   MENU ITEMS
-   ========================================================= */
 
 .menu-list {
   list-style: none;
@@ -1290,7 +886,6 @@ button {
   margin-top: 22px;
 
   display: flex;
-
   flex-direction: column;
 
   gap: 2px;
@@ -1298,7 +893,6 @@ button {
 
 .menu-list li {
   display: flex;
-
   align-items: center;
 
   gap: 12px;
@@ -1306,47 +900,28 @@ button {
   padding: 9px 0;
 
   color: var(--teal-dark);
-
-  font-size: 15px;
-
-  font-weight: 400;
-
-  line-height: 1.5;
-
-  min-width: 0;
 }
 
 .menu-list li svg {
-  flex: 0 0 auto;
-
   width: 15px;
   height: 15px;
+
+  flex-shrink: 0;
 
   color: var(--pink);
 
   fill: var(--pink);
-
   stroke: var(--pink);
-
-  stroke-width: 2;
 }
 
 .menu-list li span {
   color: var(--teal-dark);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-weight: 500;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 17px;
-
-  letter-spacing: 0.2px;
-
-  overflow-wrap: break-word;
+  font-weight: 500;
 }
-
 
 /* =========================================================
    MENU OCCASIONS
@@ -1364,44 +939,27 @@ button {
   border-radius: var(--radius);
 
   text-align: center;
-
-  box-shadow:
-    0 10px 35px rgba(50, 70, 80, 0.04);
 }
 
 .occasion-section h2 {
   color: var(--pink);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 32px;
 
-  letter-spacing: 1px;
-
   font-weight: 400;
+
+  letter-spacing: 1px;
 }
 
 .occasion-section .occasion-list {
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  flex-wrap: wrap;
-
-  gap: 10px;
-
   margin-top: 22px;
 }
 
 .occasion-section .occasion-list span {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
   padding: 10px 17px;
@@ -1414,39 +972,14 @@ button {
 
   color: var(--pink);
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: 16px;
-
-  letter-spacing: 1px;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
 }
-
-.occasion-section .occasion-list span:hover {
-  background: #ffffff;
-
-  border-color: rgba(201, 121, 125, 0.5);
-
-  transform: translateY(-2px);
-}
-
-
-/* =========================================================
-   MENU ORDER BUTTON
-   ========================================================= */
 
 .menu-order-button {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
   margin-top: 30px;
@@ -1459,34 +992,22 @@ button {
 
   color: #ffffff;
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 15px;
 
   letter-spacing: 1px;
 
-  font-weight: 500;
-
-  box-shadow:
-    0 7px 20px rgba(201, 121, 125, 0.18);
-
   transition:
     transform 0.2s ease,
-    background 0.2s ease,
-    box-shadow 0.2s ease;
+    background 0.2s ease;
 }
 
 .menu-order-button:hover {
   background: var(--pink);
 
   transform: translateY(-2px);
-
-  box-shadow:
-    0 10px 25px rgba(201, 121, 125, 0.25);
 }
-
 
 /* =========================================================
    ORDER
@@ -1494,20 +1015,15 @@ button {
 
 .order-layout {
   display: flex;
-
   flex-direction: column;
 
   gap: 30px;
 
   width: 100%;
-
-  min-width: 0;
 }
 
 .order-form-card {
   width: 100%;
-
-  min-width: 0;
 
   background: #ffffff;
 
@@ -1521,12 +1037,11 @@ button {
     0 10px 35px rgba(50, 70, 80, 0.04);
 }
 
-.order-form-card h2 {
+.order-form-card h2,
+.order-summary h2 {
   color: var(--teal);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 32px;
 
@@ -1543,31 +1058,18 @@ button {
   margin-top: 8px;
 }
 
-
-/* =========================================================
-   FORM GRID
-   ========================================================= */
-
 .form-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, 1fr);
 
   gap: 22px 24px;
 
   margin-top: 30px;
-
-  width: 100%;
-
-  min-width: 0;
 }
 
 .form-grid label {
   display: block;
-
-  min-width: 0;
-
   width: 100%;
 }
 
@@ -1577,18 +1079,10 @@ button {
   color: var(--teal);
 
   font-size: 14px;
-
   font-weight: 500;
-
-  letter-spacing: 0.3px;
 
   margin-bottom: 9px;
 }
-
-
-/* =========================================================
-   FORM INPUTS
-   ========================================================= */
 
 .form-grid input,
 .form-grid select,
@@ -1596,10 +1090,6 @@ button {
   display: block;
 
   width: 100%;
-
-  max-width: 100%;
-
-  min-width: 0;
 
   border: 2px solid var(--border);
 
@@ -1645,20 +1135,9 @@ button {
     0 0 0 3px rgba(248, 135, 150, 0.12);
 }
 
-.form-grid input[type="date"] {
-  width: 100%;
-
-  min-height: 52px;
-
-  font-size: 16px;
-
-  color: var(--teal-dark);
-}
-
 .full-width {
   grid-column: 1 / -1;
 }
-
 
 /* =========================================================
    WHATSAPP ORDER
@@ -1666,9 +1145,7 @@ button {
 
 .whatsapp-order-button {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   width: 100%;
@@ -1680,28 +1157,22 @@ button {
   padding: 15px 25px;
 
   border: none;
-
   border-radius: 999px;
 
   background: var(--pink);
 
   color: #ffffff;
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 18px;
 
   letter-spacing: 1px;
 
-  font-weight: 500;
-
   cursor: pointer;
 
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease,
     background 0.2s ease;
 }
 
@@ -1709,9 +1180,6 @@ button {
   background: var(--rose-dark);
 
   transform: translateY(-2px);
-
-  box-shadow:
-    0 10px 25px rgba(248, 135, 150, 0.25);
 }
 
 .whatsapp-order-button.disabled {
@@ -1720,8 +1188,6 @@ button {
   color: var(--muted);
 
   cursor: not-allowed;
-
-  box-shadow: none;
 }
 
 .form-help {
@@ -1734,15 +1200,12 @@ button {
   margin-top: 12px;
 }
 
-
 /* =========================================================
    ORDER SUMMARY
    ========================================================= */
 
 .order-summary {
   width: 100%;
-
-  min-width: 0;
 
   background: #ffffff;
 
@@ -1756,70 +1219,40 @@ button {
     0 10px 35px rgba(50, 70, 80, 0.04);
 }
 
-.order-summary h2 {
-  color: var(--teal);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 32px;
-
-  font-weight: 500;
-
-  letter-spacing: 1px;
-}
-
 .order-summary .heart-divider {
   margin-bottom: 20px;
 }
 
 .summary-item {
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
 
   gap: 20px;
 
   padding: 14px 0;
 
-  border-bottom:
-    1px solid rgba(53, 101, 117, 0.12);
-
-  font-size: 14px;
-
-  min-width: 0;
+  border-bottom: 1px solid rgba(53, 101, 117, 0.12);
 }
 
 .summary-item span {
   color: var(--muted);
-
-  min-width: 0;
 }
 
 .summary-item strong {
   color: var(--teal);
 
   text-align: right;
-
-  font-weight: 600;
-
-  overflow-wrap: anywhere;
 }
 
 .summary-message {
   margin-top: 22px;
-
-  padding-top: 5px;
 }
 
 .summary-message span {
   color: var(--teal);
 
   font-size: 14px;
-
   font-weight: 600;
 }
 
@@ -1831,10 +1264,7 @@ button {
   line-height: 1.7;
 
   margin-top: 8px;
-
-  max-width: 800px;
 }
-
 
 /* =========================================================
    CONTACT
@@ -1843,24 +1273,18 @@ button {
 .contact-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, 1fr);
 
   gap: 20px;
-
-  min-width: 0;
 }
 
 .contact-card {
   display: flex;
-
   align-items: center;
 
   gap: 15px;
 
   padding: 28px;
-
-  min-width: 0;
 
   background: #ffffff;
 
@@ -1888,12 +1312,10 @@ button {
   width: 45px;
   height: 45px;
 
-  flex: 0 0 auto;
+  flex-shrink: 0;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   border-radius: 50%;
@@ -1921,9 +1343,7 @@ button {
 .contact-card h2 {
   color: var(--teal);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 22px;
 
@@ -1936,8 +1356,6 @@ button {
   font-size: 13px;
 
   margin-top: 4px;
-
-  overflow-wrap: anywhere;
 }
 
 .contact-card span {
@@ -1967,9 +1385,7 @@ button {
 .contact-cta h2 {
   color: var(--teal);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 32px;
 
@@ -1979,9 +1395,7 @@ button {
 .contact-cta p {
   color: var(--teal-dark);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 16px;
 
@@ -1994,17 +1408,16 @@ button {
   margin-top: 25px;
 }
 
-
 /* =========================================================
    FOOTER
    ========================================================= */
 
 .footer {
+  margin-top: auto;
+
   border-top: 1.5px solid var(--pink);
 
   background: #ffffff;
-
-  margin-top: auto;
 }
 
 .footer-container {
@@ -2018,40 +1431,24 @@ button {
 .footer-title {
   color: var(--teal-dark);
 
-  font-family:
-    "Great Vibes",
-    cursive;
-
-  letter-spacing: 1.5px;
+  font-family: "Great Vibes", cursive;
 
   font-size: 32px;
 }
 
 .footer-links {
   display: flex;
-
   flex-wrap: wrap;
 
   gap: 25px;
 
   margin-top: 25px;
 
-  letter-spacing: 0.5px;
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
   color: var(--teal-dark);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: 16px;
-}
-
-.footer-links a {
-  color: var(--teal-dark);
-
-  transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
@@ -2066,84 +1463,55 @@ button {
   margin-top: 30px;
 }
 
-
 /* =========================================================
-   TABLET + MOBILE
-   850px AND BELOW
+   TABLET
    ========================================================= */
 
-@media screen and (max-width: 850px) {
+@media (max-width: 850px) {
 
-  /* =======================================================
-     NAVBAR
-     ======================================================= */
+  /* NAVBAR */
 
   .navbar-container {
     width: calc(100% - 32px);
 
-    min-height: 84px;
+    min-height: auto;
 
-    gap: 12px;
+    padding: 16px 0;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
   }
 
   .navbar-brand {
-    flex: 1 1 auto;
-
-    min-width: 0;
-
-    gap: 10px;
+    flex-shrink: 0;
   }
 
-  .navbar-logo {
-    width: 48px;
-    height: 48px;
+  .navbar-links {
+    order: 3;
+
+    width: 100%;
+
+    margin-left: 0;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px 24px;
+
+    padding-bottom: 4px;
   }
 
-  .navbar-brand-text {
-    flex: 1 1 auto;
-
-    min-width: 0;
-
-    overflow: hidden;
+  .navbar-links a {
+    font-size: 18px;
   }
 
-  .brand-name {
-    font-size: clamp(24px, 6vw, 30px);
-
-    line-height: 1;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
+  .navbar-button {
+    margin-left: auto;
   }
 
-  .brand-tagline {
-    font-size: clamp(5.5px, 1.5vw, 8px);
-
-    letter-spacing: clamp(1px, 0.45vw, 2px);
-
-    margin-top: 5px;
-
-    line-height: 1;
-
-    white-space: nowrap;
-  }
-
-  .navbar-links,
-  .navbar-container > .navbar-button {
-    display: none;
-  }
-
-  .mobile-menu-button {
-    display: flex;
-  }
-
-
-  /* =======================================================
-     HERO
-     ======================================================= */
+  /* HERO */
 
   .hero-container {
     width: min(680px, calc(100% - 40px));
@@ -2167,7 +1535,6 @@ button {
 
   .hero-description {
     margin-left: auto;
-
     margin-right: auto;
   }
 
@@ -2177,13 +1544,10 @@ button {
 
   .hero-image-wrapper {
     min-height: 430px;
-
-    margin-top: 10px;
   }
 
   .hero-circle {
     width: min(360px, 70vw);
-
     height: min(360px, 70vw);
   }
 
@@ -2191,34 +1555,23 @@ button {
     width: min(90%, 450px);
   }
 
+  /* ABOUT */
 
-  /* =======================================================
-     ABOUT
-     ======================================================= */
+  .about-section,
+  .occasions-section,
+  .how-section,
+  .menu-page,
+  .page {
+    width: min(680px, calc(100% - 40px));
+  }
 
   .about-section {
-    width: min(680px, calc(100% - 40px));
-
     padding: 55px 0;
   }
 
-
-  /* =======================================================
-     OCCASIONS
-     ======================================================= */
-
-  .occasions-section {
-    width: min(680px, calc(100% - 40px));
-  }
-
-
-  /* =======================================================
-     HOW IT WORKS
-     ======================================================= */
+  /* HOW */
 
   .how-section {
-    width: min(680px, calc(100% - 40px));
-
     padding: 60px 0 75px;
   }
 
@@ -2226,71 +1579,44 @@ button {
     grid-template-columns: 1fr;
   }
 
-
-  /* =======================================================
-     MENU
-     ======================================================= */
-
-  .menu-page {
-    width: min(680px, calc(100% - 40px));
-  }
+  /* MENU */
 
   .menu-grid {
     grid-template-columns: 1fr;
   }
 
-
-  /* =======================================================
-     CONTACT
-     ======================================================= */
-
-  .page {
-    width: min(680px, calc(100% - 40px));
-
-    padding: 55px 0 80px;
-  }
+  /* CONTACT */
 
   .contact-grid {
     grid-template-columns: 1fr;
   }
 
+  /* ORDER */
 
-  /* =======================================================
-     ORDER
-     ======================================================= */
-
-  .order-form-card {
-    padding: 30px;
-  }
-
+  .order-form-card,
   .order-summary {
     padding: 30px;
   }
 }
 
-
 /* =========================================================
    MOBILE
-   600px AND BELOW
    ========================================================= */
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
 
   :root {
     --content-width: 90%;
   }
 
-
-  /* =======================================================
-     NAVBAR
-     ======================================================= */
+  /* NAVBAR */
 
   .navbar-container {
-    width: calc(100% - 24px);
+    width: 90%;
 
-    min-height: 84px;
+    padding: 14px 0;
 
-    gap: 8px;
+    gap: 12px;
   }
 
   .navbar-logo {
@@ -2307,38 +1633,30 @@ button {
   }
 
   .brand-tagline {
-    font-size: clamp(5px, 1.5vw, 7px);
+    font-size: 6px;
 
-    letter-spacing: clamp(1px, 0.4vw, 1.7px);
+    letter-spacing: 1.3px;
   }
 
-  .mobile-menu-button {
-    width: 44px;
-    height: 44px;
+  .navbar-button {
+    min-width: auto;
 
-    min-width: 44px;
+    padding: 10px 16px;
 
-    flex: 0 0 44px;
+    font-size: 13px;
   }
 
-  .mobile-menu-button span {
-    width: 23px;
+  .navbar-links {
+    gap: 8px 18px;
+
+    padding-bottom: 2px;
   }
 
-  .mobile-navbar-links {
-    gap: 16px;
-
-    padding: 22px 18px 28px;
+  .navbar-links a {
+    font-size: 17px;
   }
 
-  .mobile-navbar-links a {
-    font-size: 20px;
-  }
-
-
-  /* =======================================================
-     HERO
-     ======================================================= */
+  /* HERO */
 
   .hero-container {
     width: 90%;
@@ -2350,12 +1668,6 @@ button {
 
   .hero h1 {
     font-size: clamp(38px, 11vw, 48px);
-
-    line-height: 1.05;
-  }
-
-  .hero h1 span {
-    margin-top: 8px;
   }
 
   .hero-description {
@@ -2372,25 +1684,18 @@ button {
     width: 100%;
 
     margin-top: 28px;
-
-    gap: 12px;
   }
 
   .btn {
     width: 100%;
-
-    min-height: 48px;
   }
 
   .hero-image-wrapper {
     min-height: 330px;
-
-    margin-top: 5px;
   }
 
   .hero-circle {
     width: min(280px, 72vw);
-
     height: min(280px, 72vw);
   }
 
@@ -2398,10 +1703,7 @@ button {
     width: 95%;
   }
 
-
-  /* =======================================================
-     ABOUT
-     ======================================================= */
+  /* ABOUT */
 
   .about-section {
     width: 90%;
@@ -2417,20 +1719,13 @@ button {
 
   .about-content h2 {
     font-size: clamp(29px, 9vw, 36px);
-
-    line-height: 1.15;
   }
 
   .about-content p {
     font-size: 16px;
-
-    line-height: 1.7;
   }
 
-
-  /* =======================================================
-     OCCASIONS
-     ======================================================= */
+  /* OCCASIONS */
 
   .occasions-section {
     width: 90%;
@@ -2438,11 +1733,6 @@ button {
 
   .section-card {
     padding: 25px 16px;
-  }
-
-  .section-card h2,
-  .section-heading h2 {
-    font-size: clamp(27px, 8vw, 32px);
   }
 
   .occasion-list {
@@ -2455,10 +1745,7 @@ button {
     padding: 9px 13px;
   }
 
-
-  /* =======================================================
-     HOW IT WORKS
-     ======================================================= */
+  /* HOW */
 
   .how-section {
     width: 90%;
@@ -2486,7 +1773,6 @@ button {
 
   .info-icon {
     width: 60px;
-
     height: 60px;
 
     font-size: 24px;
@@ -2494,28 +1780,19 @@ button {
 
   .info-content {
     width: 100%;
-
-    padding-top: 0;
   }
 
   .info-card h3 {
     font-size: 23px;
-
-    margin-bottom: 14px;
   }
 
   .info-card li {
     text-align: left;
 
     font-size: 16px;
-
-    line-height: 1.5;
   }
 
-
-  /* =======================================================
-     GENERAL PAGES
-     ======================================================= */
+  /* GENERAL PAGES */
 
   .page {
     width: 90%;
@@ -2533,14 +1810,9 @@ button {
 
   .page-header p:last-child {
     font-size: 16px;
-
-    line-height: 1.7;
   }
 
-
-  /* =======================================================
-     MENU
-     ======================================================= */
+  /* MENU */
 
   .menu-page {
     width: 90%;
@@ -2554,32 +1826,21 @@ button {
 
   .menu-header h1 {
     font-size: clamp(38px, 11vw, 48px);
-
-    letter-spacing: -0.5px;
   }
 
   .menu-header p {
     font-size: 16px;
-
-    line-height: 1.7;
   }
 
   .menu-card {
     padding: 24px 20px;
 
     min-height: auto;
-
-    border-radius: 18px;
   }
 
   .menu-list li span {
     font-size: 16px;
   }
-
-
-  /* =======================================================
-     MENU OCCASIONS
-     ======================================================= */
 
   .occasion-section {
     padding: 25px 16px;
@@ -2587,10 +1848,6 @@ button {
 
   .occasion-section h2 {
     font-size: 28px;
-  }
-
-  .occasion-section .occasion-list {
-    gap: 8px;
   }
 
   .occasion-section .occasion-list span {
@@ -2603,10 +1860,7 @@ button {
     width: 100%;
   }
 
-
-  /* =======================================================
-     ORDER
-     ======================================================= */
+  /* ORDER */
 
   .order-layout {
     gap: 22px;
@@ -2633,41 +1887,16 @@ button {
   .order-form-card h2,
   .order-summary h2 {
     font-size: 28px;
-
-    line-height: 1.2;
   }
 
   .form-intro {
     font-size: 13px;
-
-    line-height: 1.6;
   }
 
   .form-grid input,
   .form-grid select,
   .form-grid textarea {
-    width: 100%;
-
     font-size: 16px;
-
-    padding: 13px 14px;
-  }
-
-  .form-grid input,
-  .form-grid select {
-    min-height: 50px;
-  }
-
-  .form-grid textarea {
-    min-height: 120px;
-  }
-
-  .form-grid input[type="date"] {
-    width: 100%;
-
-    font-size: 16px;
-
-    min-height: 50px;
   }
 
   .order-summary {
@@ -2682,34 +1911,19 @@ button {
     align-items: flex-start;
 
     gap: 5px;
-
-    padding: 12px 0;
   }
 
   .summary-item strong {
     text-align: left;
-
-    overflow-wrap: anywhere;
-  }
-
-  .summary-message p {
-    font-size: 13px;
-
-    line-height: 1.6;
   }
 
   .whatsapp-order-button {
     font-size: 16px;
 
     min-height: 55px;
-
-    padding: 14px 18px;
   }
 
-
-  /* =======================================================
-     CONTACT
-     ======================================================= */
+  /* CONTACT */
 
   .contact-grid {
     grid-template-columns: 1fr;
@@ -2727,14 +1941,6 @@ button {
     font-size: 20px;
   }
 
-  .contact-card p {
-    font-size: 12px;
-  }
-
-  .contact-card span {
-    font-size: 11px;
-  }
-
   .contact-cta {
     padding: 35px 18px;
   }
@@ -2743,18 +1949,7 @@ button {
     font-size: 28px;
   }
 
-  .contact-cta p {
-    font-size: 15px;
-
-    line-height: 1.7;
-
-    margin-top: 20px;
-  }
-
-
-  /* =======================================================
-     FOOTER
-     ======================================================= */
+  /* FOOTER */
 
   .footer-container {
     width: 90%;
@@ -2762,68 +1957,54 @@ button {
     padding: 40px 0 25px;
   }
 
-  .footer-title {
-    font-size: 30px;
-  }
-
   .footer-links {
     gap: 16px 22px;
-
-    margin-top: 22px;
 
     font-size: 15px;
   }
 }
 
-
 /* =========================================================
-   SMALL PHONE
-   420px AND BELOW
+   SMALL PHONES
    ========================================================= */
 
-@media screen and (max-width: 420px) {
+@media (max-width: 420px) {
 
   .navbar-container {
-    width: calc(100% - 20px);
-
-    min-height: 84px;
+    width: 92%;
   }
 
   .navbar-logo {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
   }
 
   .navbar-brand {
-    gap: 8px;
+    gap: 7px;
   }
 
   .brand-name {
-    font-size: clamp(22px, 7vw, 27px);
+    font-size: 22px;
   }
 
   .brand-tagline {
     font-size: 5px;
 
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
   }
 
-  .mobile-menu-button {
-    width: 42px;
-    height: 42px;
+  .navbar-button {
+    padding: 9px 12px;
 
-    min-width: 42px;
-
-    flex-basis: 42px;
+    font-size: 12px;
   }
 
-  .mobile-menu-button span {
-    width: 22px;
+  .navbar-links {
+    gap: 7px 14px;
   }
 
-  .mobile-navbar-links {
-    padding-left: 16px;
-    padding-right: 16px;
+  .navbar-links a {
+    font-size: 16px;
   }
 
   .about-container,
@@ -2831,96 +2012,5 @@ button {
   .order-summary {
     padding-left: 16px;
     padding-right: 16px;
-  }
-}
-
-
-/* =========================================================
-   VERY SMALL PHONE SAFETY
-   360px AND BELOW
-   ========================================================= */
-
-@media screen and (max-width: 360px) {
-
-  .navbar-container {
-    width: calc(100% - 16px);
-
-    min-height: 82px;
-  }
-
-  .navbar-logo {
-    width: 42px;
-    height: 42px;
-  }
-
-  .brand-name {
-    font-size: 21px;
-  }
-
-  .brand-tagline {
-    font-size: 4.5px;
-
-    letter-spacing: 0.9px;
-  }
-
-  .mobile-menu-button {
-    width: 40px;
-    height: 40px;
-
-    min-width: 40px;
-
-    flex-basis: 40px;
-  }
-
-  .mobile-menu-button span {
-    width: 21px;
-  }
-}
-
-
-/* =========================================================
-   LANDSCAPE PHONE SAFETY
-   ========================================================= */
-
-@media screen and (max-width: 850px) and (orientation: landscape) {
-
-  .navbar-container {
-    min-height: 76px;
-  }
-
-  .navbar-logo {
-    width: 44px;
-    height: 44px;
-  }
-
-  .mobile-menu-button {
-    width: 42px;
-    height: 42px;
-
-    min-width: 42px;
-
-    flex-basis: 42px;
-  }
-
-  .mobile-navbar-links {
-    padding-top: 18px;
-
-    padding-bottom: 22px;
-
-    gap: 12px;
-  }
-
-  .mobile-navbar-links a {
-    font-size: 19px;
-  }
-
-  .hero-container {
-    padding-top: 35px;
-
-    padding-bottom: 40px;
-  }
-
-  .hero-image-wrapper {
-    min-height: 300px;
   }
 }
