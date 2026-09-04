@@ -23,14 +23,14 @@ function Navbar() {
         {/* Navigation Links */}
         <div className="navbar-links">
           <Link to="/">Home</Link>
-          <Link to="/menu">Cake Menu</Link>
+          <Link to="/about">About</Link>
+          <Link to="/menu">Menu</Link>
           <Link to="/order">Order</Link>
-          <Link to="/contact">Contact</Link>
         </div>
 
         {/* Order Button */}
-        <Link to="/order" className="navbar-button">
-          Order a Cake
+        <Link to="/contact" className="navbar-button">
+          Get in touch 
         </Link>
 
       </div>
