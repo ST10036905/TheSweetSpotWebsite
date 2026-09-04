@@ -22,17 +22,17 @@ function Navbar() {
         <nav className="navbar-links">
           <a href="/">Home</a>
           <a href="/menu">Menu</a>
+          <a href="/">About us</a>
           <a href="/order">Order</a>
-          <a href="/contact">Contact</a>
         </nav>
 
         <a
-          href="https://wa.me/258845023340"
+          href="/contact"
           target="_blank"
           rel="noreferrer"
           className="navbar-button"
         >
-          WhatsApp
+          Get in touch
         </a>
 
       </div>

@@ -10,6 +10,7 @@ const cakeBases = [
 const fillings = [
   "Cream Cheese Frosting",
   "Peppermint Crisp",
+   "Classic Caramel",
   "Biscoff Lotus",
   "Milk Truffle",
   "Dark Chocolate Truffle",
@@ -29,12 +30,9 @@ const occasions = [
 ];
 
 const sizes = [
-  "4 inch",
-  "5 inch",
-  "6 inch",
-  "7 inch",
-  "8 inch",
-  "10 inch",
+  "4 inch /10cm",
+  "6 inch /15cm",
+  "7 inch /18cm",
 ];
 
 function Order() {
@@ -133,14 +131,14 @@ Thank you! ♡`;
           <div className="form-grid">
 
             <label>
-              <span>Your name</span>
+              <span>Name</span>
 
               <input
                 type="text"
                 name="name"
                 value={form.name}
                 onChange={handleChange}
-                placeholder="Your name"
+                placeholder="e.g Mayra"
               />
             </label>
 
@@ -153,7 +151,7 @@ Thank you! ♡`;
                 name="phone"
                 value={form.phone}
                 onChange={handleChange}
-                placeholder="e.g. 084 123 4567"
+                placeholder="e.g. 080 123 4567"
               />
             </label>
 
@@ -176,7 +174,7 @@ Thank you! ♡`;
 
 
             <label>
-              <span>Date needed</span>
+              <span>Collection date</span>
 
               <input
                 type="date"
@@ -260,7 +258,7 @@ Thank you! ♡`;
                 value={form.notes}
                 onChange={handleChange}
                 rows="5"
-                placeholder="Colours, theme, message on the cake, allergies..."
+                placeholder="Colours scheme, theme, message on the cake, allergies..."
               />
             </label>
 

@@ -6,11 +6,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=Great+Vibes&display=swap');
 
 
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
 :root {
   --white: #ffffff;
   --cream: #fffaf8;
 
-  /* Soft dusty white / beige */
   --dusty-white: #f7f3ef;
 
   --teal: #356575;
@@ -19,6 +22,8 @@
   --rose: #c9797d;
   --rose-dark: #b9686e;
   --rose-light: #f8e7e5;
+
+  --pink: #f88796;
 
   --text: #111111;
   --muted: #6f777b;
@@ -45,7 +50,9 @@ html {
 
 body {
   margin: 0;
+
   background: var(--white);
+
   color: var(--text);
 
   font-family:
@@ -61,11 +68,13 @@ body {
 
 #root {
   min-height: 100vh;
+
   background: var(--white);
 }
 
 a {
   text-decoration: none;
+
   color: inherit;
 }
 
@@ -83,7 +92,9 @@ textarea {
 
 .navbar {
   position: sticky;
+
   top: 0;
+
   z-index: 100;
 
   width: 100%;
@@ -97,12 +108,15 @@ textarea {
 
 .navbar-container {
   width: min(1525px, 92%);
+
   min-height: 82px;
 
   margin: auto;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   gap: 40px;
@@ -110,7 +124,9 @@ textarea {
 
 .navbar-brand {
   display: flex;
+
   align-items: center;
+
   gap: 13px;
 
   flex-shrink: 0;
@@ -118,6 +134,7 @@ textarea {
 
 .navbar-logo {
   width: 54px;
+
   height: 54px;
 
   object-fit: contain;
@@ -127,6 +144,7 @@ textarea {
 
 .navbar-brand-text {
   display: flex;
+
   flex-direction: column;
 
   justify-content: center;
@@ -138,7 +156,7 @@ textarea {
 ========================================================= */
 
 .navbar-links a.active {
-  color: #f88796;
+  color: var(--pink);
 
   font-weight: 600;
 }
@@ -160,7 +178,7 @@ textarea {
 }
 
 .brand-tagline {
-  color: #f88796;
+  color: var(--pink);
 
   font-family:
     Inter,
@@ -185,6 +203,7 @@ textarea {
 
 .navbar-links {
   display: flex;
+
   align-items: center;
 
   justify-content: flex-end;
@@ -223,11 +242,12 @@ textarea {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   flex-shrink: 0;
 
-  background: #f88796;
+  background: var(--pink);
 
   color: white;
 
@@ -317,7 +337,7 @@ textarea {
 .hero h1 span {
   display: block;
 
-  color: #f88796;
+  color: var(--pink);
 
   font-family: "Great Vibes", cursive;
 
@@ -364,6 +384,7 @@ textarea {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   padding: 14px 24px;
@@ -385,7 +406,7 @@ textarea {
 }
 
 .btn-primary {
-  background: #f88796;
+  background: var(--pink);
 
   color: #ffffff;
 
@@ -443,6 +464,7 @@ textarea {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   overflow: visible;
@@ -452,6 +474,7 @@ textarea {
   position: absolute;
 
   width: 460px;
+
   height: 460px;
 
   border-radius: 50%;
@@ -501,7 +524,7 @@ textarea {
 }
 
 .section-card {
-  background: #f8e7e5;
+  background: var(--rose-light);
 
   border: 1px solid var(--border);
 
@@ -517,7 +540,7 @@ textarea {
 
 .section-card h2,
 .section-heading h2 {
-  color: #f88796;
+  color: var(--pink);
 
   font-family:
     "Cormorant Garamond",
@@ -532,7 +555,7 @@ textarea {
 }
 
 .heart-divider {
-  color: #f88796;
+  color: var(--pink);
 
   font-family:
     "Cormorant Garamond",
@@ -565,7 +588,7 @@ textarea {
 
   background: #fff8f7;
 
-  color: #f88796;
+  color: var(--pink);
 
   font-family:
     "Cormorant Garamond",
@@ -620,19 +643,6 @@ textarea {
   line-height: 1.1;
 }
 
-.section-heading .heart-divider {
-  color: var(--rose);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 20px;
-
-  margin-top: 10px;
-}
-
 
 /* =========================================================
    HOW IT WORKS GRID
@@ -645,8 +655,6 @@ textarea {
     repeat(2, minmax(0, 1fr));
 
   gap: 28px 30px;
-
-  margin-top: 0;
 }
 
 
@@ -673,15 +681,9 @@ textarea {
     0 8px 30px rgba(50, 70, 80, 0.025);
 }
 
-
-/* PINK BORDER */
-
 .rose-card {
   border: 2px solid rgba(201, 121, 125, 0.45);
 }
-
-
-/* TEAL BORDER */
 
 .teal-card {
   border: 2px solid rgba(53, 101, 117, 0.35);
@@ -689,11 +691,12 @@ textarea {
 
 
 /* =========================================================
-   ICON
+   INFO ICON
 ========================================================= */
 
 .info-icon {
   width: 70px;
+
   height: 70px;
 
   flex-shrink: 0;
@@ -701,13 +704,14 @@ textarea {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
 
-  border: 1px solid #f88796;
+  border: 1px solid var(--pink);
 
-  color: #f88796;
+  color: var(--pink);
 
   font-family:
     "Cormorant Garamond",
@@ -715,8 +719,6 @@ textarea {
     serif;
 
   font-size: 27px;
-
-  font-weight: 400;
 }
 
 .teal-icon {
@@ -727,20 +729,15 @@ textarea {
 
 
 /* =========================================================
-   CARD CONTENT
+   INFO CARD CONTENT
 ========================================================= */
 
 .info-content {
   padding-top: 2px;
 }
 
-
-/* =========================================================
-   CARD HEADING
-========================================================= */
-
 .info-card h3 {
-  color: #f88796;
+  color: var(--pink);
 
   font-family:
     "Cormorant Garamond",
@@ -762,11 +759,6 @@ textarea {
   color: var(--teal);
 }
 
-
-/* =========================================================
-   CARD LIST
-========================================================= */
-
 .info-card ul {
   list-style: none;
 
@@ -787,19 +779,12 @@ textarea {
 
   font-size: 17px;
 
-  font-weight: 400;
-
-  letter-spacing: 0.4px;
-
   line-height: 1.5;
 
   margin-bottom: 9px;
 
   padding-left: 26px;
 }
-
-
-/* HEART BULLET */
 
 .info-card li::before {
   content: "♥";
@@ -810,7 +795,7 @@ textarea {
 
   top: 2px;
 
-  color:#f88796;
+  color: var(--pink);
 
   font-family: Arial, sans-serif;
 
@@ -900,9 +885,12 @@ textarea {
 }
 
 .menu-header h1 {
-  color: #f88796;
+  color: var(--pink);
 
-  font-family: "Cormorant Garamond";
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: clamp(42px, 6vw, 62px);
 
@@ -914,7 +902,7 @@ textarea {
 }
 
 .menu-header .heart-divider {
-  color: #f88796;
+  color: var(--pink);
 
   font-size: 18px;
 
@@ -928,7 +916,10 @@ textarea {
 
   color: var(--teal);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-weight: 500;
 
@@ -1014,7 +1005,7 @@ textarea {
 }
 
 .pink-label {
-  background: #f8e7e5;
+  background: var(--rose-light);
 
   color: #a9585e;
 }
@@ -1051,7 +1042,7 @@ textarea {
 
   padding: 9px 0;
 
-  color: #294f5d;
+  color: var(--teal-dark);
 
   font-size: 15px;
 
@@ -1067,19 +1058,26 @@ textarea {
 
   height: 15px;
 
-  color: var(--rose);
+  color: var(--pink);
 
-  stroke-width: 2.0;
+  fill: var(--pink);
+
+  stroke: var(--pink);
+
+  stroke-width: 2;
 }
 
 .menu-list li span {
-  color: #294f5d;
-  
-  font-family: "Cormont Garamond" , serif;
+  color: var(--teal-dark);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-weight: 500;
 
-  font-size: 16px;
+  font-size: 17px;
 
   letter-spacing: 0.2px;
 }
@@ -1087,7 +1085,6 @@ textarea {
 
 /* =========================================================
    OCCASIONS — MENU
-   MATCHES HOME OCCASIONS CARD
 ========================================================= */
 
 .occasion-section {
@@ -1095,7 +1092,7 @@ textarea {
 
   padding: 35px;
 
-  background: #f8e7e5;
+  background: var(--rose-light);
 
   border: 2px solid var(--border);
 
@@ -1108,7 +1105,7 @@ textarea {
 }
 
 .occasion-section h2 {
-  color: #f88796;
+  color: var(--pink);
 
   font-family:
     "Cormorant Garamond",
@@ -1120,21 +1117,6 @@ textarea {
   letter-spacing: 1px;
 
   font-weight: 400;
-
-  line-height: 1.2;
-}
-
-.occasion-section .heart-divider {
-  color: #f88796;
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 20px;
-
-  margin-top: 8px;
 }
 
 .occasion-section .occasion-list {
@@ -1166,7 +1148,7 @@ textarea {
 
   background: #fff8f7;
 
-  color: #f88796;
+  color: var(--pink);
 
   font-family:
     "Cormorant Garamond",
@@ -1176,8 +1158,6 @@ textarea {
   font-size: 16px;
 
   letter-spacing: 1px;
-
-  font-weight: 400;
 
   transition:
     background 0.2s ease,
@@ -1250,25 +1230,32 @@ textarea {
 ========================================================= */
 
 .order-layout {
-  display: grid;
+  display: flex;
 
-  grid-template-columns:
-    minmax(0, 1.5fr)
-    minmax(280px, 0.8fr);
+  flex-direction: column;
 
   gap: 30px;
 
-  align-items: start;
+  width: 100%;
+
+  align-items: stretch;
 }
 
+
+/* =========================================================
+   ORDER FORM
+========================================================= */
+
 .order-form-card {
+  width: 100%;
+
   background: #ffffff;
 
   border: 1px solid var(--border);
 
   border-radius: var(--radius);
 
-  padding: 35px;
+  padding: 38px;
 
   box-shadow:
     0 10px 35px rgba(50, 70, 80, 0.04);
@@ -1282,7 +1269,7 @@ textarea {
     Georgia,
     serif;
 
-  font-size: 29px;
+  font-size: 32px;
 
   font-weight: 500;
 }
@@ -1297,19 +1284,26 @@ textarea {
   margin-top: 8px;
 }
 
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
 .form-grid {
   display: grid;
 
   grid-template-columns:
-    repeat(2, 1fr);
+    repeat(2, minmax(0, 1fr));
 
-  gap: 20px;
+  gap: 22px 24px;
 
   margin-top: 30px;
 }
 
 .form-grid label {
   display: block;
+
+  min-width: 0;
 }
 
 .form-grid label span {
@@ -1317,12 +1311,19 @@ textarea {
 
   color: var(--teal);
 
-  font-size: 13px;
+  font-size: 14px;
 
-  font-weight: 600;
+  font-weight: 500;
 
-  margin-bottom: 7px;
+  letter-spacing: 0.3px;
+
+  margin-bottom: 9px;
 }
+
+
+/* =========================================================
+   FORM INPUTS
+========================================================= */
 
 .form-grid input,
 .form-grid select,
@@ -1333,27 +1334,50 @@ textarea {
 
   background: #ffffff;
 
-  color: #111111;
+  color: var(--teal-dark);
 
-  border-radius: 10px;
+  border-radius: 14px;
 
-  padding: 12px 14px;
+  padding: 14px 16px;
 
   outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-grid input,
+.form-grid select {
+  min-height: 52px;
+}
+
+.form-grid textarea {
+  min-height: 130px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+.form-grid input::placeholder,
+.form-grid textarea::placeholder {
+  color: #9a9a9a;
 }
 
 .form-grid input:focus,
 .form-grid select:focus,
 .form-grid textarea:focus {
-  border-color: var(--rose);
+  border-color: var(--pink);
 
   box-shadow:
-    0 0 0 3px rgba(201, 121, 125, 0.1);
+    0 0 0 3px rgba(248, 135, 150, 0.12);
 }
 
-.form-grid textarea {
-  resize: vertical;
-}
+
+/* =========================================================
+   FULL WIDTH FORM ITEMS
+========================================================= */
 
 .full-width {
   grid-column: 1 / -1;
@@ -1373,40 +1397,52 @@ textarea {
 
   width: 100%;
 
-  margin-top: 25px;
+  min-height: 58px;
 
-  padding: 15px;
+  margin-top: 28px;
+
+  padding: 15px 25px;
 
   border: none;
 
   border-radius: 999px;
 
-  background: var(--rose);
+  background: var(--pink);
 
   color: #ffffff;
 
-  font-size: 14px;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  font-weight: 600;
+  font-size: 18px;
+
+  letter-spacing: 1px;
+
+  font-weight: 500;
 
   cursor: pointer;
 
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
-.whatsapp-order-button:hover {
+.whatsapp-order-button:hover:not(.disabled) {
+  background: var(--rose-dark);
+
   transform: translateY(-2px);
 
   box-shadow:
-    0 8px 20px rgba(201, 121, 125, 0.25);
+    0 10px 25px rgba(248, 135, 150, 0.25);
 }
 
 .whatsapp-order-button.disabled {
-  background: #ddd;
+  background: #e5e1df;
 
-  color: #999;
+  color: var(--muted);
 
   cursor: not-allowed;
 
@@ -1418,9 +1454,9 @@ textarea {
 
   color: var(--muted);
 
-  font-size: 11px;
+  font-size: 12px;
 
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 
@@ -1429,17 +1465,17 @@ textarea {
 ========================================================= */
 
 .order-summary {
-  position: sticky;
+  width: 100%;
 
-  top: 110px;
+  position: static;
 
   background: #ffffff;
 
-  border: 1px solid rgba(53, 101, 117, 0.25);
+  border: 1px solid rgba(53, 101, 117, 0.3);
 
   border-radius: var(--radius);
 
-  padding: 28px;
+  padding: 32px 36px;
 
   box-shadow:
     0 10px 35px rgba(50, 70, 80, 0.04);
@@ -1453,24 +1489,37 @@ textarea {
     Georgia,
     serif;
 
-  font-size: 27px;
+  font-size: 32px;
 
   font-weight: 500;
+
+  letter-spacing: 1px;
 }
+
+.order-summary .heart-divider {
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   SUMMARY ITEMS
+========================================================= */
 
 .summary-item {
   display: flex;
 
   justify-content: space-between;
 
+  align-items: center;
+
   gap: 20px;
 
-  padding: 13px 0;
+  padding: 14px 0;
 
   border-bottom:
     1px solid rgba(53, 101, 117, 0.12);
 
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .summary-item span {
@@ -1481,16 +1530,25 @@ textarea {
   color: var(--teal);
 
   text-align: right;
+
+  font-weight: 600;
 }
 
+
+/* =========================================================
+   SUMMARY MESSAGE
+========================================================= */
+
 .summary-message {
-  margin-top: 20px;
+  margin-top: 22px;
+
+  padding-top: 5px;
 }
 
 .summary-message span {
   color: var(--teal);
 
-  font-size: 13px;
+  font-size: 14px;
 
   font-weight: 600;
 }
@@ -1498,11 +1556,13 @@ textarea {
 .summary-message p {
   color: var(--muted);
 
-  font-size: 13px;
+  font-size: 14px;
 
   line-height: 1.7;
 
-  margin-top: 7px;
+  margin-top: 8px;
+
+  max-width: 800px;
 }
 
 
@@ -1709,12 +1769,12 @@ textarea {
     grid-template-columns: 1fr;
   }
 
-  .order-layout {
-    grid-template-columns: 1fr;
+  .order-form-card {
+    padding: 30px;
   }
 
   .order-summary {
-    position: static;
+    padding: 30px;
   }
 
   .contact-grid {
@@ -1743,12 +1803,6 @@ textarea {
     width: 90%;
 
     padding: 45px 0;
-  }
-
-  .hero-location {
-    font-size: 10px;
-
-    letter-spacing: 3px;
   }
 
   .hero h1 {
@@ -1887,6 +1941,8 @@ textarea {
 
   .form-grid {
     grid-template-columns: 1fr;
+
+    gap: 18px;
   }
 
   .full-width {
@@ -1894,7 +1950,32 @@ textarea {
   }
 
   .order-form-card {
-    padding: 23px;
+    padding: 24px 20px;
+  }
+
+  .order-summary {
+    padding: 25px 20px;
+  }
+
+  .order-form-card h2,
+  .order-summary h2 {
+    font-size: 28px;
+  }
+
+  .summary-item {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+  }
+
+  .summary-item strong {
+    text-align: left;
+  }
+
+  .whatsapp-order-button {
+    font-size: 16px;
   }
 
 
@@ -1961,7 +2042,7 @@ textarea {
 ========================================================= */
 
 .footer {
-  border-top: 1.5px solid #f88796;
+  border-top: 1.5px solid var(--pink);
 
   background: #ffffff;
 
@@ -2020,7 +2101,7 @@ textarea {
 }
 
 .copyright {
-  color: #6f777b;
+  color: var(--muted);
 
   font-size: 11px;
 
