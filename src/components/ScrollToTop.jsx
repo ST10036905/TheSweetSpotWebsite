@@ -5,10 +5,8 @@ function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    if (window.location.hash) {
-      return;
-    }
-
+    // Every time a new page is opened,
+    // start at the top of that page.
     window.scrollTo({
       top: 0,
       left: 0,
