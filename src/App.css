@@ -3,11 +3,13 @@
    Main Website Styles
 ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=Great+Vibes&display=swap');
+@import url(
+  "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=Great+Vibes&display=swap"
+);
 
 
 /* =========================================================
-   ROOT
+   ROOT VARIABLES
 ========================================================= */
 
 :root {
@@ -26,7 +28,6 @@
 
   --text: #111111;
   --muted: #6f777b;
-
   --border: #eaded9;
 
   --radius: 18px;
@@ -34,7 +35,7 @@
 
 
 /* =========================================================
-   GLOBAL
+   GLOBAL STYLES
 ========================================================= */
 
 * {
@@ -64,15 +65,12 @@ body {
     sans-serif;
 
   -webkit-font-smoothing: antialiased;
-
   overflow-x: hidden;
 }
 
 #root {
   min-height: 100vh;
-
   background: var(--white);
-
   overflow-x: hidden;
 }
 
@@ -96,7 +94,6 @@ textarea {
 .navbar {
   position: sticky;
   top: 0;
-
   z-index: 1000;
 
   width: 100%;
@@ -106,8 +103,6 @@ textarea {
   border-bottom: 1.5px solid var(--pink);
 
   backdrop-filter: blur(10px);
-
-  overflow: visible;
 }
 
 .navbar-container {
@@ -135,7 +130,6 @@ textarea {
   gap: 13px;
 
   flex-shrink: 0;
-
   min-width: 0;
 }
 
@@ -146,7 +140,6 @@ textarea {
   display: block;
 
   object-fit: contain;
-
   flex-shrink: 0;
 }
 
@@ -178,10 +171,6 @@ textarea {
 
   font-family:
     Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
     sans-serif;
 
   font-size: 9px;
@@ -221,7 +210,6 @@ textarea {
   font-weight: 600;
 
   letter-spacing: 0.5px;
-
   line-height: 1;
 
   white-space: nowrap;
@@ -236,7 +224,7 @@ textarea {
 
 
 /* =========================================================
-   NAVBAR BUTTON
+   NAVBAR CONTACT BUTTON
 ========================================================= */
 
 .navbar-button {
@@ -265,7 +253,6 @@ textarea {
   font-weight: 500;
 
   letter-spacing: 1px;
-
   line-height: 1;
 
   white-space: nowrap;
@@ -284,7 +271,7 @@ textarea {
 
 
 /* =========================================================
-   HAMBURGER
+   MOBILE HAMBURGER
 ========================================================= */
 
 .mobile-menu-button {
@@ -344,7 +331,6 @@ textarea {
 
 .hero-container {
   width: min(1200px, 92%);
-
   min-height: 650px;
 
   margin: auto;
@@ -421,75 +407,6 @@ textarea {
 
 
 /* =========================================================
-   BUTTONS
-========================================================= */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 14px 24px;
-
-  border-radius: 999px;
-
-  font-size: 14px;
-  font-weight: 600;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn-primary {
-  background: var(--pink);
-  color: #ffffff;
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-weight: 400;
-
-  letter-spacing: 2px;
-
-  box-shadow:
-    0 8px 22px rgba(201, 121, 125, 0.2);
-}
-
-.btn-primary:hover {
-  box-shadow:
-    0 12px 28px rgba(201, 121, 125, 0.3);
-}
-
-.btn-secondary {
-  border: 1px solid rgba(53, 101, 117, 0.5);
-
-  background: #ffffff;
-  color: var(--teal);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-weight: 400;
-
-  letter-spacing: 2px;
-}
-
-.btn-secondary:hover {
-  background: #faf6f5;
-}
-
-
-/* =========================================================
    HERO IMAGE
 ========================================================= */
 
@@ -541,6 +458,73 @@ textarea {
 
 .mainImage:hover {
   transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 24px;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--pink);
+  color: #ffffff;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-weight: 400;
+  letter-spacing: 2px;
+
+  box-shadow:
+    0 8px 22px rgba(201, 121, 125, 0.2);
+}
+
+.btn-primary:hover {
+  box-shadow:
+    0 12px 28px rgba(201, 121, 125, 0.3);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(53, 101, 117, 0.5);
+
+  background: #ffffff;
+  color: var(--teal);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.btn-secondary:hover {
+  background: #faf6f5;
 }
 
 
@@ -1241,7 +1225,6 @@ textarea {
 
   transition:
     transform 0.2s ease,
-    background 0.2s ease,
     box-shadow 0.2s ease;
 }
 
@@ -1398,23 +1381,13 @@ textarea {
     0 0 0 3px rgba(248, 135, 150, 0.12);
 }
 
-.form-grid input[type="date"] {
-  width: 100%;
-
-  min-height: 52px;
-
-  font-size: 16px;
-
-  color: var(--teal-dark);
-}
-
 .full-width {
   grid-column: 1 / -1;
 }
 
 
 /* =========================================================
-   WHATSAPP ORDER
+   WHATSAPP ORDER BUTTON
 ========================================================= */
 
 .whatsapp-order-button {
@@ -1448,13 +1421,10 @@ textarea {
 
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
+    box-shadow 0.2s ease;
 }
 
 .whatsapp-order-button:hover:not(.disabled) {
-  background: var(--rose-dark);
-
   transform: translateY(-2px);
 
   box-shadow:
@@ -1470,24 +1440,12 @@ textarea {
   box-shadow: none;
 }
 
-.form-help {
-  margin-top: 12px;
-
-  color: var(--muted);
-
-  font-size: 12px;
-
-  text-align: center;
-}
-
 
 /* =========================================================
    ORDER SUMMARY
 ========================================================= */
 
 .order-summary {
-  position: static;
-
   width: 100%;
   min-width: 0;
 
@@ -1512,12 +1470,6 @@ textarea {
 
   font-size: 32px;
   font-weight: 500;
-
-  letter-spacing: 1px;
-}
-
-.order-summary .heart-divider {
-  margin-bottom: 20px;
 }
 
 .summary-item {
@@ -1527,14 +1479,10 @@ textarea {
 
   gap: 20px;
 
-  min-width: 0;
-
   padding: 14px 0;
 
   border-bottom:
     1px solid rgba(53, 101, 117, 0.12);
-
-  font-size: 14px;
 }
 
 .summary-item span {
@@ -1551,7 +1499,6 @@ textarea {
 
 .summary-message {
   margin-top: 22px;
-  padding-top: 5px;
 }
 
 .summary-message span {
@@ -1562,8 +1509,6 @@ textarea {
 }
 
 .summary-message p {
-  max-width: 800px;
-
   margin-top: 8px;
 
   color: var(--muted);
@@ -1585,8 +1530,6 @@ textarea {
     repeat(2, minmax(0, 1fr));
 
   gap: 20px;
-
-  min-width: 0;
 }
 
 .contact-card {
@@ -1594,8 +1537,6 @@ textarea {
   align-items: center;
 
   gap: 15px;
-
-  min-width: 0;
 
   padding: 28px;
 
@@ -1778,12 +1719,6 @@ textarea {
   letter-spacing: 0.5px;
 }
 
-.footer-links a {
-  color: var(--teal-dark);
-
-  transition: color 0.2s ease;
-}
-
 .footer-links a:hover {
   color: var(--rose-dark);
 }
@@ -1798,18 +1733,16 @@ textarea {
 
 
 /* =========================================================
-   TABLET / MOBILE NAVBAR
+   TABLET AND MOBILE
 ========================================================= */
 
 @media screen and (max-width: 900px) {
 
-  .navbar {
-    overflow: visible;
-  }
+  /* Navbar */
 
   .navbar-container {
     width: 92%;
-    min-height: 85px;
+    min-height: 82px;
 
     gap: 15px;
   }
@@ -1822,38 +1755,27 @@ textarea {
   .navbar-brand {
     flex: 1;
 
-    min-width: 0;
-
-    gap: 12px;
+    gap: 10px;
   }
 
   .navbar-logo {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
   }
 
   .navbar-brand-text {
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-
-    min-width: 0;
-
     overflow: visible;
   }
 
   .brand-name {
-    font-size: 30px;
+    font-size: 28px;
 
     overflow: visible;
 
-    text-overflow: unset;
+    text-overflow: initial;
   }
 
   .brand-tagline {
-    margin-top: 5px;
-
     font-size: 7px;
 
     letter-spacing: 2px;
@@ -1862,54 +1784,34 @@ textarea {
   .mobile-menu-button {
     display: flex;
 
-    flex: 0 0 50px;
+    flex: 0 0 48px;
 
-    width: 50px;
-    height: 50px;
-
-    padding: 10px;
+    width: 48px;
+    height: 48px;
   }
-
-  .mobile-menu-button span {
-    width: 27px;
-    height: 2px;
-  }
-
-
-  /* MOBILE DROPDOWN */
 
   .mobile-navbar-links {
     display: flex;
-
-    position: absolute;
-
-    top: 100%;
-    left: 0;
 
     width: 100%;
 
     flex-direction: column;
     align-items: center;
 
-    gap: 20px;
+    gap: 18px;
 
-    padding: 28px 20px 32px;
+    padding: 25px 18px 32px;
 
     background: #ffffff;
 
     border-top: 1px solid var(--border);
     border-bottom: 1.5px solid var(--pink);
-
-    box-shadow:
-      0 15px 30px rgba(50, 70, 80, 0.08);
-
-    z-index: 999;
   }
 
   .mobile-navbar-links a {
     display: block;
 
-    padding: 6px 15px;
+    padding: 5px 10px;
 
     color: var(--teal);
 
@@ -1918,16 +1820,8 @@ textarea {
       Georgia,
       serif;
 
-    font-size: 23px;
+    font-size: 22px;
     font-weight: 600;
-
-    line-height: 1.2;
-
-    letter-spacing: 0.5px;
-  }
-
-  .mobile-navbar-links a:hover {
-    color: var(--pink);
   }
 
   .mobile-navbar-links .mobile-contact-button {
@@ -1936,10 +1830,10 @@ textarea {
     align-items: center;
     justify-content: center;
 
-    width: min(240px, 90%);
-    min-height: 50px;
+    width: min(220px, 90%);
+    min-height: 48px;
 
-    padding: 14px 24px;
+    padding: 12px 20px;
 
     border-radius: 999px;
 
@@ -1951,14 +1845,11 @@ textarea {
       Georgia,
       serif;
 
-    font-size: 19px;
-    font-weight: 500;
-
-    letter-spacing: 1px;
+    font-size: 18px;
   }
 
 
-  /* HERO */
+  /* Hero */
 
   .hero-container {
     grid-template-columns: 1fr;
@@ -2003,7 +1894,7 @@ textarea {
   }
 
 
-  /* ABOUT */
+  /* About */
 
   .about-section {
     padding: 55px 0;
@@ -2013,34 +1904,21 @@ textarea {
     padding: 40px 35px;
   }
 
-  .about-content {
-    max-width: 100%;
-  }
 
+  /* Grids */
 
-  /* HOW IT WORKS */
-
-  .how-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* PAGES */
-
-  .page {
-    padding-top: 50px;
-  }
-
-  .menu-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .how-grid,
+  .menu-grid,
   .contact-grid {
     grid-template-columns: 1fr;
   }
 
 
-  /* ORDER */
+  /* Pages */
+
+  .page {
+    padding-top: 50px;
+  }
 
   .order-form-card,
   .order-summary {
@@ -2050,17 +1928,36 @@ textarea {
 
 
 /* =========================================================
-   MOBILE
+   MOBILE PHONES
 ========================================================= */
 
 @media screen and (max-width: 600px) {
 
+  /* =======================================================
+     HERO IMAGE FIRST ON MOBILE
+  ======================================================= */
+
   .hero-container {
+    display: flex;
+    flex-direction: column;
+
     width: 90%;
 
-    padding: 45px 0;
+    padding: 40px 0 45px;
 
-    gap: 5px;
+    gap: 10px;
+  }
+
+  .hero-image-wrapper {
+    order: 1;
+
+    min-height: 300px;
+
+    margin-top: 0;
+  }
+
+  .hero-content {
+    order: 2;
   }
 
   .hero h1 {
@@ -2087,12 +1984,6 @@ textarea {
     width: 100%;
   }
 
-  .hero-image-wrapper {
-    min-height: 330px;
-
-    margin-top: 10px;
-  }
-
   .hero-circle {
     width: 280px;
     height: 280px;
@@ -2103,7 +1994,7 @@ textarea {
   }
 
 
-  /* ABOUT */
+  /* About */
 
   .about-section {
     width: 90%;
@@ -2128,7 +2019,7 @@ textarea {
   }
 
 
-  /* OCCASIONS */
+  /* Occasions */
 
   .section-card {
     padding: 25px 18px;
@@ -2150,7 +2041,7 @@ textarea {
   }
 
 
-  /* HOW IT WORKS */
+  /* How It Works */
 
   .how-section {
     width: 90%;
@@ -2183,8 +2074,6 @@ textarea {
 
   .info-content {
     width: 100%;
-
-    padding-top: 0;
   }
 
   .info-card h3 {
@@ -2200,7 +2089,7 @@ textarea {
   }
 
 
-  /* GENERAL PAGES */
+  /* General Pages */
 
   .page {
     width: 90%;
@@ -2224,7 +2113,7 @@ textarea {
   }
 
 
-  /* MENU */
+  /* Menu */
 
   .menu-page {
     width: 90%;
@@ -2254,47 +2143,12 @@ textarea {
     padding: 25px;
   }
 
-  .menu-list li {
-    font-size: 14px;
-  }
-
   .menu-list li span {
     font-size: 16px;
   }
 
 
-  /* MENU OCCASIONS */
-
-  .occasion-section {
-    padding: 25px 18px;
-  }
-
-  .occasion-section h2 {
-    font-size: 28px;
-  }
-
-  .occasion-section .occasion-list {
-    gap: 8px;
-  }
-
-  .occasion-section .occasion-list span {
-    padding: 9px 14px;
-
-    font-size: 14px;
-  }
-
-  .menu-order-button {
-    width: 100%;
-  }
-
-
-  /* ORDER */
-
-  .order-layout {
-    width: 100%;
-
-    gap: 22px;
-  }
+  /* Order */
 
   .form-grid {
     grid-template-columns: 1fr;
@@ -2314,51 +2168,15 @@ textarea {
     border-radius: 18px;
   }
 
-  .order-form-card h2,
-  .order-summary h2 {
-    font-size: 28px;
-
-    line-height: 1.2;
-  }
-
-  .form-intro {
-    font-size: 13px;
-
-    line-height: 1.6;
-  }
-
-  .form-grid input,
-  .form-grid select,
-  .form-grid textarea {
-    width: 100%;
-
-    max-width: 100%;
-    min-width: 0;
-
-    padding: 13px 14px;
-
-    font-size: 16px;
-  }
-
-  .form-grid input,
-  .form-grid select {
-    min-height: 50px;
-  }
-
-  .form-grid textarea {
-    min-height: 120px;
-  }
-
-  .form-grid input[type="date"] {
-    min-height: 50px;
-
-    font-size: 16px;
-  }
-
   .order-summary {
     padding: 25px 18px;
 
     border-radius: 18px;
+  }
+
+  .order-form-card h2,
+  .order-summary h2 {
+    font-size: 28px;
   }
 
   .summary-item {
@@ -2367,20 +2185,12 @@ textarea {
     align-items: flex-start;
 
     gap: 5px;
-
-    padding: 12px 0;
   }
 
   .summary-item strong {
     text-align: left;
 
     overflow-wrap: anywhere;
-  }
-
-  .summary-message p {
-    font-size: 13px;
-
-    line-height: 1.6;
   }
 
   .whatsapp-order-button {
@@ -2392,13 +2202,7 @@ textarea {
   }
 
 
-  /* CONTACT */
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-
-    gap: 15px;
-  }
+  /* Contact */
 
   .contact-card {
     gap: 12px;
@@ -2410,28 +2214,12 @@ textarea {
     font-size: 20px;
   }
 
-  .contact-card p {
-    font-size: 12px;
-  }
-
-  .contact-card span {
-    font-size: 11px;
-  }
-
   .contact-cta {
     padding: 35px 20px;
   }
 
   .contact-cta h2 {
     font-size: 28px;
-  }
-
-  .contact-cta p {
-    margin-top: 20px;
-
-    font-size: 15px;
-
-    line-height: 1.7;
   }
 }
 
@@ -2448,32 +2236,28 @@ textarea {
   }
 
   .navbar-logo {
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
   }
 
   .brand-name {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .brand-tagline {
     font-size: 6px;
 
-    letter-spacing: 1.8px;
+    letter-spacing: 1.7px;
   }
 
   .mobile-menu-button {
-    flex-basis: 48px;
+    flex-basis: 46px;
 
-    width: 48px;
-    min-width: 48px;
+    width: 46px;
+    min-width: 46px;
 
-    height: 48px;
-    min-height: 48px;
-  }
-
-  .mobile-menu-button span {
-    width: 25px;
+    height: 46px;
+    min-height: 46px;
   }
 
   .hero h1 {
@@ -2501,16 +2285,6 @@ textarea {
     font-size: 15px;
   }
 
-  .occasion-section {
-    padding: 25px 15px;
-  }
-
-  .occasion-section .occasion-list span {
-    padding: 8px 12px;
-
-    font-size: 13px;
-  }
-
   .info-card {
     padding: 22px 17px;
   }
@@ -2519,10 +2293,7 @@ textarea {
     padding: 22px 18px;
   }
 
-  .order-form-card {
-    padding: 22px 16px;
-  }
-
+  .order-form-card,
   .order-summary {
     padding: 22px 16px;
   }
@@ -2537,37 +2308,32 @@ textarea {
 
   .navbar-container {
     width: 94%;
-
-    min-height: 75px;
+    min-height: 74px;
   }
 
   .navbar-logo {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
   }
 
   .brand-name {
-    font-size: 25px;
+    font-size: 23px;
   }
 
   .brand-tagline {
     font-size: 5px;
 
-    letter-spacing: 1.3px;
+    letter-spacing: 1.2px;
   }
 
   .mobile-menu-button {
-    flex-basis: 44px;
+    flex-basis: 42px;
 
-    width: 44px;
-    min-width: 44px;
+    width: 42px;
+    min-width: 42px;
 
-    height: 44px;
-    min-height: 44px;
-  }
-
-  .mobile-menu-button span {
-    width: 23px;
+    height: 42px;
+    min-height: 42px;
   }
 
   .hero h1 {
