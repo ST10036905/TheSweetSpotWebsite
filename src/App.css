@@ -3,13 +3,11 @@
    Main Website Styles
 ========================================================= */
 
-@import url(
-  "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=Great+Vibes&display=swap"
-);
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=Great+Vibes&display=swap');
 
 
 /* =========================================================
-   ROOT VARIABLES
+   ROOT
 ========================================================= */
 
 :root {
@@ -28,6 +26,7 @@
 
   --text: #111111;
   --muted: #6f777b;
+
   --border: #eaded9;
 
   --radius: 18px;
@@ -35,7 +34,7 @@
 
 
 /* =========================================================
-   GLOBAL STYLES
+   GLOBAL
 ========================================================= */
 
 * {
@@ -50,8 +49,8 @@ html {
 }
 
 body {
-  margin: 0;
   min-width: 320px;
+  margin: 0;
 
   background: var(--white);
   color: var(--text);
@@ -101,8 +100,6 @@ textarea {
   background: #ffffff;
 
   border-bottom: 1.5px solid var(--pink);
-
-  backdrop-filter: blur(10px);
 }
 
 .navbar-container {
@@ -113,7 +110,6 @@ textarea {
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   gap: 40px;
 }
@@ -165,18 +161,23 @@ textarea {
 }
 
 .brand-tagline {
-  color: var(--pink);
-
   margin-top: 5px;
+
+  color: var(--pink);
 
   font-family:
     Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
     sans-serif;
 
   font-size: 9px;
   font-weight: 500;
 
   letter-spacing: 3px;
+  line-height: 1;
 
   text-transform: uppercase;
 
@@ -185,13 +186,12 @@ textarea {
 
 
 /* =========================================================
-   DESKTOP NAVIGATION
+   NAVIGATION LINKS
 ========================================================= */
 
 .navbar-links {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
 
   gap: 34px;
 
@@ -224,7 +224,7 @@ textarea {
 
 
 /* =========================================================
-   NAVBAR CONTACT BUTTON
+   NAVBAR BUTTON
 ========================================================= */
 
 .navbar-button {
@@ -271,56 +271,6 @@ textarea {
 
 
 /* =========================================================
-   MOBILE HAMBURGER
-========================================================= */
-
-.mobile-menu-button {
-  display: none;
-
-  width: 44px;
-  height: 44px;
-
-  padding: 8px;
-
-  border: none;
-
-  background: transparent;
-
-  cursor: pointer;
-
-  flex-shrink: 0;
-
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  gap: 5px;
-
-  -webkit-tap-highlight-color: transparent;
-}
-
-.mobile-menu-button span {
-  display: block;
-
-  width: 24px;
-  height: 2px;
-
-  background: var(--teal);
-
-  border-radius: 2px;
-}
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-.mobile-navbar-links {
-  display: none;
-}
-
-
-/* =========================================================
    HERO
 ========================================================= */
 
@@ -336,7 +286,6 @@ textarea {
   margin: auto;
 
   display: grid;
-
   grid-template-columns: 1fr 1fr;
 
   align-items: center;
@@ -359,7 +308,6 @@ textarea {
     serif;
 
   font-size: clamp(48px, 6vw, 76px);
-
   font-weight: 500;
 
   line-height: 1.05;
@@ -403,61 +351,6 @@ textarea {
   gap: 14px;
 
   margin-top: 34px;
-}
-
-
-/* =========================================================
-   HERO IMAGE
-========================================================= */
-
-.hero-image-wrapper {
-  position: relative;
-
-  width: 100%;
-  min-height: 520px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  overflow: visible;
-}
-
-.hero-circle {
-  position: absolute;
-
-  width: 460px;
-  height: 460px;
-
-  border-radius: 50%;
-
-  background: var(--rose-light);
-
-  z-index: 0;
-}
-
-.mainImage {
-  position: relative;
-
-  z-index: 1;
-
-  width: min(100%, 520px);
-  height: auto;
-
-  display: block;
-
-  object-fit: contain;
-
-  filter:
-    drop-shadow(
-      0 20px 25px rgba(50, 70, 80, 0.12)
-    );
-
-  transition: transform 0.3s ease;
-}
-
-.mainImage:hover {
-  transform: translateY(-5px);
 }
 
 
@@ -529,6 +422,60 @@ textarea {
 
 
 /* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-image-wrapper {
+  position: relative;
+
+  width: 100%;
+  min-height: 520px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible;
+}
+
+.hero-circle {
+  position: absolute;
+
+  width: 460px;
+  height: 460px;
+
+  border-radius: 50%;
+
+  background: var(--rose-light);
+
+  z-index: 0;
+}
+
+.mainImage {
+  position: relative;
+  z-index: 1;
+
+  width: min(100%, 520px);
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 20px 25px rgba(50, 70, 80, 0.12)
+    );
+
+  transition: transform 0.3s ease;
+}
+
+.mainImage:hover {
+  transform: translateY(-5px);
+}
+
+
+/* =========================================================
    ABOUT
 ========================================================= */
 
@@ -550,7 +497,6 @@ textarea {
   background: var(--cream);
 
   border: 1px solid var(--border);
-
   border-radius: 24px;
 
   box-shadow:
@@ -576,7 +522,6 @@ textarea {
     serif;
 
   font-size: clamp(36px, 4vw, 48px);
-
   font-weight: 400;
 
   line-height: 1.1;
@@ -610,6 +555,7 @@ textarea {
 
 .about-content p strong {
   color: var(--teal);
+
   font-weight: 600;
 }
 
@@ -632,7 +578,6 @@ textarea {
   background: var(--rose-light);
 
   border: 1px solid var(--border);
-
   border-radius: var(--radius);
 
   text-align: center;
@@ -683,7 +628,6 @@ textarea {
   padding: 10px 17px;
 
   border: 1px solid rgba(201, 121, 125, 0.35);
-
   border-radius: 999px;
 
   background: #fff8f7;
@@ -722,7 +666,6 @@ textarea {
   color: var(--teal);
 
   font-size: clamp(34px, 4vw, 42px);
-
   font-weight: 400;
 
   letter-spacing: 0.5px;
@@ -795,11 +738,13 @@ textarea {
 
 .teal-icon {
   border-color: rgba(53, 101, 117, 0.35);
+
   color: var(--teal);
 }
 
 .info-content {
   min-width: 0;
+
   padding-top: 2px;
 }
 
@@ -894,7 +839,6 @@ textarea {
     serif;
 
   font-size: clamp(42px, 6vw, 62px);
-
   font-weight: 500;
 
   letter-spacing: 0.5px;
@@ -946,7 +890,6 @@ textarea {
     serif;
 
   font-size: clamp(42px, 6vw, 62px);
-
   font-weight: 500;
 
   letter-spacing: 0.5px;
@@ -1122,7 +1065,6 @@ textarea {
   background: var(--rose-light);
 
   border: 2px solid var(--border);
-
   border-radius: var(--radius);
 
   text-align: center;
@@ -1163,7 +1105,6 @@ textarea {
   padding: 10px 17px;
 
   border: 1px solid rgba(201, 121, 125, 0.35);
-
   border-radius: 999px;
 
   background: #fff8f7;
@@ -1263,7 +1204,6 @@ textarea {
   background: #ffffff;
 
   border: 2px solid var(--border);
-
   border-radius: var(--radius);
 
   box-shadow:
@@ -1381,13 +1321,23 @@ textarea {
     0 0 0 3px rgba(248, 135, 150, 0.12);
 }
 
+.form-grid input[type="date"] {
+  width: 100%;
+
+  min-height: 52px;
+
+  font-size: 16px;
+
+  color: var(--teal-dark);
+}
+
 .full-width {
   grid-column: 1 / -1;
 }
 
 
 /* =========================================================
-   WHATSAPP ORDER BUTTON
+   WHATSAPP ORDER
 ========================================================= */
 
 .whatsapp-order-button {
@@ -1421,10 +1371,13 @@ textarea {
 
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .whatsapp-order-button:hover:not(.disabled) {
+  background: var(--rose-dark);
+
   transform: translateY(-2px);
 
   box-shadow:
@@ -1438,6 +1391,16 @@ textarea {
   cursor: not-allowed;
 
   box-shadow: none;
+}
+
+.form-help {
+  margin-top: 12px;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  text-align: center;
 }
 
 
@@ -1454,7 +1417,6 @@ textarea {
   background: #ffffff;
 
   border: 2px solid rgba(53, 101, 117, 0.3);
-
   border-radius: var(--radius);
 
   box-shadow:
@@ -1470,6 +1432,12 @@ textarea {
 
   font-size: 32px;
   font-weight: 500;
+
+  letter-spacing: 1px;
+}
+
+.order-summary .heart-divider {
+  margin-bottom: 20px;
 }
 
 .summary-item {
@@ -1479,10 +1447,14 @@ textarea {
 
   gap: 20px;
 
+  min-width: 0;
+
   padding: 14px 0;
 
   border-bottom:
     1px solid rgba(53, 101, 117, 0.12);
+
+  font-size: 14px;
 }
 
 .summary-item span {
@@ -1499,6 +1471,7 @@ textarea {
 
 .summary-message {
   margin-top: 22px;
+  padding-top: 5px;
 }
 
 .summary-message span {
@@ -1509,6 +1482,8 @@ textarea {
 }
 
 .summary-message p {
+  max-width: 800px;
+
   margin-top: 8px;
 
   color: var(--muted);
@@ -1530,6 +1505,8 @@ textarea {
     repeat(2, minmax(0, 1fr));
 
   gap: 20px;
+
+  min-width: 0;
 }
 
 .contact-card {
@@ -1538,12 +1515,13 @@ textarea {
 
   gap: 15px;
 
+  min-width: 0;
+
   padding: 28px;
 
   background: #ffffff;
 
   border: 2px solid rgba(201, 121, 125, 0.4);
-
   border-radius: 18px;
 
   transition:
@@ -1573,11 +1551,9 @@ textarea {
   justify-content: center;
 
   border: 1px solid rgba(201, 121, 125, 0.45);
-
   border-radius: 50%;
 
   background: #fffafa;
-
   color: var(--pink);
 }
 
@@ -1590,7 +1566,6 @@ textarea {
   border-color: rgba(53, 101, 117, 0.4);
 
   background: #f7fbfc;
-
   color: var(--teal);
 }
 
@@ -1631,7 +1606,6 @@ textarea {
   background: #ffffff;
 
   border: 2px solid var(--border);
-
   border-radius: 18px;
 
   text-align: center;
@@ -1719,6 +1693,12 @@ textarea {
   letter-spacing: 0.5px;
 }
 
+.footer-links a {
+  color: var(--teal-dark);
+
+  transition: color 0.2s ease;
+}
+
 .footer-links a:hover {
   color: var(--rose-dark);
 }
@@ -1733,119 +1713,74 @@ textarea {
 
 
 /* =========================================================
-   TABLET AND MOBILE
+   TABLET
 ========================================================= */
 
 @media screen and (max-width: 900px) {
 
-  /* Navbar */
-
   .navbar-container {
     width: 92%;
-    min-height: 82px;
 
-    gap: 15px;
-  }
+    min-height: auto;
 
-  .navbar-links,
-  .navbar-container > .navbar-button {
-    display: none;
+    padding: 14px 0;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
   }
 
   .navbar-brand {
+    order: 1;
+
     flex: 1;
 
-    gap: 10px;
+    min-width: 0;
+
+    gap: 8px;
   }
 
-  .navbar-logo {
-    width: 50px;
-    height: 50px;
+  .navbar-button {
+    order: 2;
   }
 
-  .navbar-brand-text {
-    overflow: visible;
-  }
-
-  .brand-name {
-    font-size: 28px;
-
-    overflow: visible;
-
-    text-overflow: initial;
-  }
-
-  .brand-tagline {
-    font-size: 7px;
-
-    letter-spacing: 2px;
-  }
-
-  .mobile-menu-button {
-    display: flex;
-
-    flex: 0 0 48px;
-
-    width: 48px;
-    height: 48px;
-  }
-
-  .mobile-navbar-links {
-    display: flex;
+  .navbar-links {
+    order: 3;
 
     width: 100%;
 
-    flex-direction: column;
-    align-items: center;
+    margin-left: 0;
 
-    gap: 18px;
-
-    padding: 25px 18px 32px;
-
-    background: #ffffff;
-
-    border-top: 1px solid var(--border);
-    border-bottom: 1.5px solid var(--pink);
-  }
-
-  .mobile-navbar-links a {
-    display: block;
-
-    padding: 5px 10px;
-
-    color: var(--teal);
-
-    font-family:
-      "Cormorant Garamond",
-      Georgia,
-      serif;
-
-    font-size: 22px;
-    font-weight: 600;
-  }
-
-  .mobile-navbar-links .mobile-contact-button {
-    display: inline-flex;
-
-    align-items: center;
     justify-content: center;
 
-    width: min(220px, 90%);
-    min-height: 48px;
+    flex-wrap: wrap;
 
-    padding: 12px 20px;
+    gap: 24px;
 
-    border-radius: 999px;
+    padding-top: 5px;
+  }
 
-    background: var(--pink);
-    color: #ffffff;
+  .navbar-logo {
+    width: 42px;
+    height: 42px;
+  }
 
-    font-family:
-      "Cormorant Garamond",
-      Georgia,
-      serif;
+  .brand-name {
+    font-size: 25px;
+  }
 
-    font-size: 18px;
+  .brand-tagline {
+    font-size: 6px;
+    letter-spacing: 1.5px;
+  }
+
+  .navbar-button {
+    min-width: 110px;
+    min-height: 40px;
+
+    padding: 10px 17px;
+
+    font-size: 13px;
   }
 
 
@@ -1905,11 +1840,9 @@ textarea {
   }
 
 
-  /* Grids */
+  /* How It Works */
 
-  .how-grid,
-  .menu-grid,
-  .contact-grid {
+  .how-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1920,6 +1853,17 @@ textarea {
     padding-top: 50px;
   }
 
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Order */
+
   .order-form-card,
   .order-summary {
     padding: 30px;
@@ -1928,36 +1872,97 @@ textarea {
 
 
 /* =========================================================
-   MOBILE PHONES
+   MOBILE
 ========================================================= */
 
 @media screen and (max-width: 600px) {
 
+  /* Navbar */
+
+  .navbar-container {
+    width: 90%;
+
+    padding: 12px 0;
+
+    gap: 10px;
+  }
+
+  .navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-name {
+    font-size: 24px;
+  }
+
+  .brand-tagline {
+    font-size: 5.5px;
+    letter-spacing: 1.3px;
+  }
+
+  .navbar-button {
+    min-width: auto;
+
+    padding: 10px 15px;
+
+    font-size: 12px;
+  }
+
+  .navbar-links {
+    gap: 18px;
+
+    padding-top: 3px;
+  }
+
+  .navbar-links a {
+    font-size: 17px;
+  }
+
+
   /* =======================================================
-     HERO IMAGE FIRST ON MOBILE
+     HERO
   ======================================================= */
 
   .hero-container {
+    width: 90%;
+
     display: flex;
     flex-direction: column;
 
-    width: 90%;
+    min-height: auto;
 
-    padding: 40px 0 45px;
+    padding: 30px 0 45px;
 
-    gap: 10px;
+    gap: 0;
   }
 
   .hero-image-wrapper {
     order: 1;
 
-    min-height: 300px;
+    min-height: 330px;
 
     margin-top: 0;
+    margin-bottom: 5px;
+
+    width: 100%;
   }
 
   .hero-content {
     order: 2;
+
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+  .hero-circle {
+    width: 280px;
+    height: 280px;
+  }
+
+  .mainImage {
+    width: 95%;
   }
 
   .hero h1 {
@@ -1982,15 +1987,6 @@ textarea {
 
   .btn {
     width: 100%;
-  }
-
-  .hero-circle {
-    width: 280px;
-    height: 280px;
-  }
-
-  .mainImage {
-    width: 95%;
   }
 
 
@@ -2074,6 +2070,8 @@ textarea {
 
   .info-content {
     width: 100%;
+
+    padding-top: 0;
   }
 
   .info-card h3 {
@@ -2089,7 +2087,7 @@ textarea {
   }
 
 
-  /* General Pages */
+  /* Pages */
 
   .page {
     width: 90%;
@@ -2143,12 +2141,47 @@ textarea {
     padding: 25px;
   }
 
+  .menu-list li {
+    font-size: 14px;
+  }
+
   .menu-list li span {
     font-size: 16px;
   }
 
 
+  /* Menu occasions */
+
+  .occasion-section {
+    padding: 25px 18px;
+  }
+
+  .occasion-section h2 {
+    font-size: 28px;
+  }
+
+  .occasion-section .occasion-list {
+    gap: 8px;
+  }
+
+  .occasion-section .occasion-list span {
+    padding: 9px 14px;
+
+    font-size: 14px;
+  }
+
+  .menu-order-button {
+    width: 100%;
+  }
+
+
   /* Order */
+
+  .order-layout {
+    width: 100%;
+
+    gap: 22px;
+  }
 
   .form-grid {
     grid-template-columns: 1fr;
@@ -2168,15 +2201,51 @@ textarea {
     border-radius: 18px;
   }
 
+  .order-form-card h2,
+  .order-summary h2 {
+    font-size: 28px;
+
+    line-height: 1.2;
+  }
+
+  .form-intro {
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+  .form-grid input,
+  .form-grid select,
+  .form-grid textarea {
+    width: 100%;
+
+    max-width: 100%;
+    min-width: 0;
+
+    padding: 13px 14px;
+
+    font-size: 16px;
+  }
+
+  .form-grid input,
+  .form-grid select {
+    min-height: 50px;
+  }
+
+  .form-grid textarea {
+    min-height: 120px;
+  }
+
+  .form-grid input[type="date"] {
+    min-height: 50px;
+
+    font-size: 16px;
+  }
+
   .order-summary {
     padding: 25px 18px;
 
     border-radius: 18px;
-  }
-
-  .order-form-card h2,
-  .order-summary h2 {
-    font-size: 28px;
   }
 
   .summary-item {
@@ -2185,12 +2254,20 @@ textarea {
     align-items: flex-start;
 
     gap: 5px;
+
+    padding: 12px 0;
   }
 
   .summary-item strong {
     text-align: left;
 
     overflow-wrap: anywhere;
+  }
+
+  .summary-message p {
+    font-size: 13px;
+
+    line-height: 1.6;
   }
 
   .whatsapp-order-button {
@@ -2204,6 +2281,12 @@ textarea {
 
   /* Contact */
 
+  .contact-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
   .contact-card {
     gap: 12px;
 
@@ -2214,12 +2297,28 @@ textarea {
     font-size: 20px;
   }
 
+  .contact-card p {
+    font-size: 12px;
+  }
+
+  .contact-card span {
+    font-size: 11px;
+  }
+
   .contact-cta {
     padding: 35px 20px;
   }
 
   .contact-cta h2 {
     font-size: 28px;
+  }
+
+  .contact-cta p {
+    margin-top: 20px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
   }
 }
 
@@ -2232,32 +2331,24 @@ textarea {
 
   .navbar-container {
     width: 92%;
-    min-height: 78px;
   }
 
-  .navbar-logo {
-    width: 46px;
-    height: 46px;
+  .navbar-links {
+    gap: 15px;
   }
 
-  .brand-name {
-    font-size: 26px;
+  .navbar-links a {
+    font-size: 16px;
   }
 
-  .brand-tagline {
-    font-size: 6px;
+  .navbar-button {
+    padding: 9px 13px;
 
-    letter-spacing: 1.7px;
+    font-size: 11px;
   }
 
-  .mobile-menu-button {
-    flex-basis: 46px;
-
-    width: 46px;
-    min-width: 46px;
-
-    height: 46px;
-    min-height: 46px;
+  .hero-image-wrapper {
+    min-height: 300px;
   }
 
   .hero h1 {
@@ -2285,6 +2376,16 @@ textarea {
     font-size: 15px;
   }
 
+  .occasion-section {
+    padding: 25px 15px;
+  }
+
+  .occasion-section .occasion-list span {
+    padding: 8px 12px;
+
+    font-size: 13px;
+  }
+
   .info-card {
     padding: 22px 17px;
   }
@@ -2293,7 +2394,10 @@ textarea {
     padding: 22px 18px;
   }
 
-  .order-form-card,
+  .order-form-card {
+    padding: 22px 16px;
+  }
+
   .order-summary {
     padding: 22px 16px;
   }
@@ -2308,32 +2412,39 @@ textarea {
 
   .navbar-container {
     width: 94%;
-    min-height: 74px;
   }
 
   .navbar-logo {
-    width: 42px;
-    height: 42px;
+    width: 37px;
+    height: 37px;
   }
 
   .brand-name {
-    font-size: 23px;
+    font-size: 22px;
   }
 
   .brand-tagline {
     font-size: 5px;
 
-    letter-spacing: 1.2px;
+    letter-spacing: 1.1px;
   }
 
-  .mobile-menu-button {
-    flex-basis: 42px;
+  .navbar-button {
+    padding: 8px 11px;
 
-    width: 42px;
-    min-width: 42px;
+    font-size: 10px;
+  }
 
-    height: 42px;
-    min-height: 42px;
+  .navbar-links {
+    gap: 12px;
+  }
+
+  .navbar-links a {
+    font-size: 15px;
+  }
+
+  .hero-image-wrapper {
+    min-height: 270px;
   }
 
   .hero h1 {
@@ -2360,5 +2471,313 @@ textarea {
   .order-form-card,
   .order-summary {
     padding: 20px 14px;
+  }
+}
+
+
+/* =========================================================
+   CHATBOT
+========================================================= */
+
+.chatbot-button {
+  position: fixed;
+
+  right: 22px;
+  bottom: 22px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  height: 48px;
+
+  padding: 0 17px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: var(--pink);
+  color: #ffffff;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 20px rgba(50, 70, 80, 0.18);
+
+  z-index: 900;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.chatbot-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(50, 70, 80, 0.24);
+}
+
+.chatbot-robot {
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   CHAT WINDOW
+========================================================= */
+
+.chatbot {
+  position: fixed;
+
+  right: 22px;
+  bottom: 82px;
+
+  width: 330px;
+  max-width: calc(100vw - 30px);
+
+  background: #ffffff;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 35px rgba(50, 70, 80, 0.16);
+
+  z-index: 899;
+}
+
+
+/* =========================================================
+   CHAT HEADER
+========================================================= */
+
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 17px;
+
+  background: #f88796;
+  color: #ffffff;
+}
+
+.chatbot-header-content {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.chatbot-header-robot {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  font-size: 19px;
+}
+
+.chatbot-header h3 {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.chatbot-header span {
+  display: block;
+
+  margin-top: 1px;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  letter-spacing: 0.8px;
+}
+
+.chatbot-close {
+  border: none;
+
+  background: transparent;
+  color: #ffffff;
+
+  font-size: 23px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   CHAT MESSAGES
+========================================================= */
+
+.chatbot-messages {
+  height: 270px;
+
+  padding: 15px;
+
+  overflow-y: auto;
+
+  background: var(--cream);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  scroll-behavior: smooth;
+}
+
+.chatbot-message {
+  max-width: 82%;
+
+  padding: 10px 13px;
+
+  border-radius: 14px;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.chatbot-message.bot {
+  align-self: flex-start;
+
+  background: #ffffff;
+
+  color: var(--teal-dark);
+
+  border: 1px solid var(--border);
+
+  border-bottom-left-radius: 4px;
+}
+
+.chatbot-message.user {
+  align-self: flex-end;
+
+  background: var(--pink);
+
+  color: #ffffff;
+
+  border-bottom-right-radius: 4px;
+}
+
+
+/* =========================================================
+   CHAT INPUT
+========================================================= */
+
+.chatbot-input {
+  display: flex;
+
+  gap: 7px;
+
+  padding: 10px;
+
+  background: #ffffff;
+
+  border-top: 1px solid var(--border);
+}
+
+.chatbot-input input {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 10px 12px;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  outline: none;
+
+  color: var(--teal-dark);
+
+  font-size: 12px;
+}
+
+.chatbot-input input:focus {
+  border-color: var(--pink);
+}
+
+.chatbot-input button {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--pink);
+  color: #ffffff;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   CHATBOT MOBILE
+========================================================= */
+
+@media screen and (max-width: 600px) {
+
+  .chatbot-button {
+    right: 15px;
+    bottom: 15px;
+
+    height: 44px;
+
+    padding: 0 14px;
+
+    font-size: 14px;
+  }
+
+  .chatbot {
+    right: 15px;
+    bottom: 70px;
+
+    width: calc(100vw - 30px);
+
+    border-radius: 17px;
+  }
+
+  .chatbot-messages {
+    height: 250px;
   }
 }
