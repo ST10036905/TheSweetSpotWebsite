@@ -1,21 +1,16 @@
-import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import logo from "../assets/The-Sweet-Spot-Logo.png";
 
 function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const navigate = useNavigate();
   const location = useLocation();
 
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-  };
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleAboutClick = (e) => {
     e.preventDefault();
-
-    closeMobileMenu();
+    setMenuOpen(false);
 
     if (location.pathname === "/") {
       const aboutSection = document.getElementById("about");
@@ -31,15 +26,18 @@ function Navbar() {
     }
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
 
-        {/* Logo and Brand */}
         <Link
           to="/"
           className="navbar-brand"
-          onClick={closeMobileMenu}
+          onClick={closeMenu}
         >
           <img
             src={logo}
@@ -59,47 +57,44 @@ function Navbar() {
         </Link>
 
 
-        {/* Desktop Navigation Links */}
-        <div className="navbar-links">
+        {/* Desktop / Mobile Navigation */}
+        <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
 
-          <Link to="/">
+          <Link to="/" onClick={closeMenu}>
             Home
           </Link>
 
-          <a
-            href="#about"
-            onClick={handleAboutClick}
-          >
+          <a href="#about" onClick={handleAboutClick}>
             About
           </a>
 
-          <Link to="/menu">
+          <Link to="/menu" onClick={closeMenu}>
             Menu
           </Link>
 
-          <Link to="/order">
+          <Link to="/order" onClick={closeMenu}>
             Order
           </Link>
 
         </div>
 
 
-        {/* Desktop Contact Button */}
+        {/* Desktop Button */}
         <Link
           to="/contact"
           className="navbar-button"
+          onClick={closeMenu}
         >
           Get in touch
         </Link>
 
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Hamburger */}
         <button
-          type="button"
-          className="mobile-menu-button"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className={`navbar-toggle ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation menu"
-          aria-expanded={mobileMenuOpen}
+          aria-expanded={menuOpen}
         >
           <span></span>
           <span></span>
@@ -107,51 +102,6 @@ function Navbar() {
         </button>
 
       </div>
-
-
-      {/* Mobile Navigation Menu */}
-      {mobileMenuOpen && (
-        <div className="mobile-navbar-links">
-
-          <Link
-            to="/"
-            onClick={closeMobileMenu}
-          >
-            Home
-          </Link>
-
-          <a
-            href="#about"
-            onClick={handleAboutClick}
-          >
-            About
-          </a>
-
-          <Link
-            to="/menu"
-            onClick={closeMobileMenu}
-          >
-            Menu
-          </Link>
-
-          <Link
-            to="/order"
-            onClick={closeMobileMenu}
-          >
-            Order
-          </Link>
-
-          <Link
-            to="/contact"
-            className="mobile-contact-button"
-            onClick={closeMobileMenu}
-          >
-            Get in touch
-          </Link>
-
-        </div>
-      )}
-
     </nav>
   );
 }

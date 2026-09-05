@@ -103,6 +103,8 @@ textarea {
 }
 
 .navbar-container {
+  position: relative;
+
   width: min(1525px, 92%);
   min-height: 82px;
 
@@ -267,6 +269,20 @@ textarea {
 
   box-shadow:
     0 8px 20px rgba(201, 121, 125, 0.25);
+}
+
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.navbar-toggle {
+  display: none;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
 }
 
 
@@ -1721,13 +1737,13 @@ textarea {
   .navbar-container {
     width: 92%;
 
-    min-height: auto;
+    min-height: 72px;
 
-    padding: 14px 0;
-
-    flex-wrap: wrap;
+    padding: 10px 0;
 
     gap: 12px;
+
+    flex-wrap: nowrap;
   }
 
   .navbar-brand {
@@ -1738,26 +1754,6 @@ textarea {
     min-width: 0;
 
     gap: 8px;
-  }
-
-  .navbar-button {
-    order: 2;
-  }
-
-  .navbar-links {
-    order: 3;
-
-    width: 100%;
-
-    margin-left: 0;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 24px;
-
-    padding-top: 5px;
   }
 
   .navbar-logo {
@@ -1774,17 +1770,124 @@ textarea {
     letter-spacing: 1.5px;
   }
 
-  .navbar-button {
-    min-width: 110px;
-    min-height: 40px;
 
-    padding: 10px 17px;
+  /* Hide desktop navigation */
 
-    font-size: 13px;
+  .navbar-links {
+    display: none;
   }
 
 
-  /* Hero */
+  /* Hide desktop button */
+
+  .navbar-button {
+    display: none;
+  }
+
+
+  /* Hamburger */
+
+  .navbar-toggle {
+    order: 2;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+    color: var(--teal);
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    z-index: 1100;
+  }
+
+  .navbar-toggle span {
+    display: block;
+
+    width: 23px;
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: var(--teal);
+
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
+  }
+
+
+  /* Hamburger becomes X */
+
+  .navbar-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .navbar-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+
+  /* Mobile / tablet dropdown */
+
+  .navbar-links.open {
+    display: flex;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 20px 0 24px;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: #ffffff;
+
+    border-bottom: 1.5px solid var(--pink);
+
+    box-shadow:
+      0 10px 25px rgba(50, 70, 80, 0.08);
+
+    z-index: 999;
+  }
+
+  .navbar-links.open a {
+    font-size: 18px;
+  }
+
+
+  /* =======================================================
+     HERO
+  ======================================================= */
 
   .hero-container {
     grid-template-columns: 1fr;
@@ -1877,14 +1980,20 @@ textarea {
 
 @media screen and (max-width: 600px) {
 
-  /* Navbar */
+  /* =======================================================
+     NAVBAR
+  ======================================================= */
 
   .navbar-container {
     width: 90%;
 
-    padding: 12px 0;
+    min-height: 68px;
 
-    gap: 10px;
+    padding: 10px 0;
+
+    gap: 8px;
+
+    flex-wrap: nowrap;
   }
 
   .navbar-logo {
@@ -1901,22 +2010,11 @@ textarea {
     letter-spacing: 1.3px;
   }
 
-  .navbar-button {
-    min-width: auto;
+  .navbar-toggle {
+    width: 40px;
+    height: 40px;
 
-    padding: 10px 15px;
-
-    font-size: 12px;
-  }
-
-  .navbar-links {
-    gap: 18px;
-
-    padding-top: 3px;
-  }
-
-  .navbar-links a {
-    font-size: 17px;
+    display: flex;
   }
 
 
@@ -2333,18 +2431,13 @@ textarea {
     width: 92%;
   }
 
-  .navbar-links {
-    gap: 15px;
+  .navbar-toggle {
+    width: 38px;
+    height: 38px;
   }
 
-  .navbar-links a {
-    font-size: 16px;
-  }
-
-  .navbar-button {
-    padding: 9px 13px;
-
-    font-size: 11px;
+  .navbar-toggle span {
+    width: 22px;
   }
 
   .hero-image-wrapper {
@@ -2429,18 +2522,13 @@ textarea {
     letter-spacing: 1.1px;
   }
 
-  .navbar-button {
-    padding: 8px 11px;
-
-    font-size: 10px;
+  .navbar-toggle {
+    width: 36px;
+    height: 36px;
   }
 
-  .navbar-links {
-    gap: 12px;
-  }
-
-  .navbar-links a {
-    font-size: 15px;
+  .navbar-toggle span {
+    width: 21px;
   }
 
   .hero-image-wrapper {
@@ -2487,7 +2575,7 @@ textarea {
 
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
 
   height: 48px;
 
@@ -2526,19 +2614,6 @@ textarea {
 
   box-shadow:
     0 10px 25px rgba(50, 70, 80, 0.24);
-}
-
-.chatbot-robot {
-  width: 22px;
-  height: 22px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 18px;
-
-  line-height: 1;
 }
 
 
@@ -2589,21 +2664,6 @@ textarea {
   align-items: center;
 
   gap: 10px;
-}
-
-.chatbot-header-robot {
-  width: 34px;
-  height: 34px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: #ffffff;
-
-  font-size: 19px;
 }
 
 .chatbot-header h3 {
