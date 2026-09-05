@@ -51,6 +51,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+
   background: var(--white);
   color: var(--text);
 
@@ -63,12 +64,15 @@ body {
     sans-serif;
 
   -webkit-font-smoothing: antialiased;
+
   overflow-x: hidden;
 }
 
 #root {
   min-height: 100vh;
+
   background: var(--white);
+
   overflow-x: hidden;
 }
 
@@ -92,6 +96,7 @@ textarea {
 .navbar {
   position: sticky;
   top: 0;
+
   z-index: 1000;
 
   width: 100%;
@@ -101,6 +106,8 @@ textarea {
   border-bottom: 1.5px solid var(--pink);
 
   backdrop-filter: blur(10px);
+
+  overflow: visible;
 }
 
 .navbar-container {
@@ -128,6 +135,7 @@ textarea {
   gap: 13px;
 
   flex-shrink: 0;
+
   min-width: 0;
 }
 
@@ -138,6 +146,7 @@ textarea {
   display: block;
 
   object-fit: contain;
+
   flex-shrink: 0;
 }
 
@@ -212,6 +221,7 @@ textarea {
   font-weight: 600;
 
   letter-spacing: 0.5px;
+
   line-height: 1;
 
   white-space: nowrap;
@@ -255,6 +265,7 @@ textarea {
   font-weight: 500;
 
   letter-spacing: 1px;
+
   line-height: 1;
 
   white-space: nowrap;
@@ -445,6 +456,7 @@ textarea {
     serif;
 
   font-weight: 400;
+
   letter-spacing: 2px;
 
   box-shadow:
@@ -468,6 +480,7 @@ textarea {
     serif;
 
   font-weight: 400;
+
   letter-spacing: 2px;
 }
 
@@ -1211,7 +1224,7 @@ textarea {
 
   border-radius: 999px;
 
-  background: #f88796;
+  background: var(--pink);
   color: #ffffff;
 
   font-family:
@@ -1233,8 +1246,6 @@ textarea {
 }
 
 .menu-order-button:hover {
-  background: #f88796;
-
   transform: translateY(-2px);
 
   box-shadow:
@@ -1792,11 +1803,15 @@ textarea {
 
 @media screen and (max-width: 900px) {
 
+  .navbar {
+    overflow: visible;
+  }
+
   .navbar-container {
     width: 92%;
-    min-height: 68px;
+    min-height: 85px;
 
-    gap: 10px;
+    gap: 15px;
   }
 
   .navbar-links,
@@ -1809,65 +1824,92 @@ textarea {
 
     min-width: 0;
 
-    gap: 8px;
+    gap: 12px;
   }
 
   .navbar-logo {
-    width: 42px;
-    height: 42px;
+    width: 52px;
+    height: 52px;
   }
 
   .navbar-brand-text {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
     min-width: 0;
 
-    overflow: hidden;
+    overflow: visible;
   }
 
   .brand-name {
-    font-size: 25px;
+    font-size: 30px;
 
-    overflow: hidden;
+    overflow: visible;
 
-    text-overflow: ellipsis;
+    text-overflow: unset;
   }
 
   .brand-tagline {
-    font-size: 6px;
+    margin-top: 5px;
 
-    letter-spacing: 1.5px;
+    font-size: 7px;
+
+    letter-spacing: 2px;
   }
 
   .mobile-menu-button {
     display: flex;
 
-    flex: 0 0 42px;
+    flex: 0 0 50px;
 
-    width: 42px;
-    height: 42px;
+    width: 50px;
+    height: 50px;
+
+    padding: 10px;
   }
+
+  .mobile-menu-button span {
+    width: 27px;
+    height: 2px;
+  }
+
+
+  /* MOBILE DROPDOWN */
 
   .mobile-navbar-links {
     display: flex;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
 
     width: 100%;
 
     flex-direction: column;
     align-items: center;
 
-    gap: 18px;
+    gap: 20px;
 
-    padding: 22px 18px 28px;
+    padding: 28px 20px 32px;
 
     background: #ffffff;
 
     border-top: 1px solid var(--border);
     border-bottom: 1.5px solid var(--pink);
+
+    box-shadow:
+      0 15px 30px rgba(50, 70, 80, 0.08);
+
+    z-index: 999;
   }
 
   .mobile-navbar-links a {
     display: block;
 
-    padding: 4px 10px;
+    padding: 6px 15px;
 
     color: var(--teal);
 
@@ -1876,7 +1918,7 @@ textarea {
       Georgia,
       serif;
 
-    font-size: 21px;
+    font-size: 23px;
     font-weight: 600;
 
     line-height: 1.2;
@@ -1894,10 +1936,10 @@ textarea {
     align-items: center;
     justify-content: center;
 
-    width: min(220px, 90%);
-    min-height: 46px;
+    width: min(240px, 90%);
+    min-height: 50px;
 
-    padding: 12px 20px;
+    padding: 14px 24px;
 
     border-radius: 999px;
 
@@ -1909,16 +1951,14 @@ textarea {
       Georgia,
       serif;
 
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 500;
 
     letter-spacing: 1px;
   }
 
 
-  /* =======================================================
-     HERO
-  ======================================================= */
+  /* HERO */
 
   .hero-container {
     grid-template-columns: 1fr;
@@ -1963,9 +2003,7 @@ textarea {
   }
 
 
-  /* =======================================================
-     ABOUT
-  ======================================================= */
+  /* ABOUT */
 
   .about-section {
     padding: 55px 0;
@@ -1980,18 +2018,14 @@ textarea {
   }
 
 
-  /* =======================================================
-     HOW IT WORKS
-  ======================================================= */
+  /* HOW IT WORKS */
 
   .how-grid {
     grid-template-columns: 1fr;
   }
 
 
-  /* =======================================================
-     PAGES
-  ======================================================= */
+  /* PAGES */
 
   .page {
     padding-top: 50px;
@@ -2006,9 +2040,7 @@ textarea {
   }
 
 
-  /* =======================================================
-     ORDER
-  ======================================================= */
+  /* ORDER */
 
   .order-form-card,
   .order-summary {
@@ -2071,7 +2103,7 @@ textarea {
   }
 
 
-  /* About */
+  /* ABOUT */
 
   .about-section {
     width: 90%;
@@ -2096,7 +2128,7 @@ textarea {
   }
 
 
-  /* Occasions */
+  /* OCCASIONS */
 
   .section-card {
     padding: 25px 18px;
@@ -2118,7 +2150,7 @@ textarea {
   }
 
 
-  /* How It Works */
+  /* HOW IT WORKS */
 
   .how-section {
     width: 90%;
@@ -2168,7 +2200,7 @@ textarea {
   }
 
 
-  /* General pages */
+  /* GENERAL PAGES */
 
   .page {
     width: 90%;
@@ -2192,7 +2224,7 @@ textarea {
   }
 
 
-  /* Menu */
+  /* MENU */
 
   .menu-page {
     width: 90%;
@@ -2231,7 +2263,7 @@ textarea {
   }
 
 
-  /* Menu occasions */
+  /* MENU OCCASIONS */
 
   .occasion-section {
     padding: 25px 18px;
@@ -2256,7 +2288,7 @@ textarea {
   }
 
 
-  /* Order */
+  /* ORDER */
 
   .order-layout {
     width: 100%;
@@ -2360,7 +2392,7 @@ textarea {
   }
 
 
-  /* Contact */
+  /* CONTACT */
 
   .contact-grid {
     grid-template-columns: 1fr;
@@ -2412,36 +2444,36 @@ textarea {
 
   .navbar-container {
     width: 92%;
-    min-height: 65px;
+    min-height: 78px;
   }
 
   .navbar-logo {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
   }
 
   .brand-name {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .brand-tagline {
-    font-size: 5.5px;
+    font-size: 6px;
 
-    letter-spacing: 1.3px;
+    letter-spacing: 1.8px;
   }
 
   .mobile-menu-button {
-    flex-basis: 40px;
+    flex-basis: 48px;
 
-    width: 40px;
-    min-width: 40px;
+    width: 48px;
+    min-width: 48px;
 
-    height: 40px;
-    min-height: 40px;
+    height: 48px;
+    min-height: 48px;
   }
 
   .mobile-menu-button span {
-    width: 22px;
+    width: 25px;
   }
 
   .hero h1 {
@@ -2505,35 +2537,37 @@ textarea {
 
   .navbar-container {
     width: 94%;
+
+    min-height: 75px;
   }
 
   .navbar-logo {
-    width: 37px;
-    height: 37px;
+    width: 44px;
+    height: 44px;
   }
 
   .brand-name {
-    font-size: 22px;
+    font-size: 25px;
   }
 
   .brand-tagline {
     font-size: 5px;
 
-    letter-spacing: 1.1px;
+    letter-spacing: 1.3px;
   }
 
   .mobile-menu-button {
-    flex-basis: 38px;
+    flex-basis: 44px;
 
-    width: 38px;
-    min-width: 38px;
+    width: 44px;
+    min-width: 44px;
 
-    height: 38px;
-    min-height: 38px;
+    height: 44px;
+    min-height: 44px;
   }
 
   .mobile-menu-button span {
-    width: 21px;
+    width: 23px;
   }
 
   .hero h1 {
