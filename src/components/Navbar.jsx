@@ -10,6 +10,7 @@ function Navbar() {
 
   const handleAboutClick = (e) => {
     e.preventDefault();
+
     setMenuOpen(false);
 
     if (location.pathname === "/") {
@@ -34,6 +35,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
 
+        {/* Logo */}
         <Link
           to="/"
           className="navbar-brand"
@@ -57,39 +59,50 @@ function Navbar() {
         </Link>
 
 
-        {/* Desktop / Mobile Navigation */}
+        {/* Navigation */}
         <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
 
-          <Link to="/" onClick={closeMenu}>
+          <Link
+            to="/"
+            onClick={closeMenu}
+          >
             Home
           </Link>
 
-          <a href="#about" onClick={handleAboutClick}>
+          <a
+            href="#about"
+            onClick={handleAboutClick}
+          >
             About
           </a>
 
-          <Link to="/menu" onClick={closeMenu}>
+          <Link
+            to="/menu"
+            onClick={closeMenu}
+          >
             Menu
           </Link>
 
-          <Link to="/order" onClick={closeMenu}>
+          <Link
+            to="/order"
+            onClick={closeMenu}
+          >
             Order
+          </Link>
+
+          {/* Get in touch */}
+          <Link
+            to="/contact"
+            className="navbar-button"
+            onClick={closeMenu}
+          >
+            Get in touch
           </Link>
 
         </div>
 
 
-        {/* Desktop Button */}
-        <Link
-          to="/contact"
-          className="navbar-button"
-          onClick={closeMenu}
-        >
-          Get in touch
-        </Link>
-
-
-        {/* Mobile Hamburger */}
+        {/* Hamburger */}
         <button
           className={`navbar-toggle ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}

@@ -1,3 +1,4 @@
+
 /* =========================================================
    THE SWEET SPOT
    Main Website Styles
@@ -244,14 +245,14 @@ textarea {
   border-radius: 999px;
 
   background: var(--pink);
-  color: #ffffff;
+  color: #ffffff !important;
 
   font-family:
     "Cormorant Garamond",
     Georgia,
     serif;
 
-  font-size: 14px;
+  font-size: 14px !important;
   font-weight: 500;
 
   letter-spacing: 1px;
@@ -266,6 +267,10 @@ textarea {
 
 .navbar-button:hover {
   transform: translateY(-2px);
+
+  background: var(--pink);
+
+  color: #ffffff !important;
 
   box-shadow:
     0 8px 20px rgba(201, 121, 125, 0.25);
@@ -1734,6 +1739,10 @@ textarea {
 
 @media screen and (max-width: 900px) {
 
+  /* -------------------------------------------------------
+     NAVBAR
+  ------------------------------------------------------- */
+
   .navbar-container {
     width: 92%;
 
@@ -1774,13 +1783,6 @@ textarea {
   /* Hide desktop navigation */
 
   .navbar-links {
-    display: none;
-  }
-
-
-  /* Hide desktop button */
-
-  .navbar-button {
     display: none;
   }
 
@@ -1848,7 +1850,9 @@ textarea {
   }
 
 
-  /* Mobile / tablet dropdown */
+  /* -------------------------------------------------------
+     MOBILE / TABLET DROPDOWN
+  ------------------------------------------------------- */
 
   .navbar-links.open {
     display: flex;
@@ -1862,7 +1866,7 @@ textarea {
 
     margin: 0;
 
-    padding: 20px 0 24px;
+    padding: 20px 0 25px;
 
     flex-direction: column;
 
@@ -1882,6 +1886,48 @@ textarea {
 
   .navbar-links.open a {
     font-size: 18px;
+  }
+
+
+  /* Get in touch inside hamburger */
+
+  .navbar-links.open .navbar-button {
+    display: inline-flex;
+
+    width: auto;
+
+    min-width: 135px;
+    min-height: 42px;
+
+    margin-top: 2px;
+
+    padding: 11px 22px;
+
+    background: var(--pink);
+    color: #ffffff !important;
+
+    font-family:
+      "Cormorant Garamond",
+      Georgia,
+      serif;
+
+    font-size: 15px !important;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    border-radius: 999px;
+
+    box-shadow:
+      0 7px 18px rgba(201, 121, 125, 0.15);
+  }
+
+  .navbar-links.open .navbar-button:hover {
+    background: var(--rose-dark);
+
+    color: #ffffff !important;
+
+    transform: translateY(-2px);
   }
 
 
